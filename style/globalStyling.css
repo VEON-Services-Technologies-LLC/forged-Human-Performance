@@ -1,0 +1,119 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /*this will help when using rem to be 1 rem -> 10px*/
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #0c355a;
+}
+
+a {
+  text-decoration: none;
+  color: #0c355a;
+}
+
+/* Global CTA Button */
+.main-cta-primary {
+  display: inline-block;
+  background-color: #ad2b2b;
+  color: white !important;
+  font-size: 1.6rem; /* 16px */
+  font-weight: bold;
+  padding: 1.5rem 3rem; /* 15px 30px */
+  border-radius: 3rem; /* 30px */
+  text-transform: uppercase;
+  letter-spacing: 0.1rem; /* 1px */
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+}
+
+.main-cta-primary:hover {
+  background-color: #d49829;
+  transform: translateY(-0.3rem); /* -3px */
+  box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.3);
+}
+
+.global-headline {
+  color: #d49829 !important;
+}
+
+/* Full-width Divider Section */
+.divider-section {
+  width: 100vw;
+  height: 70vh;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+}
+
+.divider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.divider-section:hover .divider-image {
+  transform: scale(1.08);
+}
+
+/* Optional Content Overlay */
+.divider-caption {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  color: white;
+  max-width: 80%;
+  z-index: 2;
+}
+
+.divider-caption h3 {
+  font-size: 3rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
+.divider-caption p {
+  font-size: 1.6rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Overlay Effect */
+.divider-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 50%);
+  z-index: 1;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .divider-section {
+    height: 60vh; /* Slightly smaller on mobile */
+  }
+
+  .divider-caption h3 {
+    font-size: 2.2rem;
+  }
+
+  .divider-caption p {
+    font-size: 1.4rem;
+  }
+}
