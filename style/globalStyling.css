@@ -15,9 +15,123 @@ body {
   color: #0c355a;
 }
 
+/* Font Face Definitions */
+@font-face {
+    font-family: 'Newake';
+    src: url('../fonts/Newake-Font-Demo.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/AvenirLTSd-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Base Typography */
+:root {
+    --font-heading: 'Newake', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Avenir', 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--min-font-size);
+    line-height: 1.6;
+    color: #0C355A;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6,
+.section-title, .calculator-title, .tier-title,
+.heading-primary, .intro-title, .process-header h2 {
+    font-family: var(--font-heading);
+    font-weight: normal;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: inherit;
+}
+
+/* Specific Heading Sizes */
+h1, .heading-primary {
+    font-size: 7rem;
+}
+
+h2, .section-title {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.8rem;
+}
+
+/* Paragraphs and Body Text */
+p, li, .section-description, .calculator-description,
+.intro-text, .benefits-list li, .result-label, .result-value,
+.input-note, .disclaimer, .text-body p {
+    font-family: var(--font-body);
+    font-size: 2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Forms - Exception for smaller labels */
+.form-group label, .goal-radio-label, .goal-tooltip {
+    font-size: 1.4rem;
+    font-family: var(--font-body);
+}
+
+
 a {
   text-decoration: none;
   color: #0c355a;
+}
+
+/* Minimum Font Size Enforcement */
+body * {
+    font-size: min(max(18px, 1rem), 100px);
+}
+
+/* Buttons and CTAs */
+.main-CTA, .calculator-submit-btn, .result-action-btn {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    h1, .heading-primary {
+        font-size: 2.4rem;
+    }
+    
+    h2, .section-title {
+        font-size: 2rem;
+    }
+    
+    h3 {
+        font-size: 1.8rem;
+    }
+}
+
+a, 
+.main-CTA, 
+.calculator-submit-btn, 
+.result-action-btn,
+.floating-menu-btn,
+.service-card-cta,
+.footer-form button,
+.social-link,
+.nav-link {
+    font-family: var(--font-body) !important; /* Force Avenir */
+    font-size: 1.6rem;
 }
 
 /* Global CTA Button */
@@ -28,7 +142,7 @@ a {
   font-size: 1.6rem; /* 16px */
   font-weight: bold;
   padding: 1.5rem 3rem; /* 15px 30px */
-  border-radius: 3rem; /* 30px */
+  border-radius: .5rem; /* 30px */
   text-transform: uppercase;
   letter-spacing: 0.1rem; /* 1px */
   transition: all 0.3s ease;

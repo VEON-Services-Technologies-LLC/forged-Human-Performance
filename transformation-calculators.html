@@ -70,7 +70,7 @@
           </div>
           <h3 class="calculator-title">Daily Caloric Intake Calculator</h3>
           <p class="calculator-description">Get your personalized daily calorie target based on your main fitness goal.</p>
-          <button class="calculator-cta">Launch Calculator</button>
+          <a href="#caloric-intake-calculator-section" class="calculator-cta" onclick="">Go To Calculator</a>
         </div>
         
         <!-- Calculator 3 -->
@@ -83,7 +83,7 @@
           </div>
           <h3 class="calculator-title">Macro Ratio Calculator</h3>
           <p class="calculator-description">Find your ideal daily protein, carb, and fat grams for your calorie target and goal.</p>
-          <button class="calculator-cta">Launch Calculator</button>
+          <a href="#macro-calculator-section" class="calculator-cta" onclick="">Go To Calculator</a>
         </div>
       </div>
     </div>
@@ -234,151 +234,208 @@
       />
     </section>
     <section class="calculator-section" id="caloric-intake-calculator-section">
+  <div class="container">
+    <div class="calculator-header">
+      <h2 class="section-title">Daily Caloric Intake Calculator</h2>
+      <p class="section-description">
+        Get personalized calorie targets based on your specific fitness goals - whether you're aiming for fat loss, muscle gain, body recomposition, or maintenance.
+      </p>
+    </div>
+
+    <div class="calculator-grid">
+      <div class="calculator-info">
+        <h3>How This Calculator Works</h3>
+        <p>This calculator provides science-based recommendations for:</p>
+        <ul class="benefits-list">
+          <li><strong>Fat Loss:</strong> Safe deficit ranges to preserve muscle</li>
+          <li><strong>Muscle Gain:</strong> Optimal surplus for lean growth</li>
+          <li><strong>Recomposition:</strong> Balanced approach for simultaneous fat loss/muscle gain</li>
+          <li><strong>Maintenance:</strong> Calorie targets to maintain your current physique</li>
+        </ul>
+        <div class="disclaimer">
+          <p><strong>Note:</strong> These are estimates. Individual results vary based on metabolism, adherence, and other factors.</p>
+        </div>
+      </div>
+
+      <div class="calculator-form-container">
+        <form id="goal-calculator-form" class="forgedhp-calculator">
+          <fieldset class="goal-selection">
+            <legend>Select Your Primary Goal</legend>
+            <div class="goal-radio-container">
+              <label class="goal-radio-option">
+                <input type="radio" name="goal" value="fat_loss" class="goal-radio" checked>
+                <span class="goal-radio-label">Fat Loss</span>
+                <div class="goal-tooltip">Reduce body fat while maintaining muscle</div>
+              </label>
+              
+              <label class="goal-radio-option">
+                <input type="radio" name="goal" value="lean_mass_gain" class="goal-radio">
+                <span class="goal-radio-label">Muscle Gain</span>
+                <div class="goal-tooltip">Increase lean muscle mass</div>
+              </label>
+              
+              <label class="goal-radio-option">
+                <input type="radio" name="goal" value="body_recomposition" class="goal-radio">
+                <span class="goal-radio-label">Recomposition</span>
+                <div class="goal-tooltip">Lose fat and gain muscle simultaneously</div>
+              </label>
+              
+              <label class="goal-radio-option">
+                <input type="radio" name="goal" value="maintenance" class="goal-radio">
+                <span class="goal-radio-label">Maintenance</span>
+                <div class="goal-tooltip">Maintain current weight and composition</div>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="dynamic-inputs">
+            <div class="form-group" id="fat-input-group">
+              <label for="fat-to-lose-goal">Fat to Lose (lbs)</label>
+              <input type="number" id="fat-to-lose-goal" name="fat-to-lose" min="1" step="0.5" class="goal-input">
+              <div class="input-note">Typical range: 5-30 lbs</div>
+            </div>
+
+            <div class="form-group" id="muscle-input-group">
+              <label for="muscle-to-gain-goal">Muscle to Gain (lbs)</label>
+              <input type="number" id="muscle-to-gain-goal" name="muscle-to-gain" min="1" step="0.5" class="goal-input">
+              <div class="input-note">Typical range: 2-15 lbs</div>
+            </div>
+
+            <div class="form-group">
+              <label for="tdee-goal">Your TDEE (Calories) <span class="input-note">(Use your TDEE from the Fat Loss Calculator results)</span></label>
+              <input type="number" id="tdee-goal" name="tdee" min="1000" step="1" required>
+              <div class="input-note">Total Daily Energy Expenditure</div>
+            </div>
+          </div>
+
+          <button type="submit" class="calculator-submit-btn">
+            <span class="btn-text">Calculate My Plan</span>
+            <span class="btn-loader"></span>
+          </button>
+        </form>
+
+        <div id="goal-calculator-results" class="calculator-results">
+          <div class="results-header">
+            <h3>Your Personalized Caloric Plan</h3>
+            <div class="results-summary" id="results-summary"></div>
+          </div>
+          
+          <div class="result-items">
+            <div class="result-item">
+              <span class="result-label">Minimal Change:</span>
+              <span id="minimal-change-result-goal" class="result-value">-- kcal/day (-- weeks)</span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Moderate Change:</span>
+              <span id="moderate-change-result-goal" class="result-value">-- kcal/day (-- weeks)</span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Maximal Change:</span>
+              <span id="maximal-change-result-goal" class="result-value">-- kcal/day (-- weeks)</span>
+            </div>
+          </div>
+          
+          <div class="result-actions">
+            <button id="reset-goal-calculator" class="result-action-btn secondary">
+              <i class="fas fa-redo"></i> Start Over
+            </button>
+            <button id="copy-goal-results" class="result-action-btn primary">
+              <i class="fas fa-copy"></i> Copy Results
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </section>
+    <section class="divider-section">
+      <img
+        src="./assets/imgs/backgrounds/div3.webp"
+        alt="Athlete training"
+        class="divider-image"
+      />
+    </section>
+    <section class="calculator-section" id="macro-calculator-section">
       <div class="container">
         <div class="calculator-header">
-          <h2 class="section-title">Daily Caloric Intake Calculator</h2>
+          <h2 class="section-title">Macro Ratio Calculator</h2>
           <p class="section-description">
-            Get personalized calorie targets based on your specific fitness goals - whether you're aiming for fat loss, muscle gain, body recomposition, or maintenance.
+            Break down your caloric intake into precise grams of protein, carbohydrates, and fats to align with your fitness goals.
           </p>
         </div>
 
         <div class="calculator-grid">
           <div class="calculator-info">
             <h3>How This Calculator Works</h3>
-            <p>This calculator provides science-based recommendations for:</p>
+            <p>This calculator helps you determine your ideal macronutrient distribution:</p>
             <ul class="benefits-list">
-              <li><strong>Fat Loss:</strong> Safe deficit ranges to preserve muscle</li>
-              <li><strong>Muscle Gain:</strong> Optimal surplus for lean growth</li>
-              <li><strong>Recomposition:</strong> Balanced approach for simultaneous fat loss/muscle gain</li>
-              <li><strong>Maintenance:</strong> Calorie targets to maintain your current physique</li>
+              <li><strong>Protein:</strong> 25-40% (0.7-1g per lb of body weight)</li>
+              <li><strong>Fats:</strong> 20-35% (essential for hormone health)</li>
+              <li><strong>Carbs:</strong> Remainder (fuel for performance)</li>
             </ul>
             <div class="disclaimer">
-              <p><strong>Note:</strong> These are estimates. Individual results vary based on metabolism, adherence, and other factors.</p>
+              <p><strong>Tip:</strong> Use your calorie target from the Daily Caloric Intake Calculator.</p>
             </div>
           </div>
 
           <div class="calculator-form-container">
-            <form id="goal-calculator-form" class="forgedhp-calculator">
-              <fieldset class="goal-selection">
-                <legend>Select Your Primary Goal</legend>
-                <div class="goal-radio-container">
-                  <label class="goal-radio-option">
-                    <input type="radio" name="goal" value="fat_loss" class="goal-radio" checked>
-                    <span class="goal-radio-label">Fat Loss</span>
-                    <div class="goal-tooltip">Reduce body fat while maintaining muscle</div>
-                  </label>
-                  
-                  <label class="goal-radio-option">
-                    <input type="radio" name="goal" value="lean_mass_gain" class="goal-radio">
-                    <span class="goal-radio-label">Muscle Gain</span>
-                    <div class="goal-tooltip">Increase lean muscle mass</div>
-                  </label>
-                  
-                  <label class="goal-radio-option">
-                    <input type="radio" name="goal" value="body_recomposition" class="goal-radio">
-                    <span class="goal-radio-label">Recomposition</span>
-                    <div class="goal-tooltip">Lose fat and gain muscle simultaneously</div>
-                  </label>
-                  
-                  <label class="goal-radio-option">
-                    <input type="radio" name="goal" value="maintenance" class="goal-radio">
-                    <span class="goal-radio-label">Maintenance</span>
-                    <div class="goal-tooltip">Maintain current weight and composition</div>
-                  </label>
-                </div>
-              </fieldset>
+            <form id="macro-calculator-form" class="forgedhp-calculator">
+              <div class="form-group">
+                <label for="caloric-intake-macro">Daily Caloric Intake</label>
+                <input type="number" id="caloric-intake-macro" name="caloric-intake" min="1000" step="50" required>
+                <div class="input-note">From your calorie calculator results</div>
+              </div>
 
-              <div class="dynamic-inputs">
-                <div class="form-group" id="fat-input-group">
-                  <label for="fat-to-lose-goal">Fat to Lose (lbs)</label>
-                  <input type="number" id="fat-to-lose-goal" name="fat-to-lose" min="1" step="0.5" class="goal-input">
-                  <div class="input-note">Typical range: 5-30 lbs</div>
-                </div>
+              <div class="form-group">
+                <label for="protein-percent-macro">Protein Percentage (%)</label>
+                <input type="number" id="protein-percent-macro" name="protein-percent" min="25" max="40" step="1" value="30" required>
+                <div class="input-note">Recommended: 25-40%</div>
+              </div>
 
-                <div class="form-group" id="muscle-input-group">
-                  <label for="muscle-to-gain-goal">Muscle to Gain (lbs)</label>
-                  <input type="number" id="muscle-to-gain-goal" name="muscle-to-gain" min="1" step="0.5" class="goal-input">
-                  <div class="input-note">Typical range: 2-15 lbs</div>
-                </div>
+              <div class="form-group">
+                <label for="fat-percent-macro">Fat Percentage (%)</label>
+                <input type="number" id="fat-percent-macro" name="fat-percent" min="20" max="35" step="1" value="25" required>
+                <div class="input-note">Recommended: 20-35%</div>
+              </div>
 
-                <div class="form-group">
-                  <label for="tdee-goal">Your TDEE (Calories)</label>
-                  <input type="number" id="tdee-goal" name="tdee" min="1000" step="50" required>
-                  <div class="input-note">Total Daily Energy Expenditure</div>
-                </div>
+              <div class="form-group">
+                <label for="carbs-percent-macro">Carb Percentage (%)</label>
+                <input type="number" id="carbs-percent-macro" name="carbs-percent" min="25" max="55" step="1" value="45" required>
+                <div class="input-note">Auto-calculated from remaining %</div>
               </div>
 
               <button type="submit" class="calculator-submit-btn">
-                <span class="btn-text">Calculate My Plan</span>
+                <span class="btn-text">Calculate Macros</span>
                 <span class="btn-loader"></span>
               </button>
             </form>
 
-            <div id="goal-calculator-results" class="calculator-results">
+            <div id="macro-calculator-results" class="calculator-results">
               <div class="results-header">
-                <h3>Your Personalized Caloric Plan</h3>
-                <div class="results-summary" id="results-summary"></div>
+                <h3>Your Daily Macronutrient Targets</h3>
+                <div class="results-summary" id="macro-results-summary"></div>
               </div>
               
-              <div class="result-tiers">
-                <div class="result-tier">
-                  <h4 class="tier-title">Conservative Approach</h4>
-                  <div class="result-item">
-                    <span class="result-label">Calories:</span>
-                    <span id="minimal-change-result-goal" class="result-value">--</span>
-                  </div>
-                  <div class="result-item">
-                    <span class="result-label">Weekly Change:</span>
-                    <span class="result-value">~0.5 lb/week</span>
-                  </div>
-                  <div class="result-item">
-                    <span class="result-label">Estimated Time:</span>
-                    <span id="minimal-time-result" class="result-value">--</span>
-                  </div>
+              <div class="result-items">
+                <div class="result-item">
+                  <span class="result-label">Protein:</span>
+                  <span id="protein-result-macro" class="result-value">-- grams</span>
                 </div>
-                
-                <div class="result-tier recommended">
-                  <div class="recommended-badge">Recommended</div>
-                  <h4 class="tier-title">Moderate Approach</h4>
-                  <div class="result-item">
-                    <span class="result-label">Calories:</span>
-                    <span id="moderate-change-result-goal" class="result-value">--</span>
-                  </div>
-                  <div class="result-item">
-                    <span class="result-label">Weekly Change:</span>
-                    <span class="result-value">~1 lb/week</span>
-                  </div>
-                  <div class="result-item">
-                    <span class="result-label">Estimated Time:</span>
-                    <span id="moderate-time-result" class="result-value">--</span>
-                  </div>
+                <div class="result-item">
+                  <span class="result-label">Carbohydrates:</span>
+                  <span id="carbs-result-macro" class="result-value">-- grams</span>
                 </div>
-                
-                <div class="result-tier">
-                  <h4 class="tier-title">Aggressive Approach</h4>
-                  <div class="result-item">
-                    <span class="result-label">Calories:</span>
-                    <span id="maximal-change-result-goal" class="result-value">--</span>
-                  </div>
-                  <div class="result-item">
-                    <span class="result-label">Weekly Change:</span>
-                    <span class="result-value">~1.5-2 lb/week</span>
-                  </div>
-                  <div class="result-item">
-                    <span class="result-label">Estimated Time:</span>
-                    <span id="maximal-time-result" class="result-value">--</span>
-                  </div>
+                <div class="result-item">
+                  <span class="result-label">Fats:</span>
+                  <span id="fat-result-macro" class="result-value">-- grams</span>
                 </div>
               </div>
               
               <div class="result-actions">
-                <button id="reset-goal-calculator" class="result-action-btn secondary">
+                <button id="reset-macro-calculator" class="result-action-btn secondary">
                   <i class="fas fa-redo"></i> Start Over
                 </button>
-                <button id="save-plan" class="result-action-btn">
-                  <i class="fas fa-bookmark"></i> Save Plan
-                </button>
-                <button id="copy-goal-results" class="result-action-btn primary">
+                <button id="copy-macro-results" class="result-action-btn primary">
                   <i class="fas fa-copy"></i> Copy Results
                 </button>
               </div>
@@ -413,8 +470,25 @@
           <h3 class="footer-heading">Stay Connected</h3>
 
           <form class="footer-form">
-            <input type="email" placeholder="Your Email" required />
-            <button type="submit">Subscribe</button>
+            <iframe
+            src="https://official.forgedhp.com/widget/form/KtwglNEmRXzWCjBiDonO"
+            style="width:100%;height:100%;border:none;border-radius:3px"
+            id="inline-KtwglNEmRXzWCjBiDonO" 
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="Site's Footer Form"
+            data-height="400"
+            data-layout-iframe-id="inline-KtwglNEmRXzWCjBiDonO"
+            data-form-id="KtwglNEmRXzWCjBiDonO"
+            title="Site's Footer Form"
+                >
+            </iframe>
+            <script src="https://official.forgedhp.com/js/form_embed.js"></script>
           </form>
 
           <div class="social-links">
@@ -670,223 +744,342 @@
     </script>
     <!-- Daily Caloric Intake Calculator-->
     <script>
-      // Daily Caloric Intake Calculator - Optimized
-      document.addEventListener('DOMContentLoaded', function() {
-        const goalForm = document.getElementById('goal-calculator-form');
-        const resetBtn = document.getElementById('reset-goal-calculator');
-        const copyBtn = document.getElementById('copy-goal-results');
-        const saveBtn = document.getElementById('save-plan');
-        const fatInputGroup = document.getElementById('fat-input-group');
-        const muscleInputGroup = document.getElementById('muscle-input-group');
-        
-        // Initialize form state
+      // Daily Caloric Intake Calculator - Simplified Results
+    document.addEventListener('DOMContentLoaded', function() {
+      const goalForm = document.getElementById('goal-calculator-form');
+      const resetBtn = document.getElementById('reset-goal-calculator');
+      const copyBtn = document.getElementById('copy-goal-results');
+      const fatInputGroup = document.getElementById('fat-input-group');
+      const muscleInputGroup = document.getElementById('muscle-input-group');
+      
+      // Initialize form state
+      updateInputVisibility(document.querySelector('input[name="goal"]:checked'));
+      
+      // Goal selection handler
+      document.querySelectorAll('.goal-radio').forEach(radio => {
+        radio.addEventListener('change', function() {
+          updateInputVisibility(this);
+        });
+      });
+
+      // Form submission
+      goalForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        calculateGoalCalories();
+      });
+
+      // Reset form
+      resetBtn.addEventListener('click', function() {
+        goalForm.reset();
         updateInputVisibility(document.querySelector('input[name="goal"]:checked'));
-        
-        // Goal selection handler
-        document.querySelectorAll('.goal-radio').forEach(radio => {
-          radio.addEventListener('change', function() {
-            updateInputVisibility(this);
-          });
+        document.getElementById('goal-calculator-results').scrollIntoView({
+          behavior: 'smooth'
         });
+      });
 
-        // Form submission
-        goalForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          calculateGoalCalories();
+      // Copy results
+      copyBtn.addEventListener('click', copyGoalResultsToClipboard);
+
+      function updateInputVisibility(selectedRadio) {
+        const goal = selectedRadio.value;
+        
+        // Reset all inputs
+        document.querySelectorAll('.goal-input').forEach(input => {
+          input.disabled = true;
+          input.value = '';
+          input.closest('.form-group').style.display = 'none';
         });
+        
+        // Show relevant inputs based on goal
+        if (goal === 'fat_loss') {
+          fatInputGroup.style.display = 'block';
+          document.getElementById('fat-to-lose-goal').disabled = false;
+        } 
+        else if (goal === 'lean_mass_gain') {
+          muscleInputGroup.style.display = 'block';
+          document.getElementById('muscle-to-gain-goal').disabled = false;
+        } 
+        else if (goal === 'body_recomposition') {
+          fatInputGroup.style.display = 'block';
+          muscleInputGroup.style.display = 'block';
+          document.getElementById('fat-to-lose-goal').disabled = false;
+          document.getElementById('muscle-to-gain-goal').disabled = false;
+        }
+      }
 
-        // Reset form
-        resetBtn.addEventListener('click', function() {
-          goalForm.reset();
-          updateInputVisibility(document.querySelector('input[name="goal"]:checked'));
-          document.getElementById('goal-calculator-results').scrollIntoView({
-            behavior: 'smooth'
-          });
-        });
-
-        // Copy results
-        copyBtn.addEventListener('click', copyGoalResultsToClipboard);
+      function calculateGoalCalories() {
+        const submitBtn = goalForm.querySelector('.calculator-submit-btn');
+        submitBtn.classList.add('is-loading');
         
-        // Save plan (placeholder functionality)
-        saveBtn.addEventListener('click', function() {
-          alert('Plan saved! (This would connect to your backend in production)');
-        });
-
-        function updateInputVisibility(selectedRadio) {
-          const goal = selectedRadio.value;
-          
-          // Reset all inputs
-          document.querySelectorAll('.goal-input').forEach(input => {
-            input.disabled = true;
-            input.value = '';
-            input.closest('.form-group').style.display = 'none';
-          });
-          
-          // Show relevant inputs based on goal
-          if (goal === 'fat_loss') {
-            fatInputGroup.style.display = 'block';
-            document.getElementById('fat-to-lose-goal').disabled = false;
-          } 
-          else if (goal === 'lean_mass_gain') {
-            muscleInputGroup.style.display = 'block';
-            document.getElementById('muscle-to-gain-goal').disabled = false;
-          } 
-          else if (goal === 'body_recomposition') {
-            fatInputGroup.style.display = 'block';
-            muscleInputGroup.style.display = 'block';
-            document.getElementById('fat-to-lose-goal').disabled = false;
-            document.getElementById('muscle-to-gain-goal').disabled = false;
-          }
-        }
-
-        function calculateGoalCalories() {
-          const submitBtn = goalForm.querySelector('.calculator-submit-btn');
-          submitBtn.classList.add('is-loading');
-          
-          // Simulate processing delay for better UX
-          setTimeout(() => {
-            try {
-              const goal = document.querySelector('input[name="goal"]:checked').value;
-              const tdee = parseFloat(document.getElementById('tdee-goal').value);
-              const fatToLose = parseFloat(document.getElementById('fat-to-lose-goal').value) || 0;
-              const muscleToGain = parseFloat(document.getElementById('muscle-to-gain-goal').value) || 0;
-              
-              if (!tdee || isNaN(tdee)) {
-                throw new Error('Please enter your TDEE');
-              }
-              
-              if ((goal === 'fat_loss' || goal === 'body_recomposition') && fatToLose <= 0) {
-                throw new Error('Please enter fat to lose for your selected goal');
-              }
-              
-              if ((goal === 'lean_mass_gain' || goal === 'body_recomposition') && muscleToGain <= 0) {
-                throw new Error('Please enter muscle to gain for your selected goal');
-              }
-              
-              // Calculate based on goal
-              const results = {
-                fat_loss: calculateFatLoss(tdee, fatToLose),
-                lean_mass_gain: calculateMuscleGain(tdee, muscleToGain),
-                body_recomposition: calculateRecomp(tdee, fatToLose, muscleToGain),
-                maintenance: calculateMaintenance(tdee)
-              }[goal];
-              
-              displayResults(results, goal, fatToLose, muscleToGain);
-              
-            } catch (error) {
-              alert(error.message);
-            } finally {
-              submitBtn.classList.remove('is-loading');
-            }
-          }, 800); // Artificial delay for better UX
-        }
-        
-        function calculateFatLoss(tdee, fatToLose) {
-          return {
-            minimal: tdee - 250,  // ~0.5 lb/week
-            moderate: tdee - 500,  // ~1 lb/week
-            maximal: tdee - 750,   // ~1.5 lb/week
-            minimalTime: (fatToLose / 0.5).toFixed(1),
-            moderateTime: (fatToLose / 1).toFixed(1),
-            maximalTime: (fatToLose / 1.5).toFixed(1)
-          };
-        }
-        
-        function calculateMuscleGain(tdee, muscleToGain) {
-          return {
-            minimal: tdee + 200,  // ~0.25 lb/month
-            moderate: tdee + 400,  // ~0.5 lb/month
-            maximal: tdee + 600,   // ~0.75 lb/month
-            minimalTime: (muscleToGain / 0.25).toFixed(1),
-            moderateTime: (muscleToGain / 0.5).toFixed(1),
-            maximalTime: (muscleToGain / 0.75).toFixed(1)
-          };
-        }
-        
-        function calculateRecomp(tdee, fatToLose, muscleToGain) {
-          return {
-            minimal: tdee - 100,  // Small deficit
-            moderate: tdee,        // Maintenance
-            maximal: tdee + 100,   // Small surplus
-            minimalTime: Math.max(fatToLose / 0.25, muscleToGain / 0.125).toFixed(1),
-            moderateTime: Math.max(fatToLose / 0.5, muscleToGain / 0.25).toFixed(1),
-            maximalTime: Math.max(fatToLose / 0.75, muscleToGain / 0.375).toFixed(1)
-          };
-        }
-        
-        function calculateMaintenance(tdee) {
-          return {
-            minimal: tdee,
-            moderate: tdee,
-            maximal: tdee,
-            minimalTime: 'N/A',
-            moderateTime: 'N/A',
-            maximalTime: 'N/A'
-          };
-        }
-        
-        function displayResults(results, goal, fatToLose, muscleToGain) {
-          // Update result values
-          document.getElementById('minimal-change-result-goal').textContent = `${results.minimal.toFixed(0)} kcal`;
-          document.getElementById('moderate-change-result-goal').textContent = `${results.moderate.toFixed(0)} kcal`;
-          document.getElementById('maximal-change-result-goal').textContent = `${results.maximal.toFixed(0)} kcal`;
-          
-          document.getElementById('minimal-time-result').textContent = `${results.minimalTime} weeks`;
-          document.getElementById('moderate-time-result').textContent = `${results.moderateTime} weeks`;
-          document.getElementById('maximal-time-result').textContent = `${results.maximalTime} weeks`;
-          
-          // Update summary based on goal
-          const summaryText = {
-            fat_loss: `To lose ${fatToLose} lbs of fat, we recommend:`,
-            lean_mass_gain: `To gain ${muscleToGain} lbs of muscle, we recommend:`,
-            body_recomposition: `To lose ${fatToLose} lbs of fat and gain ${muscleToGain} lbs of muscle, we recommend:`,
-            maintenance: `To maintain your current weight, your calorie targets are:`
-          }[goal];
-          
-          document.getElementById('results-summary').textContent = summaryText;
-          
-          // Scroll to results
-          document.getElementById('goal-calculator-results').scrollIntoView({
-            behavior: 'smooth'
-          });
-        }
-
-        async function copyGoalResultsToClipboard() {
+        setTimeout(() => {
           try {
             const goal = document.querySelector('input[name="goal"]:checked').value;
-            const tdee = document.getElementById('tdee-goal').value;
-            const minimal = document.getElementById('minimal-change-result-goal').textContent;
-            const moderate = document.getElementById('moderate-change-result-goal').textContent;
-            const maximal = document.getElementById('maximal-change-result-goal').textContent;
+            const tdee = parseFloat(document.getElementById('tdee-goal').value);
+            const fatToLose = parseFloat(document.getElementById('fat-to-lose-goal').value) || 0;
+            const muscleToGain = parseFloat(document.getElementById('muscle-to-gain-goal').value) || 0;
             
-            const resultsText = `ForgedHP Caloric Plan\n====================\n
-      Goal: ${goal.replace('_', ' ').toUpperCase()}
-      TDEE: ${tdee} calories
-
-      Recommendations:
-      - Conservative: ${minimal}
-      - Moderate: ${moderate}
-      - Aggressive: ${maximal}
-
-      Calculated by ForgedHP - https://forgedhp.com`;
-
-            await navigator.clipboard.writeText(resultsText);
+            if (!tdee || isNaN(tdee)) {
+              throw new Error('Please enter your TDEE (from Fat Loss Calculator results)');
+            }
             
-            // Visual feedback
-            const originalText = copyBtn.innerHTML;
-            copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-            copyBtn.classList.add('copied');
+            if ((goal === 'fat_loss' || goal === 'body_recomposition') && fatToLose <= 0) {
+              throw new Error('Please enter fat to lose for your selected goal');
+            }
             
-            setTimeout(() => {
-              copyBtn.innerHTML = originalText;
-              copyBtn.classList.remove('copied');
-            }, 2000);
-          } catch (err) {
-            alert('Failed to copy results. Please try again or copy manually.');
+            if ((goal === 'lean_mass_gain' || goal === 'body_recomposition') && muscleToGain <= 0) {
+              throw new Error('Please enter muscle to gain for your selected goal');
+            }
+            
+            // Calculate based on goal
+            const results = {
+              fat_loss: calculateFatLoss(tdee, fatToLose),
+              lean_mass_gain: calculateMuscleGain(tdee, muscleToGain),
+              body_recomposition: calculateRecomp(tdee, fatToLose, muscleToGain),
+              maintenance: calculateMaintenance(tdee)
+            }[goal];
+            
+            displayResults(results, goal, fatToLose, muscleToGain);
+            
+          } catch (error) {
+            alert(error.message);
+          } finally {
+            submitBtn.classList.remove('is-loading');
           }
+        }, 800);
+      }
+      
+      function calculateFatLoss(tdee, fatToLose) {
+        return {
+          minimal: tdee - 250,  // ~0.5 lb/week
+          moderate: tdee - 500,  // ~1 lb/week
+          maximal: tdee - 750,   // ~1.5 lb/week
+          minimalTime: (fatToLose / 0.5).toFixed(1),
+          moderateTime: (fatToLose / 1).toFixed(1),
+          maximalTime: (fatToLose / 1.5).toFixed(1)
+        };
+      }
+      
+      function calculateMuscleGain(tdee, muscleToGain) {
+        return {
+          minimal: tdee + 200,  // ~0.25 lb/month
+          moderate: tdee + 400,  // ~0.5 lb/month
+          maximal: tdee + 600,   // ~0.75 lb/month
+          minimalTime: (muscleToGain / 0.25).toFixed(1),
+          moderateTime: (muscleToGain / 0.5).toFixed(1),
+          maximalTime: (muscleToGain / 0.75).toFixed(1)
+        };
+      }
+      
+      function calculateRecomp(tdee, fatToLose, muscleToGain) {
+        return {
+          minimal: tdee - 100,  // Small deficit
+          moderate: tdee,        // Maintenance
+          maximal: tdee + 100,   // Small surplus
+          minimalTime: Math.max(fatToLose / 0.25, muscleToGain / 0.125).toFixed(1),
+          moderateTime: Math.max(fatToLose / 0.5, muscleToGain / 0.25).toFixed(1),
+          maximalTime: Math.max(fatToLose / 0.75, muscleToGain / 0.375).toFixed(1)
+        };
+      }
+      
+      function calculateMaintenance(tdee) {
+        return {
+          minimal: tdee,
+          moderate: tdee,
+          maximal: tdee,
+          minimalTime: 'N/A',
+          moderateTime: 'N/A',
+          maximalTime: 'N/A'
+        };
+      }
+      
+      function displayResults(results, goal, fatToLose, muscleToGain) {
+        // Update result values in the simplified format
+        document.getElementById('minimal-change-result-goal').textContent = 
+          `${results.minimal.toFixed(0)} kcal/day (${results.minimalTime} weeks)`;
+        document.getElementById('moderate-change-result-goal').textContent = 
+          `${results.moderate.toFixed(0)} kcal/day (${results.moderateTime} weeks)`;
+        document.getElementById('maximal-change-result-goal').textContent = 
+          `${results.maximal.toFixed(0)} kcal/day (${results.maximalTime} weeks)`;
+        
+        // Update summary based on goal
+        const summaryText = {
+          fat_loss: `To lose ${fatToLose} lbs of fat:`,
+          lean_mass_gain: `To gain ${muscleToGain} lbs of muscle:`,
+          body_recomposition: `To lose ${fatToLose} lbs of fat and gain ${muscleToGain} lbs of muscle:`,
+          maintenance: `To maintain your current weight:`
+        }[goal];
+        
+        document.getElementById('results-summary').textContent = summaryText;
+        
+        // Scroll to results
+        document.getElementById('goal-calculator-results').scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+
+      async function copyGoalResultsToClipboard() {
+        try {
+          const goal = document.querySelector('input[name="goal"]:checked').value;
+          const tdee = document.getElementById('tdee-goal').value;
+          const minimal = document.getElementById('minimal-change-result-goal').textContent;
+          const moderate = document.getElementById('moderate-change-result-goal').textContent;
+          const maximal = document.getElementById('maximal-change-result-goal').textContent;
+          const summary = document.getElementById('results-summary').textContent;
+          
+          const resultsText = `ForgedHP Caloric Plan\n====================\n
+    ${summary}
+
+    ${minimal}
+    ${moderate}
+    ${maximal}
+
+    Calculated by ForgedHP - https://forgedhp.com`;
+
+          await navigator.clipboard.writeText(resultsText);
+          
+          // Visual feedback
+          const originalText = copyBtn.innerHTML;
+          copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+          copyBtn.classList.add('copied');
+          
+          setTimeout(() => {
+            copyBtn.innerHTML = originalText;
+            copyBtn.classList.remove('copied');
+          }, 2000);
+        } catch (err) {
+          alert('Failed to copy results. Please try again or copy manually.');
         }
-      });
+      }
+    });
     </script>
+    <!-- Macro Ratio Calculator-->
+     <script>
+      // Macro Ratio Calculator
+    document.addEventListener('DOMContentLoaded', function() {
+      const macroForm = document.getElementById('macro-calculator-form');
+      const resetBtn = document.getElementById('reset-macro-calculator');
+      const copyBtn = document.getElementById('copy-macro-results');
+      const carbsInput = document.getElementById('carbs-percent-macro');
+      
+      // Constants for calorie content per gram
+      const CALORIES_PER_GRAM_PROTEIN = 4;
+      const CALORIES_PER_GRAM_CARBS = 4;
+      const CALORIES_PER_GRAM_FAT = 9;
+
+      // Auto-calculate carbs percentage when protein/fat change
+      document.getElementById('protein-percent-macro').addEventListener('input', updateCarbsPercentage);
+      document.getElementById('fat-percent-macro').addEventListener('input', updateCarbsPercentage);
+
+      function updateCarbsPercentage() {
+        const proteinPercent = parseFloat(document.getElementById('protein-percent-macro').value) || 0;
+        const fatPercent = parseFloat(document.getElementById('fat-percent-macro').value) || 0;
+        const remainingPercent = 100 - proteinPercent - fatPercent;
+        
+        if (remainingPercent >= 25 && remainingPercent <= 55) {
+          carbsInput.value = Math.round(remainingPercent);
+        }
+      }
+
+      // Form submission
+      macroForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        calculateMacros();
+      });
+
+      // Reset form
+      resetBtn.addEventListener('click', function() {
+        macroForm.reset();
+        document.getElementById('protein-percent-macro').value = 30;
+        document.getElementById('fat-percent-macro').value = 25;
+        document.getElementById('carbs-percent-macro').value = 45;
+        document.getElementById('macro-calculator-results').scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+
+      // Copy results
+      copyBtn.addEventListener('click', copyMacroResultsToClipboard);
+
+      function calculateMacros() {
+        const submitBtn = macroForm.querySelector('.calculator-submit-btn');
+        submitBtn.classList.add('is-loading');
+        
+        setTimeout(() => {
+          try {
+            const caloricIntake = parseFloat(document.getElementById('caloric-intake-macro').value);
+            const proteinPercent = parseFloat(document.getElementById('protein-percent-macro').value);
+            const fatPercent = parseFloat(document.getElementById('fat-percent-macro').value);
+            const carbsPercent = parseFloat(document.getElementById('carbs-percent-macro').value);
+            
+            if (!caloricIntake || isNaN(caloricIntake)) {
+              throw new Error('Please enter your daily caloric intake');
+            }
+            
+            const totalPercent = proteinPercent + fatPercent + carbsPercent;
+            if (totalPercent !== 100) {
+              throw new Error('Macronutrient percentages must add up to 100%');
+            }
+            
+            // Calculate grams for each macronutrient
+            const proteinGrams = (proteinPercent / 100 * caloricIntake) / CALORIES_PER_GRAM_PROTEIN;
+            const fatGrams = (fatPercent / 100 * caloricIntake) / CALORIES_PER_GRAM_FAT;
+            const carbsGrams = (carbsPercent / 100 * caloricIntake) / CALORIES_PER_GRAM_CARBS;
+            
+            // Display results
+            document.getElementById('protein-result-macro').textContent = `${proteinGrams.toFixed(1)} grams`;
+            document.getElementById('carbs-result-macro').textContent = `${carbsGrams.toFixed(1)} grams`;
+            document.getElementById('fat-result-macro').textContent = `${fatGrams.toFixed(1)} grams`;
+            
+            document.getElementById('macro-results-summary').textContent = 
+              `Based on ${caloricIntake} calories with ${proteinPercent}% protein, ${carbsPercent}% carbs, ${fatPercent}% fat`;
+            
+            // Scroll to results
+            document.getElementById('macro-calculator-results').scrollIntoView({
+              behavior: 'smooth'
+            });
+            
+          } catch (error) {
+            alert(error.message);
+          } finally {
+            submitBtn.classList.remove('is-loading');
+          }
+        }, 800);
+      }
+
+      async function copyMacroResultsToClipboard() {
+        try {
+          const calories = document.getElementById('caloric-intake-macro').value;
+          const protein = document.getElementById('protein-result-macro').textContent;
+          const carbs = document.getElementById('carbs-result-macro').textContent;
+          const fats = document.getElementById('fat-result-macro').textContent;
+          const summary = document.getElementById('macro-results-summary').textContent;
+          
+          const resultsText = `ForgedHP Macro Plan\n==================\n
+    ${summary}
+
+    Protein: ${protein}
+    Carbs: ${carbs}
+    Fats: ${fats}
+
+    Calculated by ForgedHP - https://forgedhp.com`;
+
+          await navigator.clipboard.writeText(resultsText);
+          
+          // Visual feedback
+          const originalText = copyBtn.innerHTML;
+          copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+          copyBtn.classList.add('copied');
+          
+          setTimeout(() => {
+            copyBtn.innerHTML = originalText;
+            copyBtn.classList.remove('copied');
+          }, 2000);
+        } catch (err) {
+          alert('Failed to copy results. Please try again or copy manually.');
+        }
+      }
+    });
+     </script>
   </body>
 </html>
           
