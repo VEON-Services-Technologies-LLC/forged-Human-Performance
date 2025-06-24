@@ -206,7 +206,7 @@
               communication, trust, and leadership for lasting results.
             </p>
             <div class="service-card-cta-container">
-              <a href="#" class="service-card-cta">LEARN MORE</a>
+              <a href="tel:+12104267063" class="service-card-cta">CALL NOW</a>
             </div>
           </div>
         </div>
@@ -224,7 +224,7 @@
               training.
             </p>
             <div class="service-card-cta-container">
-              <a href="#" class="service-card-cta">LEARN MORE</a>
+              <a href="tel:+12104267063" class="service-card-cta">CALL NOW</a>
             </div>
           </div>
         </div>
@@ -234,7 +234,7 @@
       <div class="personal-intro-content">
         <h1>Matt Virnau</h1>
         <p>Head Coach and Founder of Forged Human Performance</p>
-        <a href="#" class="main-cta-primary">ABOUT ME</a>
+        <a href="./about-me.html" class="main-cta-primary">ABOUT ME</a>
       </div>
     </section>
     <section class="stats-section">
@@ -547,7 +547,7 @@
         </div>
 
         <div class="cta-container">
-          <a href="#" class="main-cta-primary">GET MY FREE BLUEPRINT</a>
+          <button id="blueprint-cta" class="main-cta-primary">GET MY FREE BLUEPRINT</button>
           <p class="guarantee-text">100% Free - No Credit Card Required</p>
         </div>
       </div>
@@ -577,7 +577,7 @@
         <!-- Column 2: Resources -->
         <div class="footer-column-2">
           <h4 class="footer-subheading">Free Resources</h4>
-          <a href="#" class="footer-link">Transformation Calculators</a>
+          <a href="./transformation-calculators.html" class="footer-link">Transformation Calculators</a>
         </div>
 
         <!-- Column 3: Social & Form -->
@@ -647,5 +647,44 @@
       </div>
     </footer>
     <script src="./js/main.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+      const blueprintCTA = document.getElementById('blueprint-cta');
+      const popupContainer = document.getElementById('form-popup-container');
+      const overlay = document.querySelector('.form-popup-overlay');
+      const closeBtn = document.querySelector('.close-popup-btn');
+      
+      if (blueprintCTA) {
+        blueprintCTA.addEventListener('click', function(e) {
+          e.preventDefault();
+          popupContainer.style.display = 'block';
+          document.body.style.overflow = 'hidden'; // Prevent scrolling
+        });
+      }
+      
+      // Close functionality
+      function closePopup() {
+        popupContainer.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+      
+      if (overlay) overlay.addEventListener('click', closePopup);
+      if (closeBtn) closeBtn.addEventListener('click', closePopup);
+    });
+    </script>
+    <!-- Form Popup Container -->
+    <div id="form-popup-container" style="display:none;">
+      <div class="form-popup-overlay"></div>
+      <div class="form-popup-wrapper">
+        <iframe
+          src="https://official.forgedhp.com/widget/form/BRPsMNTSLgz8K1le2mmx"
+          id="popup-BRPsMNTSLgz8K1le2mmx"
+          title="Free Blueprint Site Form"
+          allow="autoplay; fullscreen"
+        ></iframe>
+        <button class="close-popup-btn">&times;</button>
+      </div>
+    </div>
+    <script src="https://official.forgedhp.com/js/form_embed.js"></script>
   </body>
 </html>
