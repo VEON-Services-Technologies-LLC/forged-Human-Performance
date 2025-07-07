@@ -1,3 +1,46 @@
+// Font loading detection
+function loadFonts() {
+  // Create test elements
+  const testElements = {
+    avenir: document.createElement("span"),
+    newake: document.createElement("span"),
+  };
+
+  testElements.avenir.style.fontFamily = "Avenir";
+  testElements.avenir.style.fontWeight = "300";
+  testElements.avenir.style.visibility = "hidden";
+  testElements.avenir.textContent = "A";
+
+  testElements.newake.style.fontFamily = "Newake";
+  testElements.newake.style.visibility = "hidden";
+  testElements.newake.textContent = "N";
+
+  document.body.appendChild(testElements.avenir);
+  document.body.appendChild(testElements.newake);
+
+  // Check periodically
+  const checkInterval = setInterval(() => {
+    const avenirLoaded =
+      testElements.avenir.offsetWidth !== testElements.newake.offsetWidth;
+    const newakeLoaded =
+      testElements.newake.offsetWidth !== testElements.avenir.offsetWidth;
+
+    if (avenirLoaded && newakeLoaded) {
+      clearInterval(checkInterval);
+      document.documentElement.classList.add("fonts-loaded");
+      console.log("Custom fonts loaded successfully");
+    }
+  }, 100);
+
+  // Fallback timeout
+  setTimeout(() => {
+    clearInterval(checkInterval);
+    console.log("Font loading check timeout reached");
+  }, 3000);
+}
+
+document.addEventListener("DOMContentLoaded", loadFonts);
+
 // Sticky navbar with scroll effect
 window.addEventListener("scroll", function () {
   const navbar = document.getElementById("navbar");

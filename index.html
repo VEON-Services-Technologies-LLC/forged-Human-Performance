@@ -9,6 +9,39 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+    /* Preload critical fonts */
+    <link
+      rel="preload"
+      href="../fonts/AvenirLTStd-Light.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="./assets/Fonts/AvenirLTStd-Light.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+    <style>
+      /* System font fallback while OTF loads */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      }
+
+      /* Will be applied when fonts load */
+      .fonts-loaded body {
+        font-family: "Avenir", -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      .fonts-loaded h1,
+      .fonts-loaded h2,
+      .fonts-loaded h3 {
+        font-family: "Newake", -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+    </style>
     <title>Forged Human Performance</title>
   </head>
   <body>
@@ -547,7 +580,9 @@
         </div>
 
         <div class="cta-container">
-          <button id="blueprint-cta" class="main-cta-primary">GET MY FREE BLUEPRINT</button>
+          <button id="blueprint-cta" class="main-cta-primary">
+            GET MY FREE BLUEPRINT
+          </button>
           <p class="guarantee-text">100% Free - No Credit Card Required</p>
         </div>
       </div>
@@ -577,7 +612,9 @@
         <!-- Column 2: Resources -->
         <div class="footer-column-2">
           <h4 class="footer-subheading">Free Resources</h4>
-          <a href="./transformation-calculators.html" class="footer-link">Transformation Calculators</a>
+          <a href="./transformation-calculators.html" class="footer-link"
+            >Transformation Calculators</a
+          >
         </div>
 
         <!-- Column 3: Social & Form -->
@@ -586,22 +623,27 @@
 
           <form class="footer-form">
             <iframe
-            src="https://official.forgedhp.com/widget/form/KtwglNEmRXzWCjBiDonO"
-            style="width:100%;height:100%;border:none;border-radius:3px"
-            id="inline-KtwglNEmRXzWCjBiDonO" 
-            data-layout="{'id':'INLINE'}"
-            data-trigger-type="alwaysShow"
-            data-trigger-value=""
-            data-activation-type="alwaysActivated"
-            data-activation-value=""
-            data-deactivation-type="neverDeactivate"
-            data-deactivation-value=""
-            data-form-name="Site's Footer Form"
-            data-height="400"
-            data-layout-iframe-id="inline-KtwglNEmRXzWCjBiDonO"
-            data-form-id="KtwglNEmRXzWCjBiDonO"
-            title="Site's Footer Form"
-                >
+              src="https://official.forgedhp.com/widget/form/KtwglNEmRXzWCjBiDonO"
+              style="
+                width: 100%;
+                height: 100%;
+                border: none;
+                border-radius: 3px;
+              "
+              id="inline-KtwglNEmRXzWCjBiDonO"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Site's Footer Form"
+              data-height="400"
+              data-layout-iframe-id="inline-KtwglNEmRXzWCjBiDonO"
+              data-form-id="KtwglNEmRXzWCjBiDonO"
+              title="Site's Footer Form"
+            >
             </iframe>
             <script src="https://official.forgedhp.com/js/form_embed.js"></script>
           </form>
@@ -648,32 +690,32 @@
     </footer>
     <script src="./js/main.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-      const blueprintCTA = document.getElementById('blueprint-cta');
-      const popupContainer = document.getElementById('form-popup-container');
-      const overlay = document.querySelector('.form-popup-overlay');
-      const closeBtn = document.querySelector('.close-popup-btn');
-      
-      if (blueprintCTA) {
-        blueprintCTA.addEventListener('click', function(e) {
-          e.preventDefault();
-          popupContainer.style.display = 'block';
-          document.body.style.overflow = 'hidden'; // Prevent scrolling
-        });
-      }
-      
-      // Close functionality
-      function closePopup() {
-        popupContainer.style.display = 'none';
-        document.body.style.overflow = 'auto';
-      }
-      
-      if (overlay) overlay.addEventListener('click', closePopup);
-      if (closeBtn) closeBtn.addEventListener('click', closePopup);
-    });
+      document.addEventListener("DOMContentLoaded", function () {
+        const blueprintCTA = document.getElementById("blueprint-cta");
+        const popupContainer = document.getElementById("form-popup-container");
+        const overlay = document.querySelector(".form-popup-overlay");
+        const closeBtn = document.querySelector(".close-popup-btn");
+
+        if (blueprintCTA) {
+          blueprintCTA.addEventListener("click", function (e) {
+            e.preventDefault();
+            popupContainer.style.display = "block";
+            document.body.style.overflow = "hidden"; // Prevent scrolling
+          });
+        }
+
+        // Close functionality
+        function closePopup() {
+          popupContainer.style.display = "none";
+          document.body.style.overflow = "auto";
+        }
+
+        if (overlay) overlay.addEventListener("click", closePopup);
+        if (closeBtn) closeBtn.addEventListener("click", closePopup);
+      });
     </script>
     <!-- Form Popup Container -->
-    <div id="form-popup-container" style="display:none;">
+    <div id="form-popup-container" style="display: none">
       <div class="form-popup-overlay"></div>
       <div class="form-popup-wrapper">
         <iframe

@@ -10,6 +10,21 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+    /* Preload critical fonts */
+    <link
+      rel="preload"
+      href="../fonts/AvenirLTStd-Light.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="./assets/Fonts/AvenirLTStd-Light.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
     <title>Book Your Discovery Call</title>
   </head>
   <body class="booking-page">
@@ -30,7 +45,9 @@
             <a href="/blog" class="nav-link">Blog</a>
             <a href="./index.html?#about" class="nav-link">About</a>
             <a href="./index.html?#services" class="nav-link">Services</a>
-            <a href="./transformation-calculators.html" class="nav-link">Resources</a>
+            <a href="./transformation-calculators.html" class="nav-link"
+              >Resources</a
+            >
           </nav>
           <a href="#" class="main-CTA">BOOK A CALL</a>
         </div>
@@ -83,7 +100,9 @@
         <!-- Column 2: Resources -->
         <div class="footer-column-2">
           <h4 class="footer-subheading">Free Resources</h4>
-          <a href="./transformation-calculators.html" class="footer-link">Transformation Calculators</a>
+          <a href="./transformation-calculators.html" class="footer-link"
+            >Transformation Calculators</a
+          >
         </div>
 
         <!-- Column 3: Social & Form -->
@@ -92,22 +111,27 @@
 
           <form class="footer-form">
             <iframe
-            src="https://official.forgedhp.com/widget/form/KtwglNEmRXzWCjBiDonO"
-            style="width:100%;height:100%;border:none;border-radius:3px"
-            id="inline-KtwglNEmRXzWCjBiDonO" 
-            data-layout="{'id':'INLINE'}"
-            data-trigger-type="alwaysShow"
-            data-trigger-value=""
-            data-activation-type="alwaysActivated"
-            data-activation-value=""
-            data-deactivation-type="neverDeactivate"
-            data-deactivation-value=""
-            data-form-name="Site's Footer Form"
-            data-height="400"
-            data-layout-iframe-id="inline-KtwglNEmRXzWCjBiDonO"
-            data-form-id="KtwglNEmRXzWCjBiDonO"
-            title="Site's Footer Form"
-                >
+              src="https://official.forgedhp.com/widget/form/KtwglNEmRXzWCjBiDonO"
+              style="
+                width: 100%;
+                height: 100%;
+                border: none;
+                border-radius: 3px;
+              "
+              id="inline-KtwglNEmRXzWCjBiDonO"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Site's Footer Form"
+              data-height="400"
+              data-layout-iframe-id="inline-KtwglNEmRXzWCjBiDonO"
+              data-form-id="KtwglNEmRXzWCjBiDonO"
+              title="Site's Footer Form"
+            >
             </iframe>
             <script src="https://official.forgedhp.com/js/form_embed.js"></script>
           </form>

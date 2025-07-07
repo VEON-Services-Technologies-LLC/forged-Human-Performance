@@ -1,94 +1,166 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 html {
-  font-size: 62.5%; /*this will help when using rem to be 1 rem -> 10px*/
+  font-size: 62.5%;
 }
 
 body {
-  font-family: sans-serif;
-  line-height: 1;
-  font-weight: 400;
+  font-family: var(--font-body);
+  font-size: var(--min-font-size);
+  line-height: 1.6;
+  font-weight: 300;
   color: #0c355a;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
 }
 
 /* Font Face Definitions */
 @font-face {
-    font-family: 'Newake';
-    src: url('../fonts/Newake-Font-Demo.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Newake";
+  src: url("../assets/Fonts/Newake-Font-Demo.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
+/* Avenir Light (your base version) */
 @font-face {
-    font-family: 'Avenir';
-    src: url('../fonts/AvenirLTSd-Light.otf') format('opentype');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Avenir";
+  src: url("../fonts/AvenirLTStd-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Avenir Regular */
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/AvenirLTStd-Roman.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Avenir Medium */
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/AvenirLTStd-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Avenir Bold */
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/AvenirLTStd-Heavy.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* Base Typography */
 :root {
-    --font-heading: 'Newake', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-body: 'Avenir', 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  --font-heading: "Newake", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: "Avenir", "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
 }
 
-body {
-    font-family: var(--font-body);
-    font-size: var(--min-font-size);
-    line-height: 1.6;
-    color: #0C355A;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: var(--min-font-size);
+  font-family: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+strong,
+b {
+  font-weight: 700; /* Uses Avenir Heavy for bold */
+}
+
+em,
+i {
+  font-style: italic;
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6,
-.section-title, .calculator-title, .tier-title,
-.heading-primary, .intro-title, .process-header h2 {
-    font-family: var(--font-heading);
-    font-weight: normal;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-    color: inherit;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.section-title,
+.calculator-title,
+.tier-title,
+.heading-primary,
+.intro-title,
+.process-header h2 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  margin: 0 0 1rem;
+  line-height: 1.2;
+  text-rendering: optimizeLegibility;
+  color: inherit;
 }
 
 /* Specific Heading Sizes */
-h1, .heading-primary {
-    font-size: 7rem;
+h1,
+.heading-primary {
+  font-size: clamp(3.2rem, 5vw, 7rem); /* Responsive clamp */
 }
 
-h2, .section-title {
-    font-size: 4rem;
+h2,
+.section-title {
+  font-size: clamp(2.4rem, 4vw, 4rem);
 }
 
 h3 {
-    font-size: 2rem;
+  font-size: clamp(1.8rem, 3vw, 2rem);
 }
 
 h4 {
-    font-size: 1.8rem;
+  font-size: clamp(1.6rem, 2.5vw, 1.8rem);
 }
 
 /* Paragraphs and Body Text */
-p, li, .section-description, .calculator-description,
-.intro-text, .benefits-list li, .result-label, .result-value,
-.input-note, .disclaimer, .text-body p {
-    font-family: var(--font-body);
-    font-size: 2rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+p,
+li,
+.section-description,
+.calculator-description,
+.intro-text,
+.benefits-list li,
+.result-label,
+.result-value,
+.input-note,
+.disclaimer,
+.text-body p {
+  font-family: var(--font-body);
+  font-size: var(--min-font-size);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* ========== FONT FALLBACKS ========== */
+/* If custom fonts fail to load */
+.font-loading body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.font-loaded body {
+  font-family: var(--font-body), -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /* Forms - Exception for smaller labels */
-.form-group label, .goal-radio-label, .goal-tooltip {
-    font-size: 1.4rem;
-    font-family: var(--font-body);
+.form-group label,
+.goal-radio-label,
+.goal-tooltip {
+  font-size: 1.4rem;
+  font-family: var(--font-body);
 }
-
 
 a {
   text-decoration: none;
@@ -97,41 +169,45 @@ a {
 
 /* Minimum Font Size Enforcement */
 body * {
-    font-size: min(max(18px, 1rem), 100px);
+  font-size: min(max(18px, 1rem), 100px);
 }
 
 /* Buttons and CTAs */
-.main-CTA, .calculator-submit-btn, .result-action-btn {
-    font-family: var(--font-heading);
-    font-size: 1.6rem;
+.main-CTA,
+.calculator-submit-btn,
+.result-action-btn {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    h1, .heading-primary {
-        font-size: 2.4rem;
-    }
-    
-    h2, .section-title {
-        font-size: 2rem;
-    }
-    
-    h3 {
-        font-size: 1.8rem;
-    }
+  h1,
+  .heading-primary {
+    font-size: 2.4rem;
+  }
+
+  h2,
+  .section-title {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+  }
 }
 
-a, 
-.main-CTA, 
-.calculator-submit-btn, 
+a,
+.main-CTA,
+.calculator-submit-btn,
 .result-action-btn,
 .floating-menu-btn,
 .service-card-cta,
 .footer-form button,
 .social-link,
 .nav-link {
-    font-family: var(--font-body) !important; /* Force Avenir */
-    font-size: 1.6rem;
+  font-family: var(--font-body) !important; /* Force Avenir */
+  font-size: 1.6rem;
 }
 
 /* Global CTA Button */
@@ -142,7 +218,7 @@ a,
   font-size: 1.6rem; /* 16px */
   font-weight: bold;
   padding: 1.5rem 3rem; /* 15px 30px */
-  border-radius: .5rem; /* 30px */
+  border-radius: 0.5rem; /* 30px */
   text-transform: uppercase;
   letter-spacing: 0.1rem; /* 1px */
   transition: all 0.3s ease;
@@ -244,11 +320,11 @@ a,
 }
 
 #blueprint-cta {
-  background: #AD2B2B; /* Your red color */
+  background: #ad2b2b; /* Your red color */
   color: white;
   border: none;
   padding: 1.5rem 3rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   font-size: 1.6rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -256,7 +332,7 @@ a,
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
-  font-family: 'Avenir', sans-serif;
+  font-family: "Avenir", sans-serif;
 }
 
 .form-popup-wrapper {
@@ -270,7 +346,7 @@ a,
   z-index: 9999;
   background: white;
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
 
@@ -284,7 +360,7 @@ a,
   position: absolute;
   top: 10px;
   right: 10px;
-  background: #AD2B2B;
+  background: #ad2b2b;
   color: white;
   border: none;
   width: 30px;
