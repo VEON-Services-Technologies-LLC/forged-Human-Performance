@@ -28,7 +28,7 @@ html {
 }
 
 .nav-logo img {
-  max-width: 25rem;
+  max-width: 35rem;
   height: auto;
   transition: all 0.3s ease-in-out;
 }
