@@ -34,15 +34,18 @@ html {
 }
 
 .nav-bar.scrolled .nav-logo img {
-  max-width: 20rem;
+  max-width: 35rem;
 }
 
 .nav-options {
   display: flex;
-  gap: 2rem;
-  font-size: 1.4rem;
+  gap: 4rem;
   align-items: center;
   transition: all 0.3s ease-in-out;
+}
+
+.nav-options nav a {
+  font-size: 1.7rem;
 }
 
 .nav-link {
@@ -60,7 +63,6 @@ html {
 .main-CTA:link,
 .main-CTA:visited {
   background-color: #ad2b2b;
-  font-size: 1.4rem;
   color: #fff;
   padding: 1.2rem 2.4rem;
   border-radius: 0.5rem;
@@ -141,8 +143,15 @@ html {
 }
 
 /* Hero Section Styles */
+.hero-container {
+  position: relative; /* Establish positioning context */
+  height: 65vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+}
+
 .hero-section {
-  height: 100vh;
+  height: 65vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -301,23 +310,43 @@ html {
 .benefits-list {
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Evenly distribute items */
+  height: 100%; /* Fill container */
 }
 
 .benefits-list li {
   position: relative;
-  padding-left: 3rem; /* 30px */
+  padding-left: 4rem; /* 30px */
   margin-bottom: 2rem; /* 20px */
   font-size: 1.6rem; /* 16px */
   line-height: 1.6;
   color: #333;
+  min-height: calc((100% - 4rem) / 3); /* 3 items with 2rem gaps */
+  display: flex;
+  align-items: center; /* Vertical center text */
 }
 
 .benefits-list li::before {
-  content: "→"; /* Modern arrow indicator */
+  content: ""; /* Modern arrow indicator */
   position: absolute;
   left: 0;
+  top: 0.3rem; /* 3px */
+  width: 2.5rem;
+  height: 2.5rem; /* 25px */
+  background-image: url('../assets/imgs/kettlebell.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   color: #d49829; /* Your gold brand color */
   font-weight: bold;
+}
+
+@media (hover: hover) {
+  .benefits-list li:hover::before {
+    transform: rotate(15deg);
+  }
 }
 
 /* CTA Section */
@@ -346,8 +375,9 @@ html {
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .benefits-container {
-    grid-template-columns: 1fr; /* Single column on mobile */
-    gap: 1.5rem; /* 15px reduced gap */
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+    padding: 2rem;  
   }
 
   .benefit-lists {
@@ -356,7 +386,7 @@ html {
     max-width: 100%;
   }
   .benefits-list li {
-    padding-left: 2.5rem; /* 25px */
+    margin-bottom: 2rem;
     font-size: 1.5rem; /* 15px */
   }
 }
@@ -376,7 +406,14 @@ html {
 
   .benefit-list li {
     font-size: 1.5rem;
-    padding-left: 2.5rem;
+    padding-left: 3.5rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .benefits-list li::before {
+    width: 2.2rem;
+    height: 2.2rem;
+    top: 0.2rem;
   }
 
   .section-cta h3 {
@@ -581,7 +618,7 @@ html {
       rgba(12, 53, 90, 0.9) 0%,
       rgba(12, 53, 90, 0.6) 100%
     ),
-    url("../assets/imgs/backgrounds/mattVirnau.webp") no-repeat center
+    url("../assets/imgs/backgrounds/mattVirnau3.jpg") no-repeat center
       center/cover;
   color: white;
 }
@@ -1243,6 +1280,8 @@ html {
   );
   transform: rotate(30deg);
   animation: shine 8s infinite;
+  pointer-events: none; /* This is the key fix */
+  z-index: 1; /* Ensure it stays behind content */
 }
 
 @keyframes shine {
@@ -1263,6 +1302,10 @@ html {
 
 .lead-magnet-card h2 strong {
   color: #d49829;
+}
+
+.free {
+  font-size: 4rem;
 }
 
 .lead-text {
@@ -1312,6 +1355,8 @@ html {
 
 .cta-container {
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 .guarantee-text {
@@ -1333,10 +1378,6 @@ html {
 
   .lead-text {
     font-size: 1.6rem;
-  }
-
-  .benefits-list {
-    padding: 2rem;
   }
 }
 

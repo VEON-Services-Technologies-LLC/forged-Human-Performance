@@ -104,12 +104,14 @@ h6,
   line-height: 1.2;
   text-rendering: optimizeLegibility;
   color: inherit;
+  letter-spacing: .13rem; 
+  word-spacing: .1em;
 }
 
 /* Specific Heading Sizes */
 h1,
 .heading-primary {
-  font-size: clamp(3.2rem, 5vw, 7rem); /* Responsive clamp */
+  font-size: clamp(5rem, 5vw, 7rem); /* Responsive clamp */
 }
 
 h2,
