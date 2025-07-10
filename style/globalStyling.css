@@ -1,5 +1,7 @@
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -12,6 +14,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-synthesis: none;
+  overflow-x: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Font Face Definitions */
@@ -73,6 +80,8 @@ body {
   font-family: inherit;
   line-height: inherit;
   color: inherit;
+  /* outline: 1px solid red !important; */ 
+
 }
 
 strong,
@@ -241,7 +250,7 @@ a,
 /* Full-width Divider Section */
 .divider-section {
   width: 100vw;
-  height: 70vh;
+  height: 60vh;
   position: relative;
   left: 50%;
   right: 50%;
