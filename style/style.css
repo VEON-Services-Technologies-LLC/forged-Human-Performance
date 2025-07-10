@@ -67,6 +67,7 @@ html {
   padding: 1.2rem 2.4rem;
   border-radius: 0.5rem;
   transition: all 0.3s;
+  font-weight: 600;
 }
 
 .main-CTA:hover,
@@ -138,7 +139,7 @@ html {
   }
 
   .nav-logo img {
-    max-width: 18rem;
+    max-width: 18rem !important;
   }
 }
 
@@ -679,7 +680,7 @@ html {
         rgba(12, 53, 90, 0.9) 0%,
         rgba(12, 53, 90, 0.6) 100%
       ),
-      url("../assets/imgs/backgrounds/mattVirnau.webp") no-repeat center
+      url("../assets/imgs/backgrounds/mattVirnau3.jpg") no-repeat center
         center/cover;
   }
 

@@ -1,464 +1,391 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style/style.css" />
-    <link rel="stylesheet" href="./style/globalStyling.css" />
-    <link rel="stylesheet" href="./style/transformation-calc.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <link
-      rel="preload"
-      href="../fonts/AvenirLTStd-Light.otf"
-      as="font"
-      type="font/otf"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="./assets/Fonts/AvenirLTStd-Light.otf"
-      as="font"
-      type="font/otf"
-      crossorigin
-    />
-    <title>Forged HP - Free Resources</title>
-  </head>
-  <body>
-    <header>
-      <section class="nav-bar" id="navbar">
-        <div class="nav-logo">
-          <a href="./index.html">
-            <img
-              src="./assets/imgs/branding/whiteMainLogo.svg"
-              alt="Forged HP Logo"
-            />
-          </a>
-        </div>
-
-        <div class="nav-options" id="navOptions">
-          <nav>
-            <a href="./index.html" class="nav-link">Home</a>
-            <a href="/blog" class="nav-link">Blog</a>
-            <a href="./index.html?#about" class="nav-link">About</a>
-            <a href="./index.html?#services" class="nav-link">Services</a>
-            <a href="#" class="nav-link">Resources</a>
-          </nav>
-          <a href="./book-discovery-call.html" class="main-CTA">BOOK A CALL</a>
-        </div>
-
-        <button class="hamburger" id="hamburger">
-          <i class="fas fa-bars"></i>
-        </button>
-      </section>
-      <section class="hero-container">
-        <section class="hero-section">
-        </section>
-    </header>
-    <section class="calculators-menu-section">
-    <div class="container">
-      <h2 class="section-title">Performance Calculators</h2>
-      <p class="section-subtitle">Tools to help you measure and improve</p>
-    
-      <div class="calculators-grid">
-        <!-- Calculator 1 -->
-        <div class="calculator-card" data-calculator="fitness">
-          <div class="calculator-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#D49829">
-              <path d="M14 16h6m-3-3v6M6 8h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"/>
-            </svg>
-          </div>
-          <h3 class="calculator-title">Fat Loss Calculator</h3>
-          <p class="calculator-description">Estimate your body fat, lean mass, and plan how much fat to lose for your goal physique.</p>
-          <a href="#fat-loss-calculator-section" class="calculator-cta" onclick="">Go To Calculator</a>
-        </div>
-      
-        <!-- Calculator 2 -->
-        <div class="calculator-card" data-calculator="nutrition">
-          <div class="calculator-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#D49829">
-              <path d="M12 6v6m0 0v6m0-6h6m-6 0H6M3 10h18M7 15h1m4 0h1m4 0h1M7 4h1m4 0h1m4 0h1"/>
-            </svg>
-          </div>
-          <h3 class="calculator-title">Daily Caloric Intake Calculator</h3>
-          <p class="calculator-description">Get your personalized daily calorie target based on your main fitness goal.</p>
-          <a href="#caloric-intake-calculator-section" class="calculator-cta" onclick="">Go To Calculator</a>
-        </div>
-        
-        <!-- Calculator 3 -->
-        <div class="calculator-card" data-calculator="recovery">
-          <div class="calculator-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#D49829">
-              <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              <path d="M12 6v6l4 2"/>
-            </svg>
-          </div>
-          <h3 class="calculator-title">Macro Ratio Calculator</h3>
-          <p class="calculator-description">Find your ideal daily protein, carb, and fat grams for your calorie target and goal.</p>
-          <a href="#macro-calculator-section" class="calculator-cta" onclick="">Go To Calculator</a>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ForgedHP | Transformation Calculators</title>
+  <link rel="stylesheet" href="../style/globalStyling.css">
+  <link rel="stylesheet" href="../style/style.css">
+  <link rel="stylesheet" href="./style/transformation-calc.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <section class="nav-bar" id="navbar">
+      <div class="nav-logo">
+        <a href="../index.html">
+          <img src="../assets/imgs/branding/whiteMainLogo.svg" alt="Forged HP Logo">
+        </a>
       </div>
-    </div>
-  
-  <!-- Floating Menu Button -->
-  <button class="floating-menu-btn" id="menuBtn">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <path d="M4 6h16M4 12h16M4 18h16"/>
-    </svg>
-    <span>Calcs.</span>
-  </button>
-    </section>
-    <section class="divider-section">
-      <img
-        src="./assets/imgs/backgrounds/div1.webp"
-        alt="Athlete training"
-        class="divider-image"
-      />
-    </section>
-    <section class="intro-section">
-    <div class="container">
-      <h2 class="intro-title">Introduction to ForgedHP Transformation Calculators</h2>
-      <div class="intro-content">
-        <p class="intro-text">
-          Welcome to the ForgedHP Transformation Calculators page! This powerful tool is designed to help you on your fitness journey by providing essential data to track your progress and set clear, realistic goals. Using these calculators, you'll be able to estimate vital statistics like your Basal Metabolic Rate (BMR), Total Daily Energy Expenditure (TDEE), lean mass, fat mass, and more. These insights will guide you in creating a personalized approach to transform your body, tailored specifically to your current condition and future goals.
-        </p>
+      <div class="nav-options" id="navOptions">
+        <nav>
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="#" class="nav-link">Blog</a>
+          <a href="../index.html#about" class="nav-link">About</a>
+          <a href="../index.html#services" class="nav-link">Services</a>
+          <a href="./transformation-calculators.html" class="nav-link">Resources</a>
+        </nav>
+        <a href="../book-discovery-call.html" class="main-CTA">BOOK A CALL</a>
       </div>
-    </div>
+      <button class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </button>
     </section>
-    <section class="calculator-section" id="fat-loss-calculator-section">
-      <div class="container">
-        <div class="calculator-header">
-          <h2 class="section-title">Fat Loss Calculator</h2>
-          <p class="section-description">
-            At ForgedHP, we believe in data-driven transformation. The calculators on this page are here to offer you a clear snapshot of where you are now and how to reach your desired body composition.
-          </p>
-        </div>
+  </header>
 
-        <div class="calculator-grid">
-          <div class="calculator-info">
-            <h3>How This Calculator Works</h3>
-            <p>This calculator will help you:</p>
-            <ul class="benefits-list">
-              <li>Estimate your current body fat percentage based on visual models</li>
-              <li>Calculate your BMR—the number of calories your body needs at rest</li>
-              <li>Determine your TDEE based on your activity level</li>
-              <li>Analyze your current and target fat mass and lean mass</li>
-            </ul>
-            <p class="disclaimer">
-              Keep in mind that your body is unique and it may not look exactly like one of the examples. This estimation helps get your transformation journey started. We'll dial everything in over time!
-            </p>
-          </div>
-
-          <div class="calculator-form-container">
-            <form id="fat-loss-calculator" class="forgedhp-calculator">
-              <div class="form-group">
-                <label for="height-fat-loss">Height (inches)</label>
-                <input type="number" id="height-fat-loss" name="height" min="1" required>
-              </div>
-
-              <div class="form-group">
-                <label for="age-fat-loss">Age</label>
-                <input type="number" id="age-fat-loss" name="age" min="1" required>
-              </div>
-
-              <div class="form-group">
-                <label for="weight-fat-loss">Weight (lbs)</label>
-                <input type="number" id="weight-fat-loss" name="weight" min="1" required>
-              </div>
-
-              <div class="form-group">
-                <label for="gender-fat-loss">Gender</label>
-                <select id="gender-fat-loss" name="gender" required>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="activity-fat-loss">Activity Level</label>
-                <select id="activity-fat-loss" name="activity" required>
-                  <option value="1.2">Sedentary (little or no exercise)</option>
-                  <option value="1.375">Lightly Active (light exercise 1-3 days/week)</option>
-                  <option value="1.55">Moderately Active (exercise 3-5 days/week)</option>
-                  <option value="1.725">Very Active (exercise 6-7 days/week)</option>
-                  <option value="1.9">Super Active (very hard exercise & physical job)</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="current-fat-percentage">Current Body Fat %</label>
-                <input type="number" id="current-fat-percentage" name="current-fat" min="1" max="100" step="1" required>
-              </div>
-
-              <div class="form-group">
-                <label for="target-fat-percentage">Target Body Fat %</label>
-                <input type="number" id="target-fat-percentage" name="target-fat" min="1" max="100" step="1" required>
-              </div>
-
-              <button type="submit" class="calculator-submit-btn">Calculate My Results</button>
-            </form>
-
-            <div id="fat-loss-results" class="calculator-results">
-              <h3>Your Results</h3>
-              <div class="result-item">
-                <span class="result-label">BMR:</span>
-                <span id="bmr-result-fat-loss" class="result-value">--</span>
-              </div>
-              <div class="result-item">
-                <span class="result-label">TDEE:</span>
-                <span id="tdee-result-fat-loss" class="result-value">--</span>
-              </div>
-              <div class="result-item">
-                <span class="result-label">Current Lean Mass:</span>
-                <span id="lean-mass-result-fat-loss" class="result-value">--</span>
-              </div>
-              <div class="result-item">
-                <span class="result-label">Current Fat Mass:</span>
-                <span id="fat-mass-result-fat-loss" class="result-value">--</span>
-              </div>
-              <div class="result-item">
-                <span class="result-label">Target Fat Mass:</span>
-                <span id="target-fat-mass-result-fat-loss" class="result-value">--</span>
-              </div>
-              <div class="result-item">
-                <span class="result-label">Fat to Lose:</span>
-                <span id="fat-to-lose-result-fat-loss" class="result-value">--</span>
-              </div>
-              
-              <div class="result-actions">
-                <button id="reset-calculator" class="result-action-btn secondary">
-                  <i class="fas fa-redo"></i> Calculate Again
-                </button>
-                <button id="copy-results" class="result-action-btn primary">
-                  <i class="fas fa-copy"></i> Copy Results
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+  <main class="calculators-page">
+    <section class="calculators-intro">
+      <div class="section-header">
+        <h1>Transformation Calculators</h1>
+        <p class="intro-text">At ForgedHP, we believe in data-driven transformation. These calculators help you understand your current metrics and plan your fitness journey.</p>
       </div>
     </section>
-    <section class="divider-section">
-      <img
-        src="./assets/imgs/backgrounds/div3.webp"
-        alt="Athlete training"
-        class="divider-image"
-      />
-    </section>
-    <section class="calculator-section" id="caloric-intake-calculator-section">
-  <div class="container">
-    <div class="calculator-header">
-      <h2 class="section-title">Daily Caloric Intake Calculator</h2>
-      <p class="section-description">
-        Get personalized calorie targets based on your specific fitness goals - whether you're aiming for fat loss, muscle gain, body recomposition, or maintenance.
-      </p>
-    </div>
 
-    <div class="calculator-grid">
-      <div class="calculator-info">
-        <h3>How This Calculator Works</h3>
-        <p>This calculator provides science-based recommendations for:</p>
-        <ul class="benefits-list">
-          <li><strong>Fat Loss:</strong> Safe deficit ranges to preserve muscle</li>
-          <li><strong>Muscle Gain:</strong> Optimal surplus for lean growth</li>
-          <li><strong>Recomposition:</strong> Balanced approach for simultaneous fat loss/muscle gain</li>
-          <li><strong>Maintenance:</strong> Calorie targets to maintain your current physique</li>
-        </ul>
-        <div class="disclaimer">
-          <p><strong>Note:</strong> These are estimates. Individual results vary based on metabolism, adherence, and other factors.</p>
+    <!-- Fat Loss Calculator Section -->
+    <section class="calculator-section" id="fat-loss-calculator">
+      <div class="section-header">
+        <h2>Fat Loss Calculator</h2>
+        <p class="section-description">Estimate your body fat percentage, calculate your BMR and TDEE, and determine how much fat you need to lose to reach your goals.</p>
+      </div>
+
+      <!-- Body Fat Percentage Reference Images -->
+      <div class="reference-images">
+        <div class="image-container">
+          <img src="./assets/images/male-bodyfat-reference.jpg" alt="Male body fat percentage reference">
+          <p class="image-caption">Male Body Fat Percentage Reference</p>
+        </div>
+        <div class="image-container">
+          <img src="./assets/images/female-bodyfat-reference.jpg" alt="Female body fat percentage reference">
+          <p class="image-caption">Female Body Fat Percentage Reference</p>
         </div>
       </div>
 
-      <div class="calculator-form-container">
-        <form id="goal-calculator-form" class="forgedhp-calculator">
-          <fieldset class="goal-selection">
-            <legend>Select Your Primary Goal</legend>
-            <div class="goal-radio-container">
-              <label class="goal-radio-option">
-                <input type="radio" name="goal" value="fat_loss" class="goal-radio" checked>
-                <span class="goal-radio-label">Fat Loss</span>
-                <div class="goal-tooltip">Reduce body fat while maintaining muscle</div>
-              </label>
-              
-              <label class="goal-radio-option">
-                <input type="radio" name="goal" value="lean_mass_gain" class="goal-radio">
-                <span class="goal-radio-label">Muscle Gain</span>
-                <div class="goal-tooltip">Increase lean muscle mass</div>
-              </label>
-              
-              <label class="goal-radio-option">
-                <input type="radio" name="goal" value="body_recomposition" class="goal-radio">
-                <span class="goal-radio-label">Recomposition</span>
-                <div class="goal-tooltip">Lose fat and gain muscle simultaneously</div>
-              </label>
-              
-              <label class="goal-radio-option">
-                <input type="radio" name="goal" value="maintenance" class="goal-radio">
-                <span class="goal-radio-label">Maintenance</span>
-                <div class="goal-tooltip">Maintain current weight and composition</div>
-              </label>
-            </div>
-          </fieldset>
+      <div class="instructions">
+        <h3>How to Use This Calculator</h3>
+        <ol>
+          <li><strong>Input Your Basic Information:</strong> Enter your height, age, weight, and gender.</li>
+          <li><strong>Estimate Your Body Fat Percentage:</strong> Use the reference images above to estimate your current and target body fat percentages.</li>
+          <li><strong>Determine Your Activity Level:</strong> Select the option that best matches your daily activity.</li>
+          <li><strong>Press Calculate:</strong> Get your personalized results instantly.</li>
+        </ol>
+      </div>
 
-          <div class="dynamic-inputs">
-            <div class="form-group" id="fat-input-group">
-              <label for="fat-to-lose-goal">Fat to Lose (lbs)</label>
-              <input type="number" id="fat-to-lose-goal" name="fat-to-lose" min="1" step="0.5" class="goal-input">
-              <div class="input-note">Typical range: 5-30 lbs</div>
-            </div>
-
-            <div class="form-group" id="muscle-input-group">
-              <label for="muscle-to-gain-goal">Muscle to Gain (lbs)</label>
-              <input type="number" id="muscle-to-gain-goal" name="muscle-to-gain" min="1" step="0.5" class="goal-input">
-              <div class="input-note">Typical range: 2-15 lbs</div>
-            </div>
-
-            <div class="form-group">
-              <label for="tdee-goal">Your TDEE (Calories) <span class="input-note">(Use your TDEE from the Fat Loss Calculator results)</span></label>
-              <input type="number" id="tdee-goal" name="tdee" min="1000" step="1" required>
-              <div class="input-note">Total Daily Energy Expenditure</div>
-            </div>
+      <!-- Calculator Form -->
+      <div class="calculator-container">
+        <form id="fat-loss-form" class="calculator-form">
+          <div class="form-group">
+            <label for="height-fat-loss">Height (inches)</label>
+            <input type="number" id="height-fat-loss" name="height" min="1" required>
           </div>
-
-          <button type="submit" class="calculator-submit-btn">
-            <span class="btn-text">Calculate My Plan</span>
-            <span class="btn-loader"></span>
-          </button>
+          
+          <div class="form-group">
+            <label for="age-fat-loss">Age</label>
+            <input type="number" id="age-fat-loss" name="age" min="1" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="weight-fat-loss">Weight (lbs)</label>
+            <input type="number" id="weight-fat-loss" name="weight" min="1" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="gender-fat-loss">Gender</label>
+            <select id="gender-fat-loss" name="gender" required>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="activity-fat-loss">Activity Level</label>
+            <select id="activity-fat-loss" name="activity" required>
+              <option value="1.2">Sedentary (little or no exercise)</option>
+              <option value="1.375">Lightly Active (light exercise/sports 1-3 days/week)</option>
+              <option value="1.55">Moderately Active (exercise/sports 3-5 days/week)</option>
+              <option value="1.725">Very Active (exercise/sports 6-7 days/week)</option>
+              <option value="1.9">Super Active (very hard exercise & physical job)</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="current-fat-percentage">Current Body Fat Percentage (%)</label>
+            <input type="number" id="current-fat-percentage" name="current-fat" min="1" max="100" step="1" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="target-fat-percentage">Target Body Fat Percentage (%)</label>
+            <input type="number" id="target-fat-percentage" name="target-fat" min="1" max="100" step="1" required>
+          </div>
+          
+          <button type="submit" class="calculator-submit-btn">Calculate</button>
         </form>
 
-        <div id="goal-calculator-results" class="calculator-results">
-          <div class="results-header">
-            <h3>Your Personalized Caloric Plan</h3>
-            <div class="results-summary" id="results-summary"></div>
+        <!-- Results Section -->
+        <div id="fat-loss-results" class="calculator-results">
+          <h3>Your Results</h3>
+          <div class="result-item">
+            <span class="result-label">BMR:</span>
+            <span class="result-value" id="bmr-result-fat-loss">--</span>
           </div>
-          
-          <div class="result-items">
-            <div class="result-item">
-              <span class="result-label">Minimal Change:</span>
-              <span id="minimal-change-result-goal" class="result-value">-- kcal/day (-- weeks)</span>
-            </div>
-            <div class="result-item">
-              <span class="result-label">Moderate Change:</span>
-              <span id="moderate-change-result-goal" class="result-value">-- kcal/day (-- weeks)</span>
-            </div>
-            <div class="result-item">
-              <span class="result-label">Maximal Change:</span>
-              <span id="maximal-change-result-goal" class="result-value">-- kcal/day (-- weeks)</span>
-            </div>
+          <div class="result-item">
+            <span class="result-label">TDEE:</span>
+            <span class="result-value" id="tdee-result-fat-loss">--</span>
           </div>
-          
-          <div class="result-actions">
-            <button id="reset-goal-calculator" class="result-action-btn secondary">
-              <i class="fas fa-redo"></i> Start Over
-            </button>
-            <button id="copy-goal-results" class="result-action-btn primary">
-              <i class="fas fa-copy"></i> Copy Results
-            </button>
+          <div class="result-item">
+            <span class="result-label">Current Lean Mass:</span>
+            <span class="result-value" id="lean-mass-result-fat-loss">--</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Current Fat Mass:</span>
+            <span class="result-value" id="fat-mass-result-fat-loss">--</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Target Fat Mass:</span>
+            <span class="result-value" id="target-fat-mass-result-fat-loss">--</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Fat to Lose:</span>
+            <span class="result-value" id="fat-to-lose-result-fat-loss">--</span>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Daily Caloric Intake Calculator Section -->
+<section class="calculator-section" id="caloric-intake-calculator">
+  <div class="section-header">
+    <h2>Daily Caloric Intake Calculator</h2>
+    <p class="section-description">Get personalized calorie recommendations based on your specific fitness goals - whether you want to lose fat, gain muscle, recompose your body, or maintain your current physique.</p>
+  </div>
+
+  <div class="instructions">
+    <h3>How to Use This Calculator</h3>
+    <ol>
+      <li><strong>Select Your Primary Goal:</strong> Choose one of the four options that matches your fitness objective.</li>
+      <li><strong>Enter Your Details:</strong> Input your TDEE (from the Fat Loss Calculator) and any required goal-specific metrics.</li>
+      <li><strong>Press Calculate:</strong> Get your customized calorie recommendations for different change levels.</li>
+    </ol>
+    
+    <h4>Understanding Your Options</h4>
+    <div class="goal-explanations">
+      <div class="goal-card">
+        <h5>Fat Loss</h5>
+        <p>Creates a caloric deficit to help you burn fat while preserving lean muscle mass.</p>
+      </div>
+      <div class="goal-card">
+        <h5>Muscle Gain</h5>
+        <p>Provides a caloric surplus to fuel muscle growth and recovery.</p>
+      </div>
+      <div class="goal-card">
+        <h5>Body Recomposition</h5>
+        <p>Balances calories to simultaneously lose fat and gain muscle.</p>
+      </div>
+      <div class="goal-card">
+        <h5>Maintenance</h5>
+        <p>Helps you maintain your current weight and body composition.</p>
       </div>
     </div>
   </div>
-    </section>
-    <section class="divider-section">
-      <img
-        src="./assets/imgs/backgrounds/div3.webp"
-        alt="Athlete training"
-        class="divider-image"
-      />
-    </section>
-    <section class="calculator-section" id="macro-calculator-section">
-      <div class="container">
-        <div class="calculator-header">
-          <h2 class="section-title">Macro Ratio Calculator</h2>
-          <p class="section-description">
-            Break down your caloric intake into precise grams of protein, carbohydrates, and fats to align with your fitness goals.
-          </p>
+
+  <!-- Calculator Form -->
+  <div class="calculator-container">
+    <form id="caloric-intake-form" class="calculator-form">
+      <div class="form-group">
+  <label class="goal-selection-label">Select Your Goal (Choose One)</label>
+  <div class="goal-options">
+    <label class="goal-option">
+      <input type="radio" name="goal" value="fat_loss" class="goal-radio-input">
+      <span class="custom-radio"></span>
+      <span class="goal-text">Fat Loss</span>
+    </label>
+    
+    <label class="goal-option">
+      <input type="radio" name="goal" value="muscle_gain" class="goal-radio-input">
+      <span class="custom-radio"></span>
+      <span class="goal-text">Muscle Gain</span>
+    </label>
+    
+    <label class="goal-option">
+      <input type="radio" name="goal" value="recomposition" class="goal-radio-input">
+      <span class="custom-radio"></span>
+      <span class="goal-text">Body Recomposition</span>
+    </label>
+    
+    <label class="goal-option">
+      <input type="radio" name="goal" value="maintenance" class="goal-radio-input">
+      <span class="custom-radio"></span>
+      <span class="goal-text">Maintenance</span>
+    </label>
+  </div>
+</div>
+  </div>
+</div>
+
+      <div class="form-group goal-dependent" id="fat-loss-inputs">
+        <label for="fat-to-lose">Amount of Fat to Lose (lbs)</label>
+        <input type="number" id="fat-to-lose" name="fat-to-lose" min="1" disabled>
+      </div>
+
+      <div class="form-group goal-dependent" id="muscle-gain-inputs">
+        <label for="muscle-to-gain">Amount of Muscle to Gain (lbs)</label>
+        <input type="number" id="muscle-to-gain" name="muscle-to-gain" min="1" disabled>
+      </div>
+
+      <div class="form-group">
+        <label for="tdee">Your TDEE (Total Daily Energy Expenditure)</label>
+        <input type="number" id="tdee" name="tdee" min="1" required>
+        <p class="input-note">You can get this from the Fat Loss Calculator above</p>
+      </div>
+
+      <button type="submit" class="calculator-submit-btn">Calculate</button>
+    </form>
+
+    <!-- Results Section -->
+    <div id="caloric-intake-results" class="calculator-results">
+      <h3>Your Recommendations</h3>
+      <div class="result-tier">
+        <h4>Minimal Change</h4>
+        <div class="result-item">
+          <span class="result-label">Calories:</span>
+          <span class="result-value" id="minimal-calories">--</span>
         </div>
+        <div class="result-item">
+          <span class="result-label">Estimated Time:</span>
+          <span class="result-value" id="minimal-time">--</span>
+        </div>
+        <p class="result-description">Gradual progress with minimal lifestyle changes</p>
+      </div>
 
-        <div class="calculator-grid">
-          <div class="calculator-info">
-            <h3>How This Calculator Works</h3>
-            <p>This calculator helps you determine your ideal macronutrient distribution:</p>
-            <ul class="benefits-list">
-              <li><strong>Protein:</strong> 25-40% (0.7-1g per lb of body weight)</li>
-              <li><strong>Fats:</strong> 20-35% (essential for hormone health)</li>
-              <li><strong>Carbs:</strong> Remainder (fuel for performance)</li>
-            </ul>
-            <div class="disclaimer">
-              <p><strong>Tip:</strong> Use your calorie target from the Daily Caloric Intake Calculator.</p>
-            </div>
-          </div>
+      <div class="result-tier">
+        <h4>Moderate Change</h4>
+        <div class="result-item">
+          <span class="result-label">Calories:</span>
+          <span class="result-value" id="moderate-calories">--</span>
+        </div>
+        <div class="result-item">
+          <span class="result-label">Estimated Time:</span>
+          <span class="result-value" id="moderate-time">--</span>
+        </div>
+        <p class="result-description">Balanced approach for steady progress</p>
+      </div>
 
-          <div class="calculator-form-container">
-            <form id="macro-calculator-form" class="forgedhp-calculator">
-              <div class="form-group">
-                <label for="caloric-intake-macro">Daily Caloric Intake</label>
-                <input type="number" id="caloric-intake-macro" name="caloric-intake" min="1000" step="50" required>
-                <div class="input-note">From your calorie calculator results</div>
-              </div>
+      <div class="result-tier">
+        <h4>Maximal Change</h4>
+        <div class="result-item">
+          <span class="result-label">Calories:</span>
+          <span class="result-value" id="maximal-calories">--</span>
+        </div>
+        <div class="result-item">
+          <span class="result-label">Estimated Time:</span>
+          <span class="result-value" id="maximal-time">--</span>
+        </div>
+        <p class="result-description">Intense approach for faster results</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-              <div class="form-group">
-                <label for="protein-percent-macro">Protein Percentage (%)</label>
-                <input type="number" id="protein-percent-macro" name="protein-percent" min="25" max="40" step="1" value="30" required>
-                <div class="input-note">Recommended: 25-40%</div>
-              </div>
+<!-- Macro Ratio Calculator Section -->
+<section class="calculator-section" id="macro-calculator">
+  <div class="section-header">
+    <h2>Macro Ratio Calculator</h2>
+    <p class="section-description">Break down your daily calories into precise grams of protein, carbs, and fats to perfectly align your nutrition with your fitness goals.</p>
+  </div>
 
-              <div class="form-group">
-                <label for="fat-percent-macro">Fat Percentage (%)</label>
-                <input type="number" id="fat-percent-macro" name="fat-percent" min="20" max="35" step="1" value="25" required>
-                <div class="input-note">Recommended: 20-35%</div>
-              </div>
+  <div class="instructions">
+    <h3>How to Use This Calculator</h3>
+    <ol>
+      <li><strong>Enter Your Caloric Intake:</strong> Input your daily calorie target (from the previous calculators).</li>
+      <li><strong>Set Your Macro Percentages:</strong> Adjust the sliders to your preferred protein, carbs, and fat ratios.</li>
+      <li><strong>Press Calculate:</strong> Get your daily macronutrient breakdown in grams.</li>
+    </ol>
+    
+    <h4>Macronutrient Guidelines</h4>
+    <div class="macro-guidelines">
+      <div class="macro-card">
+        <h5>Protein</h5>
+        <p>Essential for muscle growth and recovery. Recommended: 25-40% of calories (0.7-1g per lb of body weight).</p>
+      </div>
+      <div class="macro-card">
+        <h5>Carbohydrates</h5>
+        <p>Primary energy source for training. Recommended: 40-55% of calories.</p>
+      </div>
+      <div class="macro-card">
+        <h5>Fats</h5>
+        <p>Supports hormone production and health. Recommended: 20-35% of calories.</p>
+      </div>
+    </div>
+  </div>
 
-              <div class="form-group">
-                <label for="carbs-percent-macro">Carb Percentage (%)</label>
-                <input type="number" id="carbs-percent-macro" name="carbs-percent" min="25" max="55" step="1" value="45" required>
-                <div class="input-note">Auto-calculated from remaining %</div>
-              </div>
+  <!-- Calculator Form -->
+  <div class="calculator-container">
+    <form id="macro-form" class="calculator-form">
+      <div class="form-group">
+        <label for="calories-macro">Daily Caloric Intake (kcal)</label>
+        <input type="number" id="calories-macro" name="calories" min="1" required>
+        <p class="input-note">Use your calculated intake from previous calculators</p>
+      </div>
 
-              <button type="submit" class="calculator-submit-btn">
-                <span class="btn-text">Calculate Macros</span>
-                <span class="btn-loader"></span>
-              </button>
-            </form>
-
-            <div id="macro-calculator-results" class="calculator-results">
-              <div class="results-header">
-                <h3>Your Daily Macronutrient Targets</h3>
-                <div class="results-summary" id="macro-results-summary"></div>
-              </div>
-              
-              <div class="result-items">
-                <div class="result-item">
-                  <span class="result-label">Protein:</span>
-                  <span id="protein-result-macro" class="result-value">-- grams</span>
-                </div>
-                <div class="result-item">
-                  <span class="result-label">Carbohydrates:</span>
-                  <span id="carbs-result-macro" class="result-value">-- grams</span>
-                </div>
-                <div class="result-item">
-                  <span class="result-label">Fats:</span>
-                  <span id="fat-result-macro" class="result-value">-- grams</span>
-                </div>
-              </div>
-              
-              <div class="result-actions">
-                <button id="reset-macro-calculator" class="result-action-btn secondary">
-                  <i class="fas fa-redo"></i> Start Over
-                </button>
-                <button id="copy-macro-results" class="result-action-btn primary">
-                  <i class="fas fa-copy"></i> Copy Results
-                </button>
-              </div>
-            </div>
-          </div>
+      <div class="form-group">
+        <label for="protein-percent">Protein Percentage (%)</label>
+        <input type="number" id="protein-percent" name="protein" min="0" max="100" step="1" value="30" required>
+        <div class="range-slider">
+          <input type="range" min="20" max="50" value="30" class="slider" id="protein-range">
         </div>
       </div>
-    </section>
-    <footer class="site-footer">
+
+      <div class="form-group">
+        <label for="carbs-percent">Carbs Percentage (%)</label>
+        <input type="number" id="carbs-percent" name="carbs" min="0" max="100" step="1" value="40" required>
+        <div class="range-slider">
+          <input type="range" min="20" max="60" value="40" class="slider" id="carbs-range">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="fat-percent">Fat Percentage (%)</label>
+        <input type="number" id="fat-percent" name="fat" min="0" max="100" step="1" value="30" required>
+        <div class="range-slider">
+          <input type="range" min="15" max="50" value="30" class="slider" id="fat-range">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="macro-total">
+          <span class="total-label">Total:</span>
+          <span class="total-value" id="macro-total">100%</span>
+        </div>
+      </div>
+
+      <button type="submit" class="calculator-submit-btn">Calculate</button>
+    </form>
+
+    <!-- Results Section -->
+    <div id="macro-results" class="calculator-results">
+      <h3>Your Daily Macronutrients</h3>
+      <div class="result-item">
+        <span class="result-label">Protein:</span>
+        <span class="result-value" id="protein-result">-- g</span>
+      </div>
+      <div class="result-item">
+        <span class="result-label">Carbohydrates:</span>
+        <span class="result-value" id="carbs-result">-- g</span>
+      </div>
+      <div class="result-item">
+        <span class="result-label">Fats:</span>
+        <span class="result-value" id="fat-result">-- g</span>
+      </div>
+      <div class="macro-bars">
+        <div class="macro-bar protein-bar" style="width: 30%"></div>
+        <div class="macro-bar carbs-bar" style="width: 40%"></div>
+        <div class="macro-bar fat-bar" style="width: 30%"></div>
+      </div>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <footer class="site-footer">
       <div class="footer-container">
         <!-- Column 1: Logo & Description -->
         <div class="footer-column">
@@ -476,7 +403,9 @@
         <!-- Column 2: Resources -->
         <div class="footer-column-2">
           <h4 class="footer-subheading">Free Resources</h4>
-          <a href="./transformation-calculators.html" class="footer-link">Transformation Calculators</a>
+          <a href="./transformation-calculators.html" class="footer-link"
+            >Transformation Calculators</a
+          >
         </div>
 
         <!-- Column 3: Social & Form -->
@@ -485,22 +414,27 @@
 
           <form class="footer-form">
             <iframe
-            src="https://official.forgedhp.com/widget/form/KtwglNEmRXzWCjBiDonO"
-            style="width:100%;height:100%;border:none;border-radius:3px"
-            id="inline-KtwglNEmRXzWCjBiDonO" 
-            data-layout="{'id':'INLINE'}"
-            data-trigger-type="alwaysShow"
-            data-trigger-value=""
-            data-activation-type="alwaysActivated"
-            data-activation-value=""
-            data-deactivation-type="neverDeactivate"
-            data-deactivation-value=""
-            data-form-name="Site's Footer Form"
-            data-height="400"
-            data-layout-iframe-id="inline-KtwglNEmRXzWCjBiDonO"
-            data-form-id="KtwglNEmRXzWCjBiDonO"
-            title="Site's Footer Form"
-                >
+              src="https://official.forgedhp.com/widget/form/KtwglNEmRXzWCjBiDonO"
+              style="
+                width: 100%;
+                height: 100%;
+                border: none;
+                border-radius: 3px;
+              "
+              id="inline-KtwglNEmRXzWCjBiDonO"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Site's Footer Form"
+              data-height="400"
+              data-layout-iframe-id="inline-KtwglNEmRXzWCjBiDonO"
+              data-form-id="KtwglNEmRXzWCjBiDonO"
+              title="Site's Footer Form"
+            >
             </iframe>
             <script src="https://official.forgedhp.com/js/form_embed.js"></script>
           </form>
@@ -545,555 +479,8 @@
         </p>
       </div>
     </footer>
-    <script src="./js/main.js"></script>
-    <script>
-      // Sticky Nav
-      window.addEventListener("scroll", function () {
-        const navbar = document.getElementById("navbar");
-        if (window.scrollY > 50) {
-          navbar.classList.add("scrolled");
-        } else {
-          navbar.classList.remove("scrolled");
-        }
-      });
 
-      // Mobile Menu Toggle
-      const hamburger = document.getElementById("hamburger");
-      const navOptions = document.getElementById("navOptions");
-
-      hamburger.addEventListener("click", function () {
-        navOptions.classList.toggle("active");
-        hamburger.innerHTML = navOptions.classList.contains("active")
-          ? '<i class="fas fa-times"></i>'
-          : '<i class="fas fa-bars"></i>';
-      });
-
-      // Update copyright year
-      document.getElementById("current-year").textContent =
-        new Date().getFullYear();
-    </script>
-    <script>
-  // Calculator Navigation
-  document.querySelectorAll('.calculator-cta').forEach(button => {
-    button.addEventListener('click', function() {
-      const calculator = this.closest('.calculator-card').dataset.calculator;
-      // Here you would show the selected calculator
-      // For now, we'll just log it
-      console.log('Launching calculator:', calculator);
-    });
-  });
-
-  // Floating Menu Button
-  document.getElementById('menuBtn').addEventListener('click', function() {
-    // Scroll to top of calculators section
-    document.querySelector('.calculators-menu-section').scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-
-  // Show/hide floating button based on scroll
-  window.addEventListener('scroll', function() {
-    const menuBtn = document.getElementById('menuBtn');
-    if (window.scrollY > 300) {
-      menuBtn.style.opacity = '1';
-      menuBtn.style.visibility = 'visible';
-    } else {
-      menuBtn.style.opacity = '0';
-      menuBtn.style.visibility = 'hidden';
-    }
-  });
-
-  // Initialize - hide button at top of page
-  document.getElementById('menuBtn').style.opacity = '0';
-  document.getElementById('menuBtn').style.visibility = 'hidden';
-    </script>
-    <!-- Fat Loss Calculator Script-->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const fatLossForm = document.getElementById('fat-loss-calculator');
-        const resetBtn = document.getElementById('reset-calculator');
-        const copyBtn = document.getElementById('copy-results'); // Changed from email-results
-        const resultsContainer = document.getElementById('fat-loss-results');
-        
-        // Store results for copying
-        let currentResults = {};
-        
-        fatLossForm.addEventListener('submit', function(event) {
-          event.preventDefault();
-          currentResults = calculateFatLoss();
-        });
-
-        // Reset calculator
-        resetBtn.addEventListener('click', function() {
-          fatLossForm.reset();
-          resultsContainer.scrollIntoView({ behavior: 'smooth' });
-        });
-        
-        // Copy results to clipboard
-        copyBtn.addEventListener('click', function() {
-          copyResultsToClipboard();
-        });
-
-        function calculateFatLoss() {
-          // Get form inputs
-          const height = parseFloat(document.getElementById('height-fat-loss').value);
-          const age = parseInt(document.getElementById('age-fat-loss').value);
-          const weight = parseFloat(document.getElementById('weight-fat-loss').value);
-          const gender = document.getElementById('gender-fat-loss').value;
-          const activity = parseFloat(document.getElementById('activity-fat-loss').value);
-          let currentFatPercentage = parseFloat(document.getElementById('current-fat-percentage').value);
-          let targetFatPercentage = parseFloat(document.getElementById('target-fat-percentage').value);
-
-          // Validate inputs
-          if (isNaN(height) || isNaN(age) || isNaN(weight) || isNaN(currentFatPercentage) || isNaN(targetFatPercentage)) {
-            alert('Please enter valid numbers in all fields.');
-            return;
-          }
-
-          // Convert percentages to decimals
-          currentFatPercentage = currentFatPercentage / 100;
-          targetFatPercentage = targetFatPercentage / 100;
-
-          // Calculate BMR based on gender and age
-          let bmr = 0;
-          if (gender === 'male') {
-            if (age >= 18 && age <= 30) {
-              bmr = (6.53 * weight) + (7.95 * height) + 113;
-            } else if (age > 30 && age <= 60) {
-              bmr = (5.17 * weight) + (13.74 * height) - 137;
-            } else if (age > 60) {
-              bmr = (5.17 * weight) + (13.74 * height) - 256;
-            }
-          } else if (gender === 'female') {
-            if (age >= 18 && age <= 30) {
-              bmr = (4.72 * weight) + (15.62 * height) - 282;
-            } else if (age > 30 && age <= 60) {
-              bmr = (3.71 * weight) + (12.75 * height) - 11.6;
-            } else if (age > 60) {
-              bmr = (3.71 * weight) + (12.75 * height) - 256;
-            }
-          }
-
-          // Calculate TDEE and body composition
-          const tdee = bmr * activity;
-          const currentFatMass = weight * currentFatPercentage;
-          const currentLeanMass = weight - currentFatMass;
-          const targetFatMass = weight * targetFatPercentage;
-          const fatToLose = currentFatMass - targetFatMass;
-
-          // Display results
-          document.getElementById('bmr-result-fat-loss').textContent = bmr.toFixed(2) + ' kcal/day';
-          document.getElementById('tdee-result-fat-loss').textContent = tdee.toFixed(2) + ' kcal/day';
-          document.getElementById('lean-mass-result-fat-loss').textContent = currentLeanMass.toFixed(2) + ' lbs';
-          document.getElementById('fat-mass-result-fat-loss').textContent = currentFatMass.toFixed(2) + ' lbs';
-          document.getElementById('target-fat-mass-result-fat-loss').textContent = targetFatMass.toFixed(2) + ' lbs';
-          document.getElementById('fat-to-lose-result-fat-loss').textContent = fatToLose.toFixed(2) + ' lbs';
-
-          // Smooth scroll to results
-          document.getElementById('fat-loss-results').scrollIntoView({
-            behavior: 'smooth'
-          });
-
-          // Return results object for copying
-          return {
-            bmr: bmr.toFixed(2),
-            tdee: tdee.toFixed(2),
-            leanMass: currentLeanMass.toFixed(2),
-            fatMass: currentFatMass.toFixed(2),
-            targetFatMass: targetFatMass.toFixed(2),
-            fatToLose: fatToLose.toFixed(2),
-            height,
-            weight,
-            age,
-            gender,
-            activityLevel: document.getElementById('activity-fat-loss').options[document.getElementById('activity-fat-loss').selectedIndex].text,
-            currentFatPercentage: document.getElementById('current-fat-percentage').value,
-            targetFatPercentage: document.getElementById('target-fat-percentage').value
-          };
-        }
-
-        async function copyResultsToClipboard() {
-          // Format results as text
-          const resultsText = `
-            Fat Loss Calculator Results
-            ==========================
-            BMR: ${currentResults.bmr} kcal/day
-            TDEE: ${currentResults.tdee} kcal/day
-            Current Lean Mass: ${currentResults.leanMass} lbs
-            Current Fat Mass: ${currentResults.fatMass} lbs
-            Target Fat Mass: ${currentResults.targetFatMass} lbs
-            Fat to Lose: ${currentResults.fatToLose} lbs
-            
-            Personal Details
-            ---------------
-            Height: ${currentResults.height} inches
-            Weight: ${currentResults.weight} lbs
-            Age: ${currentResults.age}
-            Gender: ${currentResults.gender}
-            Activity Level: ${currentResults.activityLevel}
-            Current Body Fat: ${currentResults.currentFatPercentage}%
-            Target Body Fat: ${currentResults.targetFatPercentage}%
-            
-            Calculated by ForgedHP
-          `;
-
-          try {
-            // Copy to clipboard
-            await navigator.clipboard.writeText(resultsText);
-            
-            // Show feedback
-            const originalText = copyBtn.innerHTML;
-            copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-            
-            // Revert button text after 2 seconds
-            setTimeout(() => {
-              copyBtn.innerHTML = originalText;
-            }, 2000);
-          } catch (err) {
-            console.error('Failed to copy: ', err);
-            alert('Failed to copy results. Please try again or manually copy the text.');
-          }
-        }
-      });
-    </script>
-    <!-- Daily Caloric Intake Calculator-->
-    <script>
-      // Daily Caloric Intake Calculator - Simplified Results
-    document.addEventListener('DOMContentLoaded', function() {
-      const goalForm = document.getElementById('goal-calculator-form');
-      const resetBtn = document.getElementById('reset-goal-calculator');
-      const copyBtn = document.getElementById('copy-goal-results');
-      const fatInputGroup = document.getElementById('fat-input-group');
-      const muscleInputGroup = document.getElementById('muscle-input-group');
-      
-      // Initialize form state
-      updateInputVisibility(document.querySelector('input[name="goal"]:checked'));
-      
-      // Goal selection handler
-      document.querySelectorAll('.goal-radio').forEach(radio => {
-        radio.addEventListener('change', function() {
-          updateInputVisibility(this);
-        });
-      });
-
-      // Form submission
-      goalForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        calculateGoalCalories();
-      });
-
-      // Reset form
-      resetBtn.addEventListener('click', function() {
-        goalForm.reset();
-        updateInputVisibility(document.querySelector('input[name="goal"]:checked'));
-        document.getElementById('goal-calculator-results').scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-
-      // Copy results
-      copyBtn.addEventListener('click', copyGoalResultsToClipboard);
-
-      function updateInputVisibility(selectedRadio) {
-        const goal = selectedRadio.value;
-        
-        // Reset all inputs
-        document.querySelectorAll('.goal-input').forEach(input => {
-          input.disabled = true;
-          input.value = '';
-          input.closest('.form-group').style.display = 'none';
-        });
-        
-        // Show relevant inputs based on goal
-        if (goal === 'fat_loss') {
-          fatInputGroup.style.display = 'block';
-          document.getElementById('fat-to-lose-goal').disabled = false;
-        } 
-        else if (goal === 'lean_mass_gain') {
-          muscleInputGroup.style.display = 'block';
-          document.getElementById('muscle-to-gain-goal').disabled = false;
-        } 
-        else if (goal === 'body_recomposition') {
-          fatInputGroup.style.display = 'block';
-          muscleInputGroup.style.display = 'block';
-          document.getElementById('fat-to-lose-goal').disabled = false;
-          document.getElementById('muscle-to-gain-goal').disabled = false;
-        }
-      }
-
-      function calculateGoalCalories() {
-        const submitBtn = goalForm.querySelector('.calculator-submit-btn');
-        submitBtn.classList.add('is-loading');
-        
-        setTimeout(() => {
-          try {
-            const goal = document.querySelector('input[name="goal"]:checked').value;
-            const tdee = parseFloat(document.getElementById('tdee-goal').value);
-            const fatToLose = parseFloat(document.getElementById('fat-to-lose-goal').value) || 0;
-            const muscleToGain = parseFloat(document.getElementById('muscle-to-gain-goal').value) || 0;
-            
-            if (!tdee || isNaN(tdee)) {
-              throw new Error('Please enter your TDEE (from Fat Loss Calculator results)');
-            }
-            
-            if ((goal === 'fat_loss' || goal === 'body_recomposition') && fatToLose <= 0) {
-              throw new Error('Please enter fat to lose for your selected goal');
-            }
-            
-            if ((goal === 'lean_mass_gain' || goal === 'body_recomposition') && muscleToGain <= 0) {
-              throw new Error('Please enter muscle to gain for your selected goal');
-            }
-            
-            // Calculate based on goal
-            const results = {
-              fat_loss: calculateFatLoss(tdee, fatToLose),
-              lean_mass_gain: calculateMuscleGain(tdee, muscleToGain),
-              body_recomposition: calculateRecomp(tdee, fatToLose, muscleToGain),
-              maintenance: calculateMaintenance(tdee)
-            }[goal];
-            
-            displayResults(results, goal, fatToLose, muscleToGain);
-            
-          } catch (error) {
-            alert(error.message);
-          } finally {
-            submitBtn.classList.remove('is-loading');
-          }
-        }, 800);
-      }
-      
-      function calculateFatLoss(tdee, fatToLose) {
-        return {
-          minimal: tdee - 250,  // ~0.5 lb/week
-          moderate: tdee - 500,  // ~1 lb/week
-          maximal: tdee - 750,   // ~1.5 lb/week
-          minimalTime: (fatToLose / 0.5).toFixed(1),
-          moderateTime: (fatToLose / 1).toFixed(1),
-          maximalTime: (fatToLose / 1.5).toFixed(1)
-        };
-      }
-      
-      function calculateMuscleGain(tdee, muscleToGain) {
-        return {
-          minimal: tdee + 200,  // ~0.25 lb/month
-          moderate: tdee + 400,  // ~0.5 lb/month
-          maximal: tdee + 600,   // ~0.75 lb/month
-          minimalTime: (muscleToGain / 0.25).toFixed(1),
-          moderateTime: (muscleToGain / 0.5).toFixed(1),
-          maximalTime: (muscleToGain / 0.75).toFixed(1)
-        };
-      }
-      
-      function calculateRecomp(tdee, fatToLose, muscleToGain) {
-        return {
-          minimal: tdee - 100,  // Small deficit
-          moderate: tdee,        // Maintenance
-          maximal: tdee + 100,   // Small surplus
-          minimalTime: Math.max(fatToLose / 0.25, muscleToGain / 0.125).toFixed(1),
-          moderateTime: Math.max(fatToLose / 0.5, muscleToGain / 0.25).toFixed(1),
-          maximalTime: Math.max(fatToLose / 0.75, muscleToGain / 0.375).toFixed(1)
-        };
-      }
-      
-      function calculateMaintenance(tdee) {
-        return {
-          minimal: tdee,
-          moderate: tdee,
-          maximal: tdee,
-          minimalTime: 'N/A',
-          moderateTime: 'N/A',
-          maximalTime: 'N/A'
-        };
-      }
-      
-      function displayResults(results, goal, fatToLose, muscleToGain) {
-        // Update result values in the simplified format
-        document.getElementById('minimal-change-result-goal').textContent = 
-          `${results.minimal.toFixed(0)} kcal/day (${results.minimalTime} weeks)`;
-        document.getElementById('moderate-change-result-goal').textContent = 
-          `${results.moderate.toFixed(0)} kcal/day (${results.moderateTime} weeks)`;
-        document.getElementById('maximal-change-result-goal').textContent = 
-          `${results.maximal.toFixed(0)} kcal/day (${results.maximalTime} weeks)`;
-        
-        // Update summary based on goal
-        const summaryText = {
-          fat_loss: `To lose ${fatToLose} lbs of fat:`,
-          lean_mass_gain: `To gain ${muscleToGain} lbs of muscle:`,
-          body_recomposition: `To lose ${fatToLose} lbs of fat and gain ${muscleToGain} lbs of muscle:`,
-          maintenance: `To maintain your current weight:`
-        }[goal];
-        
-        document.getElementById('results-summary').textContent = summaryText;
-        
-        // Scroll to results
-        document.getElementById('goal-calculator-results').scrollIntoView({
-          behavior: 'smooth'
-        });
-      }
-
-      async function copyGoalResultsToClipboard() {
-        try {
-          const goal = document.querySelector('input[name="goal"]:checked').value;
-          const tdee = document.getElementById('tdee-goal').value;
-          const minimal = document.getElementById('minimal-change-result-goal').textContent;
-          const moderate = document.getElementById('moderate-change-result-goal').textContent;
-          const maximal = document.getElementById('maximal-change-result-goal').textContent;
-          const summary = document.getElementById('results-summary').textContent;
-          
-          const resultsText = `ForgedHP Caloric Plan\n====================\n
-    ${summary}
-
-    ${minimal}
-    ${moderate}
-    ${maximal}
-
-    Calculated by ForgedHP - https://forgedhp.com`;
-
-          await navigator.clipboard.writeText(resultsText);
-          
-          // Visual feedback
-          const originalText = copyBtn.innerHTML;
-          copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-          copyBtn.classList.add('copied');
-          
-          setTimeout(() => {
-            copyBtn.innerHTML = originalText;
-            copyBtn.classList.remove('copied');
-          }, 2000);
-        } catch (err) {
-          alert('Failed to copy results. Please try again or copy manually.');
-        }
-      }
-    });
-    </script>
-    <!-- Macro Ratio Calculator-->
-     <script>
-      // Macro Ratio Calculator
-    document.addEventListener('DOMContentLoaded', function() {
-      const macroForm = document.getElementById('macro-calculator-form');
-      const resetBtn = document.getElementById('reset-macro-calculator');
-      const copyBtn = document.getElementById('copy-macro-results');
-      const carbsInput = document.getElementById('carbs-percent-macro');
-      
-      // Constants for calorie content per gram
-      const CALORIES_PER_GRAM_PROTEIN = 4;
-      const CALORIES_PER_GRAM_CARBS = 4;
-      const CALORIES_PER_GRAM_FAT = 9;
-
-      // Auto-calculate carbs percentage when protein/fat change
-      document.getElementById('protein-percent-macro').addEventListener('input', updateCarbsPercentage);
-      document.getElementById('fat-percent-macro').addEventListener('input', updateCarbsPercentage);
-
-      function updateCarbsPercentage() {
-        const proteinPercent = parseFloat(document.getElementById('protein-percent-macro').value) || 0;
-        const fatPercent = parseFloat(document.getElementById('fat-percent-macro').value) || 0;
-        const remainingPercent = 100 - proteinPercent - fatPercent;
-        
-        if (remainingPercent >= 25 && remainingPercent <= 55) {
-          carbsInput.value = Math.round(remainingPercent);
-        }
-      }
-
-      // Form submission
-      macroForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        calculateMacros();
-      });
-
-      // Reset form
-      resetBtn.addEventListener('click', function() {
-        macroForm.reset();
-        document.getElementById('protein-percent-macro').value = 30;
-        document.getElementById('fat-percent-macro').value = 25;
-        document.getElementById('carbs-percent-macro').value = 45;
-        document.getElementById('macro-calculator-results').scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-
-      // Copy results
-      copyBtn.addEventListener('click', copyMacroResultsToClipboard);
-
-      function calculateMacros() {
-        const submitBtn = macroForm.querySelector('.calculator-submit-btn');
-        submitBtn.classList.add('is-loading');
-        
-        setTimeout(() => {
-          try {
-            const caloricIntake = parseFloat(document.getElementById('caloric-intake-macro').value);
-            const proteinPercent = parseFloat(document.getElementById('protein-percent-macro').value);
-            const fatPercent = parseFloat(document.getElementById('fat-percent-macro').value);
-            const carbsPercent = parseFloat(document.getElementById('carbs-percent-macro').value);
-            
-            if (!caloricIntake || isNaN(caloricIntake)) {
-              throw new Error('Please enter your daily caloric intake');
-            }
-            
-            const totalPercent = proteinPercent + fatPercent + carbsPercent;
-            if (totalPercent !== 100) {
-              throw new Error('Macronutrient percentages must add up to 100%');
-            }
-            
-            // Calculate grams for each macronutrient
-            const proteinGrams = (proteinPercent / 100 * caloricIntake) / CALORIES_PER_GRAM_PROTEIN;
-            const fatGrams = (fatPercent / 100 * caloricIntake) / CALORIES_PER_GRAM_FAT;
-            const carbsGrams = (carbsPercent / 100 * caloricIntake) / CALORIES_PER_GRAM_CARBS;
-            
-            // Display results
-            document.getElementById('protein-result-macro').textContent = `${proteinGrams.toFixed(1)} grams`;
-            document.getElementById('carbs-result-macro').textContent = `${carbsGrams.toFixed(1)} grams`;
-            document.getElementById('fat-result-macro').textContent = `${fatGrams.toFixed(1)} grams`;
-            
-            document.getElementById('macro-results-summary').textContent = 
-              `Based on ${caloricIntake} calories with ${proteinPercent}% protein, ${carbsPercent}% carbs, ${fatPercent}% fat`;
-            
-            // Scroll to results
-            document.getElementById('macro-calculator-results').scrollIntoView({
-              behavior: 'smooth'
-            });
-            
-          } catch (error) {
-            alert(error.message);
-          } finally {
-            submitBtn.classList.remove('is-loading');
-          }
-        }, 800);
-      }
-
-      async function copyMacroResultsToClipboard() {
-        try {
-          const calories = document.getElementById('caloric-intake-macro').value;
-          const protein = document.getElementById('protein-result-macro').textContent;
-          const carbs = document.getElementById('carbs-result-macro').textContent;
-          const fats = document.getElementById('fat-result-macro').textContent;
-          const summary = document.getElementById('macro-results-summary').textContent;
-          
-          const resultsText = `ForgedHP Macro Plan\n==================\n
-    ${summary}
-
-    Protein: ${protein}
-    Carbs: ${carbs}
-    Fats: ${fats}
-
-    Calculated by ForgedHP - https://forgedhp.com`;
-
-          await navigator.clipboard.writeText(resultsText);
-          
-          // Visual feedback
-          const originalText = copyBtn.innerHTML;
-          copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-          copyBtn.classList.add('copied');
-          
-          setTimeout(() => {
-            copyBtn.innerHTML = originalText;
-            copyBtn.classList.remove('copied');
-          }, 2000);
-        } catch (err) {
-          alert('Failed to copy results. Please try again or copy manually.');
-        }
-      }
-    });
-     </script>
-  </body>
+  <script src="../js/main.js"></script>
+  <script src="./js/fat-loss-calc.js"></script>
+</body>
 </html>
-          
