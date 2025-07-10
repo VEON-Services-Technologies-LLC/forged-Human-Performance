@@ -1,0 +1,291 @@
+/* Product Hero */
+.product-hero {
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(rgba(12, 53, 90, 0.7), rgba(12, 53, 90, 0.7)),
+    url('../assets/imgs/backgrounds/div3.webp') center/cover;
+  color: white;
+}
+
+.product-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.product-hero-title {
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.product-hero-subtitle {
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  color: #d49829;
+}
+
+/* Product Main Section */
+.product-main {
+  padding: 6rem 2rem;
+}
+
+.product-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+/* Product Gallery */
+.product-gallery {
+  position: sticky;
+  top: 2rem;
+}
+
+.main-image {
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.main-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.main-image:hover img {
+  transform: scale(1.02);
+}
+
+.thumbnail-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.thumbnail {
+  border: 2px solid transparent;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.thumbnail.active {
+  border-color: #d49829;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Product Details */
+.product-details {
+  padding: 0 1rem;
+}
+
+.product-title {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: #0c355a;
+}
+
+.product-price {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #d49829;
+  margin-bottom: 2rem;
+}
+
+.product-description {
+  margin-bottom: 3rem;
+}
+
+.product-description p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.product-features {
+  list-style: none;
+  margin: 2rem 0;
+  padding-left: 0;
+}
+
+.product-features li {
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+
+.product-features li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: #d49829;
+  border-radius: 50%;
+}
+
+.product-cta {
+  margin: 3rem 0;
+}
+
+.guarantee {
+  font-size: 1.4rem;
+  color: #666;
+  margin-top: 1rem;
+  text-align: center;
+  font-style: italic;
+}
+
+.product-meta {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.4rem;
+  color: #555;
+}
+
+.meta-item i {
+  color: #d49829;
+}
+
+/* Product Benefits */
+.product-benefits {
+  padding: 6rem 2rem;
+  background-color: #f8f9fa;
+  text-align: center; /* Center all text content */
+}
+
+.benefits-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 4rem;
+  color: #0c355a;
+  position: relative;
+}
+
+.section-title:after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5rem;
+  height: 0.3rem;
+  background: #d49829;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  width: 100%; /* Ensure grid takes full container width */
+  justify-items: center; /* Center items within grid cells */
+}
+
+.benefit-card {
+  background: white;
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  max-width: 400px;
+  width: 100%; /* Make cards fill their grid cells */
+}
+
+.benefit-icon {
+  font-size: 3rem;
+  color: #d49829;
+  margin-bottom: 1.5rem;
+}
+
+.benefit-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #0c355a;
+}
+
+.benefit-card p {
+  font-size: 1.6rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.shop-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-aligned-text p {
+    text-align: left;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .product-gallery {
+    position: static;
+  }
+  
+  .product-hero {
+    height: 30vh;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px; /* Constrain single column width */
+  }
+  
+  .benefit-card {
+    padding: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .thumbnail-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .product-main {
+    padding: 4rem 1rem;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
