@@ -1,3 +1,59 @@
+/* Calculators Hero Section */
+.calculators-hero {
+  height: 50vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(rgba(12, 53, 90, 0.7), rgba(12, 53, 90, 0.7)),
+    url("../assets/imgs/backgrounds/heroFormCalc.webp") no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.calculators-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.calculators-hero-title {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.calculators-hero-subtitle {
+  font-size: 2rem;
+  color: #d49829;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 912px) {
+  .calculators-hero-title {
+    font-size: 3.6rem;
+  }
+  
+  .calculators-hero-subtitle {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .calculators-hero {
+    min-height: 300px;
+  }
+  
+  .calculators-hero-title {
+    font-size: 2.8rem;
+  }
+}
+
 /* Calculators Page Styles */
 .calculators-page {
   padding: 6rem 2rem;
