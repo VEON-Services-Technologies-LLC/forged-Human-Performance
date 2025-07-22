@@ -184,6 +184,10 @@ html {
 }
 
 /* Features Bar */
+.all-caps-style {
+  text-transform: uppercase;
+}
+
 .hero-section + section {
   position: absolute;
   bottom: 0;
@@ -319,28 +323,32 @@ html {
 
 .benefits-list li {
   position: relative;
-  padding-left: 4rem; /* 30px */
-  margin-bottom: 2rem; /* 20px */
-  font-size: 1.6rem; /* 16px */
+  padding-left: 5rem; /* Keep increased padding for larger icon */
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
   line-height: 1.6;
   color: #333;
-  min-height: calc((100% - 4rem) / 3); /* 3 items with 2rem gaps */
-  display: flex;
-  align-items: center; /* Vertical center text */
+  min-height: calc((100% - 4rem) / 3);
+}
+
+/* Remove flex alignment from list items */
+.benefits-list li {
+  display: block; /* Changed from flex to block */
+  align-items: normal; /* Remove flex alignment */
 }
 
 .benefits-list li::before {
-  content: ""; /* Modern arrow indicator */
+  content: "";
   position: absolute;
   left: 0;
-  top: 0.3rem; /* 3px */
-  width: 2.5rem;
-  height: 2.5rem; /* 25px */
+  top: 0.3em; /* Changed from % to em units - aligns with first line */
+  width: 3.5rem;
+  height: 3.5rem;
   background-image: url('../assets/imgs/kettlebell.svg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  color: #d49829; /* Your gold brand color */
+  color: #d49829;
   font-weight: bold;
 }
 
@@ -387,8 +395,11 @@ html {
     max-width: 100%;
   }
   .benefits-list li {
-    margin-bottom: 2rem;
-    font-size: 1.5rem; /* 15px */
+    padding-left: 4.5rem; /* Slightly reduce padding on mobile */
+  }
+  .benefits-list li::before {
+    width: 3rem; /* Slightly reduce icon size on mobile */
+    height: 3rem;
   }
 }
 
@@ -1570,5 +1581,98 @@ html {
 
   .social-links {
     justify-content: center;
+  }
+}
+
+/* Form Popup Responsive Styles */
+#form-popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 9999;
+}
+
+.form-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(12, 53, 90, 0.9);
+  z-index: 1;
+}
+
+.form-popup-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 600px;
+  height: 80vh;
+  max-height: 700px;
+  z-index: 2;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-popup-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  flex-grow: 1;
+}
+
+.close-popup-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ad2b2b;
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .form-popup-wrapper {
+    width: 95%;
+    height: 90vh;
+    max-height: none;
+  }
+  
+  .close-popup-btn {
+    width: 25px;
+    height: 25px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-popup-wrapper {
+    width: 98%;
+    height: 95vh;
+    border-radius: 0;
+  }
+  
+  .close-popup-btn {
+    top: 5px;
+    right: 5px;
   }
 }

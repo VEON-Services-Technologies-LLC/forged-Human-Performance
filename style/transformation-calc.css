@@ -582,3 +582,8 @@
 .fat-bar {
   background-color: #D49829;
 }
+
+.center-content {
+  text-align: center;
+  font-style: italic;
+}

@@ -250,7 +250,7 @@ a,
 /* Full-width Divider Section */
 .divider-section {
   width: 100vw;
-  height: 60vh;
+  height: 70vh;
   position: relative;
   left: 50%;
   right: 50%;
@@ -387,5 +387,23 @@ a,
   .form-popup-wrapper {
     height: 80vh;
     width: 95%;
+  }
+}
+
+.all-caps-style {
+  text-transform: uppercase;
+}
+
+/* Prevent scrolling when popup is open */
+.no-scroll {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* iOS specific fix */
+@supports (-webkit-touch-callout: none) {
+  .no-scroll {
+    position: relative;
   }
 }
