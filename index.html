@@ -721,39 +721,45 @@
     </div>
     <script defer src="https://official.forgedhp.com/js/form_embed.js"></script>
     <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const blueprintCTA = document.getElementById("blueprint-cta");
-    const popupContainer = document.getElementById("form-popup-container");
-    const overlay = document.querySelector(".form-popup-overlay");
-    const closeBtn = document.querySelector(".close-popup-btn");
+      document.addEventListener("DOMContentLoaded", function () {
+  const blueprintCTA = document.getElementById("blueprint-cta");
+  const popupContainer = document.getElementById("form-popup-container");
+  const overlay = document.querySelector(".form-popup-overlay");
+  const closeBtn = document.querySelector(".close-popup-btn");
 
-    if (blueprintCTA) {
-      blueprintCTA.addEventListener("click", function (e) {
-        e.preventDefault();
-        popupContainer.style.display = "block";
-        document.body.style.overflow = "hidden";
-        // Add a class to prevent scrolling on iOS
-        document.body.classList.add("no-scroll");
-      });
-    }
-
-    // Close functionality
-    function closePopup() {
-      popupContainer.style.display = "none";
-      document.body.style.overflow = "auto";
-      document.body.classList.remove("no-scroll");
-    }
-
-    if (overlay) overlay.addEventListener("click", closePopup);
-    if (closeBtn) closeBtn.addEventListener("click", closePopup);
-
-    // Close when pressing Escape key
-    document.addEventListener("keydown", function(e) {
-      if (e.key === "Escape") {
-        closePopup();
+  if (blueprintCTA) {
+    blueprintCTA.addEventListener("click", function (e) {
+      e.preventDefault();
+      popupContainer.style.display = "block";
+      document.body.style.overflow = "hidden";
+      // Add a class to prevent scrolling on iOS
+      document.body.classList.add("no-scroll");
+      
+      // Force iframe to reload to ensure proper sizing
+      const iframe = document.querySelector(".form-popup-wrapper iframe");
+      if (iframe) {
+        iframe.src = iframe.src;
       }
     });
+  }
+
+  // Close functionality
+  function closePopup() {
+    popupContainer.style.display = "none";
+    document.body.style.overflow = "auto";
+    document.body.classList.remove("no-scroll");
+  }
+
+  if (overlay) overlay.addEventListener("click", closePopup);
+  if (closeBtn) closeBtn.addEventListener("click", closePopup);
+
+  // Close when pressing Escape key
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+      closePopup();
+    }
   });
-</script>
+});
+    </script>
   </body>
 </html>
