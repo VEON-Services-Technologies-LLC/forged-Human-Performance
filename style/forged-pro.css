@@ -276,3 +276,8 @@
     grid-template-columns: 1fr;
   }
 }
+
+.centered-content {
+    text-align: center;
+    margin-bottom: 5rem;
+}
