@@ -354,3 +354,213 @@
   color: #0c355a; /* Darker color on hover */
   transform: scale(1.1); /* Slight grow effect */
 }
+
+/* Pricing and Guarantee Section */
+.pricing-guarantee-section {
+  padding: 6rem 2rem;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.pricing-guarantee-card {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.pricing-guarantee-card h2 {
+  font-size: 3.2rem;
+  color: #0c355a;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.pricing-guarantee-card h2:after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5rem;
+  height: 0.3rem;
+  background: #d49829;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.pricing-features li {
+  font-size: 1.8rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  padding-left: 3rem;
+}
+
+.pricing-features li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #d49829;
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 6rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.faq-section h2 {
+  text-align: center;
+  font-size: 3.2rem;
+  color: #0c355a;
+  margin-bottom: 5rem;
+  position: relative;
+}
+
+.faq-section h2:after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5rem;
+  height: 0.3rem;
+  background: #d49829;
+}
+
+.faq-container {
+  margin-top: 4rem;
+}
+
+.faq-item {
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.faq-question {
+  padding: 2rem 3rem;
+  background: white;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  background: #f8f9fa;
+}
+
+.faq-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 1.5rem;
+  font-size: 24px;
+  font-weight: 900;
+  color: #d49829;
+  text-align: center;
+  line-height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  padding: 0 3rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  background: white;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px; /* Increased from 300px to accommodate longer answers */
+  padding: 0 3rem 2rem 3rem;
+  opacity: 1;
+  transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.3s ease 0.2s;
+  display: block !important;
+}
+
+.faq-item:not(.active) .faq-answer {
+  max-height: 0;
+  padding: 0 3rem;
+  opacity: 0;
+  transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.1s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+  color: #0c355a;
+}
+
+.faq-question h3 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #0c355a;
+}
+
+.faq-answer p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 8rem 2rem;
+  text-align: center;
+  background: linear-gradient(rgba(12, 53, 90, 0.9), rgba(12, 53, 90, 0.9)),
+    url("../assets/imgs/backgrounds/div3.webp") center/cover;
+  color: white;
+}
+
+.cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-section h2 {
+  font-size: 3.6rem;
+  margin-bottom: 3rem;
+  color: white;
+}
+
+.cta-note {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+  margin-top: 1.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .pricing-guarantee-card {
+    padding: 3rem 2rem;
+  }
+
+  .pricing-features li {
+    font-size: 1.6rem;
+  }
+
+  .faq-question,
+  .faq-answer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .cta-section h2 {
+    font-size: 2.8rem;
+  }
+}
