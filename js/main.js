@@ -188,3 +188,27 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 5000);
   });
 });
+
+// Expandable feature items
+document.addEventListener("DOMContentLoaded", function () {
+  const featureItems = document.querySelectorAll(".expandable-item");
+
+  featureItems.forEach((item) => {
+    const header = item.querySelector(".feature-header");
+
+    header.addEventListener("click", function () {
+      // Close all other items at the same level
+      if (item.parentElement.classList.contains("product-features")) {
+        const siblings = Array.from(item.parentElement.children);
+        siblings.forEach((sibling) => {
+          if (sibling !== item) {
+            sibling.classList.remove("active");
+          }
+        });
+      }
+
+      // Toggle current item
+      item.classList.toggle("active");
+    });
+  });
+});
