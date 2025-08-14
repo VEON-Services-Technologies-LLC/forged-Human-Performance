@@ -309,15 +309,16 @@
 
 .expand-icon {
   display: inline-block;
-  width: 2rem;
-  height: 2rem;
+  width: 24px;
+  height: 24px;
   margin-right: 1rem;
-  font-size: 1.8rem;
-  font-weight: bold;
+  font-size: 30px;
+  font-weight: 900;
   color: #d49829;
   text-align: center;
-  line-height: 1.8rem;
+  line-height: 24px;
   transition: transform 0.3s ease;
+  font-family: "Avenir", sans-serif;
 }
 
 .feature-content {
@@ -347,4 +348,9 @@
   margin-top: 1rem;
   border-left: 2px solid rgba(212, 152, 41, 0.2);
   padding-left: 1rem;
+}
+
+.feature-header:hover .expand-icon {
+  color: #0c355a; /* Darker color on hover */
+  transform: scale(1.1); /* Slight grow effect */
 }
