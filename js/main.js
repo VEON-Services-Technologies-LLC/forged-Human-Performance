@@ -233,3 +233,40 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Lead Magnet Popup Functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const blueprintCTA = document.getElementById("blueprint-cta");
+  const popupContainer = document.getElementById("form-popup-container");
+  const overlay = document.querySelector(".form-popup-overlay");
+  const closeBtn = document.querySelector(".close-popup-btn");
+  const formIframe = document.getElementById("form-iframe");
+
+  // Open popup
+  if (blueprintCTA) {
+    blueprintCTA.addEventListener("click", function (e) {
+      e.preventDefault();
+      popupContainer.style.display = "block";
+      document.body.style.overflow = "hidden";
+
+      // Reset iframe src to ensure fresh load
+      formIframe.src = formIframe.src;
+    });
+  }
+
+  // Close functionality
+  function closePopup() {
+    popupContainer.style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+
+  if (overlay) overlay.addEventListener("click", closePopup);
+  if (closeBtn) closeBtn.addEventListener("click", closePopup);
+
+  // Close with Escape key
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      closePopup();
+    }
+  });
+});

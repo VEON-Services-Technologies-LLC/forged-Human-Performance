@@ -259,7 +259,13 @@
   }
 
   .product-hero {
-    height: 30vh;
+    padding-top: 80px; /* Adjust this value based on your nav height */
+    height: auto; /* Change from fixed height to auto */
+    min-height: 40vh; /* Set a minimum height */
+  }
+
+  .product-hero-content {
+    padding-top: 2rem; /* Additional padding for content */
   }
 }
 
@@ -274,6 +280,20 @@
 
   .benefits-grid {
     grid-template-columns: 1fr;
+  }
+
+  .product-hero-title {
+    margin-top: 1rem;
+    font-size: 2.4rem;
+  }
+
+  .product-hero-subtitle {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .product-hero {
+    min-height: 50vh; /* Slightly taller on very small screens */
   }
 }
 
