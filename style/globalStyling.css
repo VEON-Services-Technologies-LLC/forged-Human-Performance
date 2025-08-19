@@ -80,8 +80,7 @@ body {
   font-family: inherit;
   line-height: inherit;
   color: inherit;
-  /* outline: 1px solid red !important; */ 
-
+  /* outline: 1px solid red !important; */
 }
 
 strong,
@@ -113,8 +112,8 @@ h6,
   line-height: 1.2;
   text-rendering: optimizeLegibility;
   color: inherit;
-  letter-spacing: .13rem; 
-  word-spacing: .1em;
+  letter-spacing: 0.13rem;
+  word-spacing: 0.1em;
 }
 
 /* Specific Heading Sizes */
@@ -406,4 +405,14 @@ a,
   .no-scroll {
     position: relative;
   }
+}
+
+/* NAV Bar new Adjustments */
+.nav-bar {
+  z-index: 1000; /* Already set, but good to confirm */
+}
+
+.product-hero {
+  position: relative;
+  z-index: 1; /* Below the nav */
 }

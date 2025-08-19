@@ -95,46 +95,51 @@ html {
 
   .nav-options {
     position: fixed;
-    top: 0;
+    top: 80px; /* Matches nav height */
     right: -100%;
-    width: 70%;
-    max-width: 30rem;
-    height: 100vh;
+    width: 100%; /* Full width */
+    height: calc(100vh - 80px); /* Full height minus nav */
     background-color: #0c355a;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
-    gap: 2rem;
+    align-items: center;
+    gap: 0;
     transition: right 0.5s ease-in-out;
-    padding: 8rem 2rem 2rem; /* Added side padding */
-    box-shadow: -0.5rem 0 -1.5rem rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-options nav {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 2rem;
+    padding: 2rem 0;
+    box-shadow: none;
+    overflow-y: auto; /* Allow scrolling if needed */
   }
 
   .nav-options.active {
     right: 0;
   }
 
-  .nav-link {
-    margin-right: 0;
-    padding: 1rem 0;
-    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.1);
+  /* Navigation links */
+  .nav-options nav {
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    align-items: center;
+  }
+
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.8rem;
   }
 
   .main-CTA {
-    width: 100%;
+    width: 80%;
+    margin: 2rem auto 0;
+    padding: 1.5rem;
     text-align: center;
-    margin-top: 2rem;
   }
 
   .nav-bar {
+    height: 80px;
     padding: 1.5rem 2rem;
   }
 
@@ -353,7 +358,7 @@ html {
   top: 0.3em; /* Changed from % to em units - aligns with first line */
   width: 3.5rem;
   height: 3.5rem;
-  background-image: url('../assets/imgs/kettlebell.svg');
+  background-image: url("../assets/imgs/kettlebell.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -395,7 +400,7 @@ html {
   .benefits-container {
     grid-template-columns: 1fr;
     row-gap: 1rem;
-    padding: 2rem;  
+    padding: 2rem;
   }
 
   .benefit-lists {
@@ -1600,8 +1605,8 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  display: none;
   z-index: 9999;
+  display: none;
 }
 
 .form-popup-overlay {
@@ -1610,8 +1615,20 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(12, 53, 90, 0.9);
-  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.form-popup-content {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  height: 80vh;
+  max-height: 700px;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
 }
 
 .form-popup-wrapper {
@@ -1620,43 +1637,38 @@ html {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90%;
-  max-width: 900px; /* Increased max-width for larger screens */
-  height: 90vh; /* Slightly reduced height for better proportions */
-  max-height: 900px; /* Added max-height */
-  z-index: 2;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  max-width: 600px;
+  height: auto;
+  max-height: 90vh;
+  background: transparent;
+  border-radius: 0;
+  z-index: 10000;
 }
 
 .form-popup-wrapper iframe {
   width: 100%;
   height: 100%;
   border: none;
-  flex-grow: 1; /* Makes iframe take all available space */
+}
+
+#form-iframe {
+  width: 100%;
+  height: 500px; /* Matches your form height */
+  border: none !important;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .close-popup-btn {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  background: #ad2b2b;
-  color: white;
+  top: -40px;
+  right: 0;
+  background: none;
   border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  font-size: 24px;
+  font-size: 30px;
+  color: white;
   cursor: pointer;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  transition: all 0.3s ease;
+  z-index: 10001;
 }
 
 .close-popup-btn:hover {
@@ -1664,21 +1676,27 @@ html {
   transform: scale(1.1);
 }
 
+.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
 /* Mobile-specific adjustments */
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .form-popup-wrapper {
-    width: 98%; /* Full width on mobile */
-    height: 95vh; /* Nearly full height */
-    max-height: none; /* Remove max-height restriction */
-    border-radius: 0; /* Remove rounded corners for full-screen feel */
+    width: 95%;
+    max-height: 80vh;
   }
-  
+
+  #form-iframe {
+    height: 80vh;
+  }
+
   .close-popup-btn {
-    width: 40px; /* Larger for easier tapping */
-    height: 40px;
-    font-size: 24px;
-    top: 15px;
-    right: 15px;
+    top: -35px;
+    font-size: 25px;
   }
 }
 
@@ -1687,7 +1705,7 @@ html {
   .form-popup-wrapper {
     height: 100vh; /* Full height */
   }
-  
+
   /* Optional: Adjust iframe content scaling */
   .form-popup-wrapper iframe {
     zoom: 0.9; /* Slightly scale down iframe content if needed */
