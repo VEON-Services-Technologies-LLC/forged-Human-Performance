@@ -262,19 +262,20 @@
         <div class="service-card">
           <div class="service-card-content">
             <div class="service-card-title">
-              <span>DIY Mastering the Mind Course</span>
-              <span class="service-card-price">$500</span>
+              <span>60-Minute 1 on 1 Session</span>
+              <span class="service-card-price">$100 e/session</span>
             </div>
             <p class="service-card-description">
-              Build mental toughness at your own pace with proven mindset tools
-              and strategies for greater resilience, focus, and confidence.
+              Meet virtually or in-person for a focused hour with a performance
+              coach. Get personalized support for your unique challenges and
+              goals, with immediate feedback and actionable strategies.
             </p>
             <div class="service-card-cta-container">
               <a
-                href="./diy-forged.html"
-                class="service-card-cta all-caps-style"
-                >Learn More</a
-              >
+                href="#"
+                class="service-card-cta all-caps-style check-availability-btn"
+                >CHECK AVAILABILITY
+              </a>
             </div>
           </div>
         </div>
@@ -283,13 +284,13 @@
         <div class="service-card">
           <div class="service-card-content">
             <div class="service-card-title">
-              <span>Mastering the Mind Small Group</span>
+              <span>Personal Fitness & Nutrition Program</span>
               <span class="service-card-price">$500/mo</span>
             </div>
             <p class="service-card-description">
-              Join a small group for guided mindset coaching, accountability,
-              and support as you build resilience and achieve your goals
-              together.
+              Achieve your goals with a tailored fitness and nutrition plan.
+              Receive ongoing expert guidance, accountability, and support—all
+              customized to match your lifestyle and objectives.
             </p>
             <div class="service-card-cta-container">
               <a href="./book-discovery-call.html" class="service-card-cta"
@@ -325,16 +326,16 @@
         <div class="service-card callout">
           <div class="service-card-content">
             <div class="service-card-title">
-              <span>Team Building Workshops</span>
-              <span class="service-card-price">Book A Call To Learn More</span>
+              <span>DIY Mastering the Mind Course</span>
+              <span class="service-card-price">$500</span>
             </div>
             <p class="service-card-description">
-              Boost team performance with interactive workshops that strengthen
-              communication, trust, and leadership for lasting results.
+              Build mental toughness at your own pace with proven mindset tools
+              and strategies for greater resilience, focus, and confidence.
             </p>
             <div class="service-card-cta-container">
-              <a href="./book-discovery-call.html" class="service-card-cta"
-                >BOOK CALL</a
+              <a href="./diy-forged.html" class="service-card-cta"
+                >LEARN MORE</a
               >
             </div>
           </div>
@@ -344,13 +345,13 @@
         <div class="service-card callout">
           <div class="service-card-content">
             <div class="service-card-title">
-              <span>Leadership Workshops</span>
-              <span class="service-card-price">Book A Call To Learn More</span>
+              <span>Mastering the Mind Small Group</span>
+              <span class="service-card-price">$500/mo</span>
             </div>
             <p class="service-card-description">
-              Empower team leaders to lead from the front, inspire others, and
-              drive higher team performance through practical, hands-on
-              training.
+              Join a small group for guided mindset coaching, accountability,
+              and support as you build resilience and achieve your goals
+              together.
             </p>
             <div class="service-card-cta-container">
               <a href="./book-discovery-call.html" class="service-card-cta"
@@ -858,38 +859,39 @@
         if (closeBtn) closeBtn.addEventListener("click", closePopup);
       });
     </script>
-    <!-- Form Popup Container -->
+    <!-- Lead Magnet Popup Container -->
     <div id="form-popup-container" style="display: none">
       <div class="form-popup-overlay"></div>
       <div class="form-popup-wrapper">
-        <iframe
-          src="https://official.forgedhp.com/widget/form/BRPsMNTSLgz8K1le2mmx"
-          style="
-            display: none;
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 3px;
-          "
-          id="popup-BRPsMNTSLgz8K1le2mmx"
-          data-layout="{'id':'POPUP'}"
-          data-trigger-type="alwaysShow"
-          data-trigger-value=""
-          data-activation-type="alwaysActivated"
-          data-activation-value=""
-          data-deactivation-type="neverDeactivate"
-          data-deactivation-value=""
-          data-form-name="Free Blueprint Site Form"
-          data-height="400"
-          data-layout-iframe-id="popup-BRPsMNTSLgz8K1le2mmx"
-          data-form-id="BRPsMNTSLgz8K1le2mmx"
-          title="Free Blueprint Site Form"
-        >
-        </iframe>
-        <script src="https://official.forgedhp.com/js/form_embed.js"></script>
+        <div class="form-container">
+          <iframe
+            src="https://official.forgedhp.com/widget/form/BRPsMNTSLgz8K1le2mmx"
+            style="width: 100%; border: none; border-radius: 3px"
+            id="lead-magnet-iframe"
+            title="Free Blueprint Site Form"
+          ></iframe>
+        </div>
         <button class="close-popup-btn" aria-label="Close form">&times;</button>
       </div>
     </div>
+    <!-- 60-Min Session Popup Container -->
+    <div id="session-popup-container" style="display: none">
+      <div class="session-popup-overlay"></div>
+      <div class="session-popup-wrapper">
+        <div class="session-form-container">
+          <iframe
+            src="https://official.forgedhp.com/widget/form/1llx6DlRXPggB0JLofcR"
+            style="width: 100%; border: none; border-radius: 3px"
+            id="session-availability-iframe"
+            title="60 Min 1on1 Session Availability"
+          ></iframe>
+        </div>
+        <button class="close-session-popup-btn" aria-label="Close form">
+          &times;
+        </button>
+      </div>
+    </div>
+    <script src="https://official.forgedhp.com/js/form_embed.js"></script>
     <script defer src="https://official.forgedhp.com/js/form_embed.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {

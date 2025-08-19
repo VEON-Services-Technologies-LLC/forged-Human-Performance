@@ -234,30 +234,45 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Lead Magnet Popup Functionality
+// Lead Magnet Popup Functionality - Updated
 document.addEventListener("DOMContentLoaded", function () {
   const blueprintCTA = document.getElementById("blueprint-cta");
   const popupContainer = document.getElementById("form-popup-container");
   const overlay = document.querySelector(".form-popup-overlay");
   const closeBtn = document.querySelector(".close-popup-btn");
-  const formIframe = document.getElementById("form-iframe");
+  const formIframe = document.getElementById("lead-magnet-iframe");
 
-  // Open popup
+  function adjustPopupContent() {
+    if (formIframe && popupContainer.style.display === "block") {
+      // Adjust iframe height based on content
+      const wrapper = document.querySelector(".form-popup-wrapper");
+      const maxHeight = window.innerHeight * 0.9 - 60; // 60px for padding and close button
+      const idealHeight = 450; // Adjust this to match your form's ideal height
+
+      formIframe.style.height = `${Math.min(idealHeight, maxHeight)}px`;
+      wrapper.style.maxHeight = `${maxHeight + 40}px`;
+    }
+  }
+
   if (blueprintCTA) {
     blueprintCTA.addEventListener("click", function (e) {
       e.preventDefault();
       popupContainer.style.display = "block";
       document.body.style.overflow = "hidden";
+      document.body.classList.add("no-scroll");
 
       // Reset iframe src to ensure fresh load
       formIframe.src = formIframe.src;
+
+      // Adjust dimensions after short delay to allow iframe to load
+      setTimeout(adjustPopupContent, 100);
     });
   }
 
-  // Close functionality
   function closePopup() {
     popupContainer.style.display = "none";
     document.body.style.overflow = "auto";
+    document.body.classList.remove("no-scroll");
   }
 
   if (overlay) overlay.addEventListener("click", closePopup);
@@ -265,8 +280,75 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Close with Escape key
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
+    if (e.key === "Escape" && popupContainer.style.display === "block") {
       closePopup();
+    }
+  });
+
+  // Adjust on window resize
+  window.addEventListener("resize", function () {
+    if (popupContainer.style.display === "block") {
+      adjustPopupContent();
+    }
+  });
+});
+
+// 60-Min Session Popup Functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const sessionCta = document.querySelector(
+    ".service-card:nth-child(2) .service-card-cta"
+  );
+  const sessionPopup = document.getElementById("session-popup-container");
+  const sessionOverlay = document.querySelector(".session-popup-overlay");
+  const closeSessionBtn = document.querySelector(".close-session-popup-btn");
+  const sessionIframe = document.getElementById("session-availability-iframe");
+
+  function adjustIframeHeight() {
+    if (sessionIframe) {
+      // Adjust height based on content (you may need to adjust this based on your form)
+      const formHeight = 420; // Approximate height of your form
+      const windowHeight = window.innerHeight;
+      const maxHeight = Math.min(formHeight, windowHeight * 0.8 - 40); // 40px for padding
+
+      sessionIframe.style.height = `${maxHeight}px`;
+    }
+  }
+
+  if (sessionCta) {
+    sessionCta.addEventListener("click", function (e) {
+      e.preventDefault();
+      sessionPopup.style.display = "block";
+      document.body.style.overflow = "hidden";
+      document.body.classList.add("no-scroll");
+      adjustIframeHeight();
+
+      // Reset iframe src to ensure fresh load
+      sessionIframe.src = sessionIframe.src;
+    });
+  }
+
+  function closeSessionPopup() {
+    sessionPopup.style.display = "none";
+    document.body.style.overflow = "auto";
+    document.body.classList.remove("no-scroll");
+  }
+
+  if (sessionOverlay)
+    sessionOverlay.addEventListener("click", closeSessionPopup);
+  if (closeSessionBtn)
+    closeSessionBtn.addEventListener("click", closeSessionPopup);
+
+  // Close with Escape key
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && sessionPopup.style.display === "block") {
+      closeSessionPopup();
+    }
+  });
+
+  // Adjust on window resize
+  window.addEventListener("resize", function () {
+    if (sessionPopup.style.display === "block") {
+      adjustIframeHeight();
     }
   });
 });
