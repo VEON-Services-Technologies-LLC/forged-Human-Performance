@@ -1,0 +1,21 @@
+For each new product, duplicate this template and replace these placeholder values:
+
+PRODUCT_DESCRIPTION - Meta description for SEO
+PRODUCT_NAME - Name of your product
+PRODUCT_IMAGE_URL - URL for social media sharing image
+PRODUCT_PAGE_URL - Canonical URL of the product page
+PRODUCT_HERO_TITLE - Main headline in the hero section
+PRODUCT_HERO_SUBTITLE - Subtitle in the hero section
+PRODUCT_INTRO_TEXT - Introductory paragraph
+PRODUCT_MAIN_IMAGE - Path to the main product image
+PRODUCT_PRICE - Price information
+GUARANTEE_DETAILS - Details about your guarantee
+UPGRADE_OPTION - Information about upgrade options
+PAYMENT_TERMS - Payment terms (e.g., "Cancel anytime")
+PRODUCT_BENEFITS_DESCRIPTION - Description of product benefits
+FEATURE_X_TITLE and FEATURE_X_DESCRIPTION - Product features
+PRODUCT_PURCHASE_LINK - Link to purchase the product
+ADD_TO_CART_BUTTON_TEXT - Text for the call-to-action button
+FAQ_QUESTION_X and FAQ_ANSWER_X - Frequently asked questions
+FINAL_CTA_TEXT - Final call-to-action text
+PAYMENT_TERMS_NOTE - Additional note about payment terms
