@@ -294,7 +294,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // 60-Min Session Popup Functionality
-document.addEventListener("DOMContentLoaded", function () {
+/* document.addEventListener("DOMContentLoaded", function () {
   const sessionCta = document.querySelector(
     ".service-card:nth-child(2) .service-card-cta"
   );
@@ -351,4 +351,4 @@ document.addEventListener("DOMContentLoaded", function () {
       adjustIframeHeight();
     }
   });
-});
+}); */
