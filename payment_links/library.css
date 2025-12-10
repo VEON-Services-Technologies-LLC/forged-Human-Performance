@@ -1,0 +1,620 @@
+/* ============================================
+   CSS Reset & Base Styles
+   ============================================ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Color Palette */
+  --primary-color: #3b82f6;
+  --primary-dark: #2563eb;
+  --secondary-color: #10b981;
+  --dark-bg: #0f172a;
+  --dark-card: #1e293b;
+  --dark-border: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --accent-gradient: linear-gradient(135deg, #ffffff 0%, #1d8198 100%);
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+
+  /* Border Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 350ms ease;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  background: var(--dark-bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================
+   Container & Layout
+   ============================================ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* ============================================
+   Hero Section
+   ============================================ */
+.hero {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  padding: var(--spacing-lg) 0 var(--spacing-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 30% 50%,
+    rgba(59, 130, 246, 0.1) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+.logos-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  animation: fadeInUp 0.6s ease;
+}
+
+.hero-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: var(--spacing-xs);
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+/* ============================================
+   Main Content
+   ============================================ */
+.main-content {
+  flex: 1;
+  padding: var(--spacing-md) 0;
+}
+
+/* ============================================
+   Library Grid - 2 COLUMNS
+   ============================================ */
+.library-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+  animation: fadeIn 0.8s ease 0.2s both;
+}
+
+/* ============================================
+   Library Cards
+   ============================================ */
+.library-card {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--dark-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.library-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent-gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-base);
+}
+
+.library-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.library-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.card-icon {
+  width: 42px;
+  height: 42px;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  transition: all var(--transition-base);
+  flex-shrink: 0;
+}
+
+.library-card:hover .card-icon {
+  background: rgba(59, 130, 246, 0.2);
+  transform: scale(1.05);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.card-description {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+/* ============================================
+   Payment Links
+   ============================================ */
+.card-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.payment-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--dark-border);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.payment-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(59, 130, 246, 0.1),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform var(--transition-slow);
+}
+
+.payment-link:hover {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: var(--primary-color);
+  transform: translateX(2px);
+}
+
+.payment-link:hover::before {
+  transform: translateX(100%);
+}
+
+.link-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.link-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+}
+
+.link-title {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.link-url {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: "SF Mono", "Monaco", "Consolas", monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Copy Button - HIGHLY VISIBLE */
+.copy-btn {
+  flex-shrink: 0;
+  min-width: 75px;
+  height: 32px;
+  background: rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.5);
+  border-radius: 0.375rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  padding: 0 0.75rem;
+  transition: all var(--transition-base);
+  position: relative;
+  margin-left: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  z-index: 10;
+}
+
+.copy-btn:hover {
+  background: rgba(59, 130, 246, 0.35);
+  border-color: var(--primary-color);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+}
+
+.copy-btn:active {
+  transform: scale(0.98);
+}
+
+.copy-btn .copy-icon {
+  color: var(--primary-color);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.copy-btn .check-icon {
+  color: var(--secondary-color);
+  position: absolute;
+  left: 0.625rem;
+  opacity: 0;
+  transform: scale(0);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.copy-btn .btn-text {
+  transition: all var(--transition-fast);
+  font-weight: 600;
+}
+
+.copy-btn.copied .copy-icon {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.copy-btn.copied .check-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.copy-btn.copied {
+  background: rgba(16, 185, 129, 0.25);
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.copy-btn.copied .btn-text {
+  color: var(--secondary-color);
+}
+
+.link-arrow {
+  flex-shrink: 0;
+  opacity: 0.5;
+  transition: all var(--transition-base);
+  margin-left: 0.25rem;
+}
+
+.payment-link:hover .link-arrow {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+/* ============================================
+   Placeholder State
+   ============================================ */
+.card-placeholder {
+  padding: var(--spacing-lg) var(--spacing-sm);
+  text-align: center;
+  border: 2px dashed var(--dark-border);
+  border-radius: var(--radius-sm);
+  background: rgba(15, 23, 42, 0.3);
+}
+
+.placeholder-text {
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.9375rem;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.footer {
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--dark-border);
+  padding: var(--spacing-sm) 0;
+  margin-top: auto;
+}
+
+.footer-text {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+}
+
+.footer-text strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 1024px) {
+  .library-grid {
+    gap: var(--spacing-sm);
+  }
+
+  .payment-link {
+    gap: 0.5rem;
+    padding: 0.625rem;
+  }
+
+  .copy-btn {
+    min-width: 70px;
+    height: 30px;
+    font-size: 0.75rem;
+    padding: 0 0.625rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .library-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+
+  .hero {
+    padding: var(--spacing-md) 0 var(--spacing-sm);
+  }
+
+  .main-content {
+    padding: var(--spacing-sm) 0;
+  }
+
+  .library-card {
+    padding: var(--spacing-sm);
+  }
+
+  .card-header {
+    gap: 0.625rem;
+  }
+
+  .card-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .card-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .card-title {
+    font-size: 1.125rem;
+  }
+
+  .payment-link {
+    padding: 0.625rem;
+    gap: 0.625rem;
+  }
+
+  .copy-btn {
+    min-width: 65px;
+    height: 28px;
+    padding: 0 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .copy-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --spacing-md: 1rem;
+    --spacing-lg: 1.25rem;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.8125rem;
+  }
+
+  .link-url {
+    font-size: 0.6875rem;
+  }
+
+  .payment-link {
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .link-icon {
+    font-size: 1.125rem;
+  }
+
+  .link-title {
+    font-size: 0.875rem;
+  }
+
+  .copy-btn {
+    min-width: 60px;
+    height: 26px;
+    font-size: 0.6875rem;
+    padding: 0 0.375rem;
+  }
+
+  .copy-btn svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .link-arrow {
+    width: 16px;
+    height: 16px;
+  }
+
+  .footer {
+    padding: 0.75rem 0;
+  }
+}
+
+/* ============================================
+   Performance & Accessibility
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus styles for accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .library-card {
+    border-width: 2px;
+  }
+
+  .payment-link {
+    border-width: 2px;
+  }
+}
