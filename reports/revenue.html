@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VEON Services - Revenue Report</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Objectivity", -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+        padding: 40px 20px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #17839a 0%, #3eb489 100%);
+        padding: 40px;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+
+      .header-content {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .logo {
+        height: 60px;
+        display: flex;
+        align-items: center;
+      }
+
+      .logo svg {
+        height: 100%;
+        width: auto;
+        filter: brightness(0) invert(1);
+      }
+
+      .header h1 {
+        font-size: 32px;
+        font-weight: 300;
+        margin-bottom: 8px;
+        letter-spacing: 2px;
+      }
+
+      .header p {
+        font-size: 14px;
+        opacity: 0.9;
+        letter-spacing: 0.5px;
+      }
+
+      .content {
+        padding: 50px 40px;
+      }
+
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+      }
+
+      .metric-card {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        border: 2px solid #e9ecef;
+        border-radius: 12px;
+        padding: 25px;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .metric-card:hover {
+        border-color: #17839a;
+        box-shadow: 0 10px 30px rgba(23, 131, 154, 0.15);
+      }
+
+      .metric-label {
+        font-size: 13px;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 12px;
+        font-weight: 600;
+      }
+
+      .metric-value {
+        font-size: 36px;
+        color: #17839a;
+        font-weight: 300;
+        letter-spacing: -1px;
+      }
+
+      .metric-subtext {
+        font-size: 12px;
+        color: #999;
+        margin-top: 8px;
+      }
+
+      .chart-section {
+        margin-bottom: 50px;
+      }
+
+      .section-title {
+        font-size: 20px;
+        color: #17839a;
+        margin-bottom: 30px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        border-bottom: 3px solid #3eb489;
+        padding-bottom: 15px;
+      }
+
+      .chart-container {
+        position: relative;
+        height: 400px;
+        margin-bottom: 40px;
+      }
+
+      .table-section {
+        margin-top: 50px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 30px;
+      }
+
+      th {
+        background: linear-gradient(135deg, #17839a 0%, #2a9aad 100%);
+        color: white;
+        padding: 16px;
+        text-align: left;
+        font-weight: 500;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      td {
+        padding: 16px;
+        border-bottom: 1px solid #e9ecef;
+        font-size: 14px;
+        color: #333;
+      }
+
+      tr:hover {
+        background-color: #f8f9fa;
+      }
+
+      .revenue-amount {
+        color: #3eb489;
+        font-weight: 600;
+        font-size: 15px;
+      }
+
+      .footer {
+        background: #f8f9fa;
+        padding: 30px 40px;
+        border-top: 1px solid #e9ecef;
+        text-align: center;
+        color: #666;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+      }
+
+      .footer strong {
+        color: #17839a;
+      }
+
+      @media (max-width: 768px) {
+        .header {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .header h1 {
+          font-size: 24px;
+        }
+
+        .content {
+          padding: 30px 20px;
+        }
+
+        .metrics {
+          grid-template-columns: 1fr;
+        }
+
+        .metric-value {
+          font-size: 28px;
+        }
+
+        table {
+          font-size: 12px;
+        }
+
+        td,
+        th {
+          padding: 12px 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header-content">
+          <h1>REVENUE REPORT</h1>
+          <p>Total Revenue Generated by Product</p>
+        </div>
+        <div class="logo">
+          <svg
+            viewBox="0 0 508.8491 168.36692"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <text
+              x="372.88843"
+              y="161.70651"
+              style="
+                font-size: 31.1044px;
+                font-family: Objectivity;
+                text-anchor: middle;
+                fill: white;
+                letter-spacing: 11.8286px;
+              "
+            >
+              SERVICES
+            </text>
+            <path
+              style="
+                fill: none;
+                stroke: white;
+                stroke-width: 27.2581;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+              "
+              d="M 112.87956,23.841554 67.892131,110.40987 31.408328,24.721596"
+            />
+            <g
+              transform="matrix(0.48801867,0,0,0.48643491,-415.84452,-71.966962)"
+              style="stroke: white"
+            >
+              <path
+                d="m 1356.3912,285.94142 c 0,0 48,-96 126,-96 54.12,0 98,43 98,96 0,53 -43.88,96 -98,96 -30,0 -56.45,-13.18 -78,-32"
+                style="
+                  fill: none;
+                  stroke: white;
+                  stroke-width: 59.8;
+                  stroke-linecap: round;
+                  stroke-miterlimit: 10;
+                "
+              />
+              <path
+                d="m 1240.331,288.25675 h -60.1935"
+                style="
+                  fill: none;
+                  stroke: white;
+                  stroke-width: 54;
+                  stroke-linecap: round;
+                  stroke-miterlimit: 10;
+                "
+              />
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="metrics">
+          <div class="metric-card">
+            <div class="metric-label">Total Revenue</div>
+            <div class="metric-value">$8,000</div>
+            <div class="metric-subtext">All Products</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Product Lines</div>
+            <div class="metric-value">7</div>
+            <div class="metric-subtext">Active Revenue Streams</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Top Product</div>
+            <div class="metric-value">$2,700</div>
+            <div class="metric-subtext">3mo Coaching (Upfront)</div>
+          </div>
+        </div>
+
+        <div class="chart-section">
+          <h2 class="section-title">Revenue Distribution by Product</h2>
+          <div class="chart-container">
+            <canvas id="revenueChart"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-section">
+          <h2 class="section-title">Revenue Breakdown</h2>
+          <div class="chart-container">
+            <canvas id="pieChart"></canvas>
+          </div>
+        </div>
+
+        <div class="table-section">
+          <h2 class="section-title">Detailed Product Revenue</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Product Name</th>
+                <th style="text-align: right">Revenue</th>
+                <th style="text-align: right">% of Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>3mo - One-on-One Performance Coaching (Pay upfront)</td>
+                <td class="revenue-amount" style="text-align: right">
+                  $2,700.00
+                </td>
+                <td style="text-align: right; color: #3eb489; font-weight: 600">
+                  33.75%
+                </td>
+              </tr>
+              <tr>
+                <td>Personal Fitness and Nutrition</td>
+                <td class="revenue-amount" style="text-align: right">
+                  $2,000.00
+                </td>
+                <td style="text-align: right; color: #3eb489; font-weight: 600">
+                  25.00%
+                </td>
+              </tr>
+              <tr>
+                <td>One-on-One Performance Coaching - Monthly</td>
+                <td class="revenue-amount" style="text-align: right">
+                  $1,000.00
+                </td>
+                <td style="text-align: right; color: #3eb489; font-weight: 600">
+                  12.50%
+                </td>
+              </tr>
+              <tr>
+                <td>Custom Online Programming - Monthly Membership</td>
+                <td class="revenue-amount" style="text-align: right">
+                  $850.00
+                </td>
+                <td style="text-align: right; color: #3eb489; font-weight: 600">
+                  10.63%
+                </td>
+              </tr>
+              <tr>
+                <td>Custom Online Programming - Small Group Membership</td>
+                <td class="revenue-amount" style="text-align: right">
+                  $750.00
+                </td>
+                <td style="text-align: right; color: #3eb489; font-weight: 600">
+                  9.38%
+                </td>
+              </tr>
+              <tr>
+                <td>DIY Mastering the Mind Course</td>
+                <td class="revenue-amount" style="text-align: right">
+                  $500.00
+                </td>
+                <td style="text-align: right; color: #3eb489; font-weight: 600">
+                  6.25%
+                </td>
+              </tr>
+              <tr>
+                <td>Forged Pro Membership - $50/month</td>
+                <td class="revenue-amount" style="text-align: right">
+                  $200.00
+                </td>
+                <td style="text-align: right; color: #3eb489; font-weight: 600">
+                  2.50%
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="footer">
+        <strong>VEON SERVICES &</strong> TECHNOLOGIES — Revenue Report<br />
+        Data current as of December 2025
+      </div>
+    </div>
+
+    <script>
+      // Color palette matching VEON brand
+      const colors = [
+        "#17839a",
+        "#3eb489",
+        "#2a9aad",
+        "#4bc59f",
+        "#1a6f88",
+        "#5cd4a3",
+        "#0f5a6e",
+      ];
+
+      const productData = {
+        labels: [
+          "3mo Coaching (Upfront)",
+          "Fitness & Nutrition",
+          "Coaching - Monthly",
+          "Online Programming - Monthly",
+          "Online Programming - Group",
+          "DIY Mastering Mind Course",
+          "Forged Pro Membership",
+        ],
+        datasets: [
+          {
+            label: "Revenue ($)",
+            data: [2700, 2000, 1000, 850, 750, 500, 200],
+            backgroundColor: colors,
+            borderColor: colors.map((c) => c + "dd"),
+            borderWidth: 2,
+            borderRadius: 8,
+          },
+        ],
+      };
+
+      // Bar Chart
+      const barCtx = document.getElementById("revenueChart").getContext("2d");
+      new Chart(barCtx, {
+        type: "bar",
+        data: productData,
+        options: {
+          indexAxis: "y",
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false,
+            },
+            tooltip: {
+              callbacks: {
+                label: function (context) {
+                  return (
+                    "$" +
+                    context.parsed.x.toLocaleString("en-US", {
+                      minimumFractionDigits: 2,
+                    })
+                  );
+                },
+              },
+              backgroundColor: "rgba(0,0,0,0.8)",
+              padding: 12,
+              titleFont: { size: 13 },
+              bodyFont: { size: 12 },
+            },
+          },
+          scales: {
+            x: {
+              beginAtZero: true,
+              ticks: {
+                callback: function (value) {
+                  return "$" + value.toLocaleString();
+                },
+                font: { size: 12 },
+              },
+              grid: {
+                color: "rgba(0,0,0,0.05)",
+              },
+            },
+            y: {
+              ticks: {
+                font: { size: 11 },
+              },
+              grid: {
+                display: false,
+              },
+            },
+          },
+        },
+      });
+
+      // Pie Chart
+      const pieCtx = document.getElementById("pieChart").getContext("2d");
+      new Chart(pieCtx, {
+        type: "doughnut",
+        data: productData,
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: "bottom",
+              labels: {
+                padding: 20,
+                font: { size: 12 },
+                usePointStyle: true,
+                pointStyle: "circle",
+              },
+            },
+            tooltip: {
+              callbacks: {
+                label: function (context) {
+                  const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                  const percentage = ((context.parsed / total) * 100).toFixed(
+                    1
+                  );
+                  return (
+                    context.label +
+                    ": $" +
+                    context.parsed.toLocaleString() +
+                    " (" +
+                    percentage +
+                    "%)"
+                  );
+                },
+              },
+              backgroundColor: "rgba(0,0,0,0.8)",
+              padding: 12,
+              titleFont: { size: 13 },
+              bodyFont: { size: 12 },
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
