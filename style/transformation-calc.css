@@ -7,7 +7,8 @@
   justify-content: center;
   position: relative;
   background: linear-gradient(rgba(12, 53, 90, 0.7), rgba(12, 53, 90, 0.7)),
-    url("../assets/imgs/backgrounds/heroFormCalc.webp") no-repeat center center/cover;
+    url("../assets/imgs/backgrounds/heroFormCalc.webp") no-repeat center
+      center/cover;
   color: white;
   text-align: center;
   padding: 0 2rem;
@@ -38,7 +39,7 @@
   .calculators-hero-title {
     font-size: 3.6rem;
   }
-  
+
   .calculators-hero-subtitle {
     font-size: 1.8rem;
   }
@@ -48,7 +49,7 @@
   .calculators-hero {
     min-height: 300px;
   }
-  
+
   .calculators-hero-title {
     font-size: 2.8rem;
   }
@@ -87,7 +88,7 @@
 }
 
 .section-header h2 {
-  color: #0C355A;
+  color: #0c355a;
   position: relative;
   margin-bottom: 1.5rem;
 }
@@ -100,7 +101,7 @@
   transform: translateX(-50%);
   width: 5rem;
   height: 0.3rem;
-  background: #D49829;
+  background: #d49829;
 }
 
 .section-description {
@@ -130,7 +131,7 @@
   width: 100%;
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .image-caption {
@@ -145,11 +146,11 @@
   padding: 2rem;
   border-radius: 8px;
   margin: 3rem 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .instructions h3 {
-  color: #0C355A;
+  color: #0c355a;
   margin-bottom: 1.5rem;
   font-size: 2rem;
 }
@@ -177,7 +178,7 @@
   background-color: #fff;
   padding: 3rem;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
@@ -188,7 +189,7 @@
   display: block;
   font-size: 1.6rem;
   margin-bottom: 0.8rem;
-  color: #0C355A;
+  color: #0c355a;
   font-weight: 500;
 }
 
@@ -205,14 +206,14 @@
 
 .form-group input:focus,
 .form-group select:focus {
-  border-color: #D49829;
+  border-color: #d49829;
   outline: none;
 }
 
 .calculator-submit-btn {
   width: 100%;
   padding: 1.5rem;
-  background-color: #D49829;
+  background-color: #d49829;
   color: white;
   font-size: 1.8rem;
   border: none;
@@ -224,7 +225,7 @@
 }
 
 .calculator-submit-btn:hover {
-  background-color: #AD2B2B;
+  background-color: #ad2b2b;
   transform: translateY(-2px);
 }
 
@@ -233,11 +234,11 @@
   background-color: #fff;
   padding: 3rem;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .calculator-results h3 {
-  color: #0C355A;
+  color: #0c355a;
   font-size: 2rem;
   margin-bottom: 2rem;
   text-align: center;
@@ -253,7 +254,7 @@
 
 .result-label {
   font-size: 1.6rem;
-  color: #0C355A;
+  color: #0c355a;
   font-weight: 500;
 }
 
@@ -268,12 +269,12 @@
   .calculator-container {
     grid-template-columns: 1fr;
   }
-  
+
   .reference-images {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .image-container {
     max-width: 100%;
   }
@@ -283,11 +284,11 @@
   .calculator-page {
     padding: 4rem 1.5rem;
   }
-  
+
   .calculator-section {
     padding: 2rem;
   }
-  
+
   .calculator-form,
   .calculator-results {
     padding: 2rem;
@@ -300,7 +301,7 @@
 .goal-selection-label {
   display: block;
   font-size: 1.6rem;
-  color: #0C355A;
+  color: #0c355a;
   margin-bottom: 1.2rem;
   font-weight: 500;
 }
@@ -316,12 +317,12 @@
   background-color: #fff;
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  border-left: 4px solid #D49829;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #d49829;
 }
 
 .goal-card h5 {
-  color: #0C355A;
+  color: #0c355a;
   margin-bottom: 0.5rem;
   font-size: 1.6rem;
 }
@@ -352,7 +353,7 @@
 }
 
 .goal-option:hover {
-  border-color: #D49829;
+  border-color: #d49829;
   background-color: rgba(212, 152, 41, 0.05);
 }
 
@@ -365,8 +366,8 @@
 }
 
 .goal-option input[type="radio"]:checked + .goal-option-label .goal-radio {
-  border-color: #D49829;
-  background-color: #D49829;
+  border-color: #d49829;
+  background-color: #d49829;
   box-shadow: inset 0 0 0 3px #f8f9fa;
 }
 
@@ -377,7 +378,7 @@
   transform: translateY(-50%);
   width: 18px;
   height: 18px;
-  border: 2px solid #0C355A;
+  border: 2px solid #0c355a;
   border-radius: 50%;
   transition: all 0.3s;
 }
@@ -395,7 +396,7 @@
 }
 
 .goal-option-label:hover {
-  border-color: #D49829;
+  border-color: #d49829;
 }
 
 .input-note {
@@ -418,14 +419,14 @@
   left: 1.5rem;
   width: 18px;
   height: 18px;
-  border: 2px solid #0C355A;
+  border: 2px solid #0c355a;
   border-radius: 50%;
   transition: all 0.3s ease;
 }
 
 .goal-radio-input:checked + .custom-radio {
-  border-color: #D49829;
-  background-color: #D49829;
+  border-color: #d49829;
+  background-color: #d49829;
   box-shadow: inset 0 0 0 3px white;
 }
 
@@ -435,13 +436,13 @@
 
 .goal-text {
   font-size: 1.6rem;
-  color: #0C355A;
+  color: #0c355a;
   font-weight: 500;
 }
 
 /* Focus state for accessibility */
 .goal-radio-input:focus-visible + .custom-radio {
-  outline: 2px solid #D49829;
+  outline: 2px solid #d49829;
   outline-offset: 2px;
 }
 
@@ -454,7 +455,7 @@
 }
 
 .result-tier h4 {
-  color: #0C355A;
+  color: #0c355a;
   margin-bottom: 1rem;
   font-size: 1.8rem;
 }
@@ -480,11 +481,11 @@
   background-color: #fff;
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .macro-card h5 {
-  color: #0C355A;
+  color: #0c355a;
   margin-bottom: 0.5rem;
   font-size: 1.6rem;
 }
@@ -516,13 +517,13 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #D49829;
+  background: #d49829;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .slider::-webkit-slider-thumb:hover {
-  background: #AD2B2B;
+  background: #ad2b2b;
   transform: scale(1.1);
 }
 
@@ -530,7 +531,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #D49829;
+  background: #d49829;
   cursor: pointer;
 }
 
@@ -547,14 +548,14 @@
 
 .total-label {
   font-size: 1.6rem;
-  color: #0C355A;
+  color: #0c355a;
   font-weight: 500;
 }
 
 .total-value {
   font-size: 1.8rem;
   font-weight: 600;
-  color: #D49829;
+  color: #d49829;
 }
 
 /* Macro Bars Visualization */
@@ -572,18 +573,120 @@
 }
 
 .protein-bar {
-  background-color: #AD2B2B;
+  background-color: #ad2b2b;
 }
 
 .carbs-bar {
-  background-color: #2671B9;
+  background-color: #2671b9;
 }
 
 .fat-bar {
-  background-color: #D49829;
+  background-color: #d49829;
 }
 
 .center-content {
   text-align: center;
   font-style: italic;
+}
+/* Next Steps CTA Section */
+.next-steps-cta {
+  padding: 6rem 2rem;
+  background: linear-gradient(rgba(12, 53, 90, 0.95), rgba(12, 53, 90, 0.95)),
+    url("../assets/imgs/backgrounds/div3.webp") center/cover;
+  text-align: center;
+}
+
+.next-steps-cta .cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.next-steps-cta h3 {
+  font-size: 3.2rem;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.next-steps-cta p {
+  font-size: 1.8rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+  .next-steps-cta {
+    padding: 4rem 2rem;
+  }
+
+  .next-steps-cta h3 {
+    font-size: 2.4rem;
+  }
+
+  .next-steps-cta p {
+    font-size: 1.6rem;
+  }
+}
+
+/* 1RM Percentage Table Styling */
+.percentage-table-wrapper {
+  overflow-x: auto;
+  margin-top: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.percentage-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.4rem;
+}
+
+.percentage-table thead {
+  background: linear-gradient(135deg, #0c355a 0%, #1a4d7a 100%);
+  color: white;
+}
+
+.percentage-table th {
+  padding: 1.5rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.percentage-table tbody tr {
+  border-bottom: 1px solid #e9ecef;
+  transition: background-color 0.2s ease;
+}
+
+.percentage-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.percentage-table td {
+  padding: 1.2rem 1rem;
+  color: #333;
+}
+
+.percentage-table td:nth-child(odd) {
+  font-weight: 600;
+  color: #0c355a;
+}
+
+.percentage-table td:nth-child(even) {
+  color: #555;
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+  .percentage-table {
+    font-size: 1.2rem;
+  }
+
+  .percentage-table th,
+  .percentage-table td {
+    padding: 1rem 0.5rem;
+  }
 }
