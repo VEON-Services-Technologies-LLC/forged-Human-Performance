@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-8G9CB4KPXQ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-8G9CB4KPXQ");
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Forged Human Performance",
+        "url": "https://forgedhp.com",
+        "logo": "https://forgedhp.com/assets/imgs/branding/whiteMainLogo.svg",
+        "sameAs": [
+          "https://www.facebook.com/ForgedHumanPerformance",
+          "https://www.instagram.com/forged.hp/",
+          "https://www.youtube.com/@forgedhumanperformance44"
+        ]
+      }
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Calculate your BMR, TDEE, and fat loss metrics with ForgedHP's Fat Loss Calculator. Data-driven tools for your transformation journey."
+    />
+
+    <!-- Facebook/WhatsApp/LinkedIn -->
+    <meta
+      property="og:title"
+      content="Fat Loss Calculator | Forged Human Performance"
+    />
+    <meta
+      property="og:description"
+      content="Calculate your metabolism and fat loss metrics with precision. Free tool from ForgedHP."
+    />
+    <meta
+      property="og:image"
+      content="https://forgedhp.com/assets/imgs/branding/socialPreview.png"
+    />
+    <meta
+      property="og:url"
+      content="https://forgedhp.com/fat-loss-calculator.html"
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Fat Loss Calculator | Forged Human Performance"
+    />
+    <meta
+      name="twitter:description"
+      content="Calculate your metabolism and fat loss metrics with precision. Free tool from ForgedHP."
+    />
+    <meta
+      name="twitter:image"
+      content="https://forgedhp.com/assets/imgs/branding/socialPreview.png"
+    />
+
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' https://www.googletagmanager.com https://official.forgedhp.com https://cdnjs.cloudflare.com"
+    />
+
+    <link
+      rel="canonical"
+      href="https://forgedhp.com/fat-loss-calculator.html"
+    />
+    <link
+      rel="icon"
+      href="./assets/imgs/branding/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="apple-touch-icon" href="./assets/imgs/branding/appIcon.png" />
+
+    <title>Fat Loss Calculator | ForgedHP</title>
+    <link rel="stylesheet" href="../style/globalStyling.css" />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/transformation-calc.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <section class="nav-bar" id="navbar">
+        <div class="nav-logo">
+          <a href="./index.html">
+            <img
+              src="./assets/imgs/branding/whiteMainLogo.svg"
+              alt="Forged HP Logo"
+            />
+          </a>
+        </div>
+        <div class="nav-options" id="navOptions">
+          <nav>
+            <a href="./index.html" class="nav-link">HOME</a>
+            <a href="https://blog.forgedhp.com/main" class="nav-link">BLOG</a>
+            <a href="./about-me.html" class="nav-link">ABOUT</a>
+            <a href="./index.html#services" class="nav-link">SERVICES</a>
+            <a href="./resources.html" class="nav-link">RESOURCES</a>
+          </nav>
+          <a href="./forged-pro-membership.html" class="main-CTA"
+            >JOIN FORGED PRO</a
+          >
+        </div>
+        <button class="hamburger" id="hamburger">
+          <i class="fas fa-bars"></i>
+        </button>
+      </section>
+    </header>
+
+    <section class="calculators-hero">
+      <div class="calculators-hero-content">
+        <h1 class="calculators-hero-title">Fat Loss Calculator</h1>
+        <h4 class="calculators-hero-subtitle">
+          Calculate your metabolism and body composition metrics
+        </h4>
+      </div>
+    </section>
+
+    <main class="calculators-page">
+      <section class="calculators-intro">
+        <div class="section-header">
+          <p class="intro-text">
+            Understand your current metrics and create a data-driven plan to
+            reach your fat loss goals.
+          </p>
+        </div>
+      </section>
+
+      <!-- Fat Loss Calculator Section -->
+      <section class="calculator-section" id="fat-loss-calculator">
+        <div class="section-header">
+          <h2>Calculate Your Metrics</h2>
+          <p class="section-description">
+            Estimate your body fat percentage, calculate your BMR and TDEE, and
+            find out what steps you need to take to reach your goals.
+          </p>
+        </div>
+
+        <!-- Body Fat Percentage Reference Images -->
+        <div class="reference-images">
+          <div class="image-container">
+            <img
+              src="./assets/imgs/backgrounds/male-bodyfat.webp"
+              alt="Male body fat percentage reference"
+            />
+            <p class="image-caption">Male Body Fat Percentage Reference</p>
+          </div>
+          <div class="image-container">
+            <img
+              src="./assets/imgs/backgrounds/female-bodyfat.webp"
+              alt="Female body fat percentage reference"
+            />
+            <p class="image-caption">Female Body Fat Percentage Reference</p>
+          </div>
+        </div>
+
+        <div class="instructions">
+          <h3>How to Use This Calculator</h3>
+          <ol>
+            <li>
+              <strong>Input Your Basic Information:</strong> Enter your height,
+              age, weight, and gender.
+            </li>
+            <li>
+              <strong>Estimate Your Body Fat Percentage:</strong> Use the
+              reference images above to estimate your current and target body
+              fat percentages.
+            </li>
+            <li>
+              <strong>Determine Your Activity Level:</strong> Select the option
+              that best matches your daily activity.
+            </li>
+            <li>
+              <strong>Press Calculate:</strong> Get your personalized results
+              instantly.
+            </li>
+          </ol>
+        </div>
+
+        <!-- Calculator Form -->
+        <div class="calculator-container">
+          <form id="fat-loss-form" class="calculator-form">
+            <div class="form-group">
+              <label for="height-fat-loss">Height (inches)</label>
+              <input
+                type="number"
+                id="height-fat-loss"
+                name="height"
+                min="1"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="age-fat-loss">Age</label>
+              <input
+                type="number"
+                id="age-fat-loss"
+                name="age"
+                min="1"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="weight-fat-loss">Weight (lbs)</label>
+              <input
+                type="number"
+                id="weight-fat-loss"
+                name="weight"
+                min="1"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="gender-fat-loss">Gender</label>
+              <select id="gender-fat-loss" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="activity-fat-loss">Activity Level</label>
+              <select id="activity-fat-loss" name="activity" required>
+                <option value="1.2">Sedentary (little or no exercise)</option>
+                <option value="1.375">
+                  Lightly Active (light exercise/sports 1-3 days/week)
+                </option>
+                <option value="1.55">
+                  Moderately Active (exercise/sports 3-5 days/week)
+                </option>
+                <option value="1.725">
+                  Very Active (exercise/sports 6-7 days/week)
+                </option>
+                <option value="1.9">
+                  Super Active (very hard exercise & physical job)
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="current-fat-percentage"
+                >Current Body Fat Percentage (%)</label
+              >
+              <input
+                type="number"
+                id="current-fat-percentage"
+                name="current-fat"
+                min="1"
+                max="100"
+                step="1"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="target-fat-percentage"
+                >Target Body Fat Percentage (%)</label
+              >
+              <input
+                type="number"
+                id="target-fat-percentage"
+                name="target-fat"
+                min="1"
+                max="100"
+                step="1"
+                required
+              />
+            </div>
+
+            <button type="submit" class="calculator-submit-btn">
+              Calculate
+            </button>
+          </form>
+
+          <!-- Results Section -->
+          <div id="fat-loss-results" class="calculator-results">
+            <h3>Your Results</h3>
+            <div class="result-item">
+              <span class="result-label">BMR:</span>
+              <span class="result-value" id="bmr-result-fat-loss">--</span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">TDEE:</span>
+              <span class="result-value" id="tdee-result-fat-loss">--</span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Current Lean Mass:</span>
+              <span class="result-value" id="lean-mass-result-fat-loss"
+                >--</span
+              >
+            </div>
+            <div class="result-item">
+              <span class="result-label">Current Fat Mass:</span>
+              <span class="result-value" id="fat-mass-result-fat-loss">--</span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Target Fat Mass:</span>
+              <span class="result-value" id="target-fat-mass-result-fat-loss"
+                >--</span
+              >
+            </div>
+            <div class="result-item">
+              <span class="result-label">Fat to Lose:</span>
+              <span class="result-value" id="fat-to-lose-result-fat-loss"
+                >--</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Next Steps CTA -->
+      <section class="next-steps-cta">
+        <div class="cta-container">
+          <h3>Ready for the Next Step?</h3>
+          <p>
+            Use your TDEE to calculate your daily caloric intake based on your
+            goals.
+          </p>
+          <a href="./caloric-intake-calculator.html" class="main-cta-primary"
+            >Calculate Daily Calories</a
+          >
+          <p style="margin-top: 2rem">
+            <a
+              href="./resources.html"
+              style="color: #0c355a; text-decoration: underline"
+              >← Back to Resources</a
+            >
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <img
+            src="./assets/imgs/branding/whiteMainLogo.svg"
+            alt="Forged HP Logo"
+            class="footer-logo"
+          />
+          <p class="footer-description">
+            ForgedHP is a human performance company committed to forging
+            mentally and physically stronger men and women.
+          </p>
+        </div>
+        <div class="footer-column-2">
+          <h4 class="footer-subheading">Free Resources</h4>
+          <a href="./resources.html" class="footer-link">Resources Hub</a>
+        </div>
+        <div class="footer-column-3">
+          <h3 class="footer-heading">Stay Connected</h3>
+          <form class="footer-form">
+            <iframe
+              src="https://official.forgedhp.com/widget/form/KtwglNEmRXzWCjBiDonO"
+              style="
+                width: 100%;
+                height: 100%;
+                border: none;
+                border-radius: 3px;
+              "
+              id="inline-KtwglNEmRXzWCjBiDonO"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Site's Footer Form"
+              data-height="400"
+              data-layout-iframe-id="inline-KtwglNEmRXzWCjBiDonO"
+              data-form-id="KtwglNEmRXzWCjBiDonO"
+              title="Site's Footer Form"
+            >
+            </iframe>
+            <script src="https://official.forgedhp.com/js/form_embed.js"></script>
+          </form>
+          <div class="social-links">
+            <a
+              href="https://www.facebook.com/ForgedHumanPerformance"
+              aria-label="Facebook"
+              class="social-link"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/forged.hp/"
+              aria-label="Instagram"
+              class="social-link"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/matt-virnau-21873114/"
+              aria-label="LinkedIn"
+              class="social-link"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.youtube.com/@forgedhumanperformance44"
+              aria-label="YouTube"
+              class="social-link"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; Copyright ForgedHP <span id="current-year">2022</span> |
+          <a href="mailto:matt@forgedhp.com">matt@forgedhp.com</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/fat-loss-calc.js"></script>
+    <script>
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>
