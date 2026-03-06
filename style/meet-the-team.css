@@ -1,0 +1,583 @@
+/* ============================================
+   Meet The Team — meet-the-team.css
+   Forged Human Performance
+   ============================================ */
+
+/* ---- Hero ---- */
+.team-hero {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: url("../assets/imgs/backgrounds/div3.webp") center/cover no-repeat;
+  color: white;
+}
+
+.team-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(12, 53, 90, 0.88) 0%,
+    rgba(12, 53, 90, 0.65) 50%,
+    rgba(173, 43, 43, 0.35) 100%
+  );
+  z-index: 1;
+}
+
+.team-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 2rem;
+  animation: heroFadeIn 0.9s ease both;
+}
+
+.team-hero-eyebrow {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #d49829;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.team-hero-title {
+  font-size: clamp(4rem, 7vw, 7rem);
+  line-height: 1.05;
+  margin-bottom: 2rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  color: white;
+}
+
+.team-hero-subtitle {
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.team-hero-scroll-indicator {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.team-hero-scroll-indicator span {
+  display: block;
+  width: 2px;
+  height: 50px;
+  background: linear-gradient(to bottom, rgba(212, 152, 41, 0.8), transparent);
+  margin: 0 auto;
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+/* ---- Intro ---- */
+.team-intro {
+  padding: 7rem 2rem 5rem;
+  text-align: center;
+  background: #ffffff;
+}
+
+.team-intro-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.team-intro h2 {
+  font-size: clamp(3rem, 4vw, 4.2rem);
+  color: #0c355a;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.team-intro h2::after {
+  content: "";
+  position: absolute;
+  bottom: -1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5rem;
+  height: 3px;
+  background: #d49829;
+  border-radius: 2px;
+}
+
+.team-intro p {
+  font-size: 1.8rem;
+  color: #555;
+  line-height: 1.7;
+  margin-top: 2.5rem;
+}
+
+/* ---- Team Main ---- */
+.team-main {
+  padding: 6rem 2rem 8rem;
+  background: #f8f9fa;
+}
+
+.team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ---- Flip Grid ---- */
+.flip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+/* ============================================
+   FLIP CARDS
+   Cards are ALWAYS visible — no JS required.
+   JS only enhances with tap-to-flip on mobile.
+   ============================================ */
+.flip-card {
+  perspective: 1200px;
+  height: 520px;
+  /* ALWAYS VISIBLE — no opacity tricks */
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+
+.flip-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  border-radius: 14px;
+}
+
+/* Hover flip — desktop only */
+@media (hover: hover) and (pointer: fine) {
+  .flip-card:hover .flip-card__inner {
+    transform: rotateY(180deg);
+  }
+}
+
+/* JS tap flip — mobile */
+.flip-card.is-flipped .flip-card__inner {
+  transform: rotateY(180deg);
+}
+
+/* ---- Front & Back shared ---- */
+.flip-card__front,
+.flip-card__back {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* ---- Front ---- */
+.flip-card__front {
+  background: #222;
+  cursor: pointer;
+}
+
+.flip-card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: grayscale(100%) contrast(1.08);
+  transition:
+    transform 0.6s ease,
+    filter 0.6s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .flip-card:hover .flip-card__img {
+    transform: scale(1.06);
+    filter: grayscale(100%) contrast(1.12) brightness(0.7);
+  }
+}
+
+.flip-card.is-flipped .flip-card__img {
+  transform: scale(1.06);
+  filter: grayscale(100%) contrast(1.12) brightness(0.7);
+}
+
+.flip-card__front-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.25) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.flip-card__front-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2.5rem 2.5rem 3rem;
+  z-index: 2;
+}
+
+.flip-card__badge {
+  display: inline-block;
+  background: #d49829;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.35rem 1rem;
+  border-radius: 3px;
+  margin-bottom: 0.8rem;
+}
+
+.flip-card__name {
+  font-size: clamp(2rem, 2.4vw, 2.6rem);
+  color: white;
+  margin-bottom: 0.3rem;
+  line-height: 1.1;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.flip-card__role {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.75);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.flip-card__hint {
+  position: absolute;
+  top: 1.8rem;
+  right: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  z-index: 3;
+  transition: opacity 0.3s ease;
+}
+
+.flip-card__hint i {
+  font-size: 1rem;
+  color: #d49829;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .flip-card:hover .flip-card__hint {
+    opacity: 0;
+  }
+}
+
+.flip-card.is-flipped .flip-card__hint {
+  opacity: 0;
+}
+
+/* ---- Back ---- */
+.flip-card__back {
+  background: linear-gradient(145deg, #0c355a 0%, #092944 100%);
+  transform: rotateY(180deg);
+  color: white;
+  display: flex;
+  align-items: stretch;
+}
+
+.flip-card__back-inner {
+  padding: 2.8rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(212, 152, 41, 0.4) transparent;
+}
+
+.flip-card__back-inner::-webkit-scrollbar {
+  width: 4px;
+}
+
+.flip-card__back-inner::-webkit-scrollbar-thumb {
+  background: rgba(212, 152, 41, 0.4);
+  border-radius: 2px;
+}
+
+.flip-card__back-badge {
+  display: inline-block;
+  background: rgba(212, 152, 41, 0.2);
+  border: 1px solid rgba(212, 152, 41, 0.5);
+  color: #d49829;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.35rem 1rem;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+  align-self: flex-start;
+}
+
+.flip-card__back-name {
+  font-size: clamp(1.8rem, 2.2vw, 2.4rem);
+  color: white;
+  margin-bottom: 0.3rem;
+  line-height: 1.1;
+}
+
+.flip-card__back-role {
+  font-size: 1.3rem;
+  color: #d49829;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin: 0;
+}
+
+.flip-card__back-divider {
+  width: 3.5rem;
+  height: 2px;
+  background: rgba(212, 152, 41, 0.5);
+  margin: 1.4rem 0;
+  flex-shrink: 0;
+}
+
+.flip-card__back-bio {
+  font-size: 1.35rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.7;
+  margin-bottom: 1.6rem;
+  flex: 1;
+}
+
+.flip-card__back-credentials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+
+.flip-cred-tag {
+  display: inline-block;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+}
+
+.flip-card__cta {
+  align-self: flex-start;
+  font-size: 1.3rem !important;
+  padding: 1.2rem 2.4rem !important;
+  flex-shrink: 0;
+}
+
+/* ---- Values Strip ---- */
+.team-values {
+  padding: 7rem 2rem;
+  background: linear-gradient(135deg, #0c355a 0%, #0a2a47 100%);
+  color: white;
+}
+
+.team-values-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  text-align: center;
+}
+
+.value-item {
+  padding: 2rem 1rem;
+  /* ALWAYS VISIBLE */
+  opacity: 1;
+  visibility: visible;
+}
+
+.value-icon {
+  font-size: 3.2rem;
+  color: #d49829;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.value-item h3 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.value-item p {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+/* ---- CTA Section ---- */
+.cta-section {
+  padding: 8rem 2rem;
+  text-align: center;
+  background:
+    linear-gradient(rgba(12, 53, 90, 0.9), rgba(12, 53, 90, 0.9)),
+    url("../assets/imgs/backgrounds/div3.webp") center/cover;
+  color: white;
+}
+
+.cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-section h2 {
+  font-size: clamp(2.8rem, 4vw, 3.8rem);
+  margin-bottom: 3rem;
+  color: white;
+}
+
+.cta-note {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-style: italic;
+  margin-top: 1.5rem;
+}
+
+/* ---- Animations ---- */
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollPulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1.15);
+  }
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .flip-grid {
+    gap: 2rem;
+  }
+  .flip-card {
+    height: 480px;
+  }
+}
+
+@media (max-width: 900px) {
+  .flip-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .flip-card:first-child {
+    grid-column: 1 / -1;
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .team-values-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-hero {
+    height: auto;
+    min-height: 60vh;
+    padding: 10rem 2rem 6rem;
+  }
+  .team-intro {
+    padding: 5rem 2rem 4rem;
+  }
+  .team-main {
+    padding: 4rem 1.5rem 6rem;
+  }
+  .flip-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .flip-card {
+    height: 420px;
+  }
+  .flip-card:first-child {
+    grid-column: 1 / -1;
+    max-width: 420px;
+    height: 440px;
+  }
+  .flip-card__hint {
+    opacity: 1;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-hero-title {
+    font-size: 3.4rem;
+  }
+  .flip-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .flip-card,
+  .flip-card:first-child {
+    grid-column: auto;
+    max-width: 100%;
+    height: 460px;
+  }
+  .flip-card__back-bio {
+    font-size: 1.3rem;
+  }
+  .team-values {
+    padding: 5rem 1.5rem;
+  }
+  .team-values-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .value-item h3 {
+    font-size: 1.7rem;
+  }
+  .cta-section {
+    padding: 6rem 1.5rem;
+  }
+}
