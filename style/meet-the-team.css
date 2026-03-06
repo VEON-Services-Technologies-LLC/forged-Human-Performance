@@ -1,9 +1,10 @@
 /* ============================================
    Meet The Team — meet-the-team.css
    Forged Human Performance
+   v4.0 — FINAL
    ============================================ */
 
-/* ---- Hero ---- */
+/* ===== HERO ===== */
 .team-hero {
   position: relative;
   height: 70vh;
@@ -14,10 +15,10 @@
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  background: url("../assets/imgs/backgrounds/div3.webp") center/cover no-repeat;
+  background: url("../assets/imgs/backgrounds/div3.webp") center / cover
+    no-repeat;
   color: white;
 }
-
 .team-hero-overlay {
   position: absolute;
   inset: 0;
@@ -29,7 +30,6 @@
   );
   z-index: 1;
 }
-
 .team-hero-content {
   position: relative;
   z-index: 2;
@@ -37,34 +37,29 @@
   padding: 0 2rem;
   animation: heroFadeIn 0.9s ease both;
 }
-
 .team-hero-eyebrow {
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 1.2rem !important;
   font-weight: 700;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: #d49829;
+  color: #d49829 !important;
   margin-bottom: 1.5rem;
-  opacity: 0.9;
 }
-
 .team-hero-title {
-  font-size: clamp(4rem, 7vw, 7rem);
+  font-size: clamp(4rem, 7vw, 7rem) !important;
   line-height: 1.05;
   margin-bottom: 2rem;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  color: white;
+  color: white !important;
 }
-
 .team-hero-subtitle {
-  font-size: clamp(1.5rem, 2.2vw, 2rem);
-  color: rgba(255, 255, 255, 0.85);
+  font-size: clamp(1.5rem, 2.2vw, 2rem) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.5;
 }
-
 .team-hero-scroll-indicator {
   position: absolute;
   bottom: 3rem;
@@ -72,7 +67,6 @@
   transform: translateX(-50%);
   z-index: 2;
 }
-
 .team-hero-scroll-indicator span {
   display: block;
   width: 2px;
@@ -82,26 +76,23 @@
   animation: scrollPulse 2s ease-in-out infinite;
 }
 
-/* ---- Intro ---- */
+/* ===== INTRO ===== */
 .team-intro {
   padding: 7rem 2rem 5rem;
   text-align: center;
-  background: #ffffff;
+  background: #fff;
 }
-
 .team-intro-container {
   max-width: 700px;
   margin: 0 auto;
 }
-
 .team-intro h2 {
-  font-size: clamp(3rem, 4vw, 4.2rem);
-  color: #0c355a;
+  font-size: clamp(3rem, 4vw, 4.2rem) !important;
+  color: #0c355a !important;
   margin-bottom: 2rem;
   position: relative;
   display: inline-block;
 }
-
 .team-intro h2::after {
   content: "";
   position: absolute;
@@ -113,82 +104,94 @@
   background: #d49829;
   border-radius: 2px;
 }
-
 .team-intro p {
-  font-size: 1.8rem;
-  color: #555;
+  font-size: 1.8rem !important;
+  color: #555 !important;
   line-height: 1.7;
   margin-top: 2.5rem;
 }
 
-/* ---- Team Main ---- */
+/* ===== TEAM SECTION ===== */
 .team-main {
   padding: 6rem 2rem 8rem;
   background: #f8f9fa;
 }
-
 .team-container {
-  max-width: 1200px;
+  max-width: 1140px;
   margin: 0 auto;
 }
 
-/* ---- Flip Grid ---- */
+/* ===== FLIP GRID ===== */
 .flip-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
 }
 
-/* ============================================
-   FLIP CARDS
-   Cards are ALWAYS visible — no JS required.
-   JS only enhances with tap-to-flip on mobile.
-   ============================================ */
+/* ===== FLIP CARD ===== */
+/*
+  CRITICAL RULES:
+  1. .flip-card must NOT have overflow:hidden — kills preserve-3d on Safari
+  2. .flip-card__inner holds the 3D rotation
+  3. Both faces MUST have backface-visibility:hidden
+  4. Back face MUST start at rotateY(180deg)
+  5. NO independent transitions on child elements inside the faces
+*/
+
 .flip-card {
-  perspective: 1200px;
   height: 520px;
-  /* ALWAYS VISIBLE — no opacity tricks */
-  opacity: 1;
-  visibility: visible;
-  display: block;
+  /* perspective on the card itself, not a wrapper */
+  perspective: 1400px;
+  -webkit-perspective: 1400px;
+  /* ALWAYS VISIBLE — no JS needed to show cards */
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
 }
 
 .flip-card__inner {
   position: relative;
   width: 100%;
   height: 100%;
+  transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
   transform-style: preserve-3d;
-  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
-  border-radius: 14px;
+  -webkit-transform-style: preserve-3d;
+  /* GPU layer */
+  will-change: transform;
 }
 
-/* Hover flip — desktop only */
+/* Desktop hover flip */
 @media (hover: hover) and (pointer: fine) {
   .flip-card:hover .flip-card__inner {
     transform: rotateY(180deg);
   }
 }
 
-/* JS tap flip — mobile */
+/* JS tap flip */
 .flip-card.is-flipped .flip-card__inner {
   transform: rotateY(180deg);
 }
 
-/* ---- Front & Back shared ---- */
+/* ===== SHARED FACE STYLES ===== */
 .flip-card__front,
 .flip-card__back {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   border-radius: 14px;
   overflow: hidden;
+  /* THE most important rule — hides the face when rotated away */
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
 
-/* ---- Front ---- */
+/* ===== FRONT FACE ===== */
 .flip-card__front {
-  background: #222;
+  background: #111;
   cursor: pointer;
+  /* Front starts facing us — rotateY(0) */
+  transform: rotateY(0deg);
 }
 
 .flip-card__img {
@@ -199,22 +202,7 @@
   object-fit: cover;
   object-position: center top;
   display: block;
-  filter: grayscale(100%) contrast(1.08);
-  transition:
-    transform 0.6s ease,
-    filter 0.6s ease;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .flip-card:hover .flip-card__img {
-    transform: scale(1.06);
-    filter: grayscale(100%) contrast(1.12) brightness(0.7);
-  }
-}
-
-.flip-card.is-flipped .flip-card__img {
-  transform: scale(1.06);
-  filter: grayscale(100%) contrast(1.12) brightness(0.7);
+  filter: grayscale(100%) contrast(1.1) brightness(0.9);
 }
 
 .flip-card__front-overlay {
@@ -222,11 +210,10 @@
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.82) 0%,
-    rgba(0, 0, 0, 0.25) 50%,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.2) 55%,
     transparent 100%
   );
-  pointer-events: none;
   z-index: 1;
 }
 
@@ -242,27 +229,27 @@
 .flip-card__badge {
   display: inline-block;
   background: #d49829;
-  color: white;
-  font-size: 1rem;
+  color: white !important;
+  font-size: 1rem !important;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 0.35rem 1rem;
+  padding: 0.4rem 1.1rem;
   border-radius: 3px;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.9rem;
 }
 
 .flip-card__name {
-  font-size: clamp(2rem, 2.4vw, 2.6rem);
-  color: white;
-  margin-bottom: 0.3rem;
+  font-size: clamp(2rem, 2.5vw, 2.8rem) !important;
+  color: white !important;
+  margin: 0 0 0.4rem;
   line-height: 1.1;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
 .flip-card__role {
-  font-size: 1.4rem;
-  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.35rem !important;
+  color: rgba(255, 255, 255, 0.78) !important;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin: 0;
@@ -274,82 +261,78 @@
   right: 1.8rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 1.1rem;
-  letter-spacing: 0.05em;
+  gap: 0.6rem;
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-size: 1.1rem !important;
   z-index: 3;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
 }
-
 .flip-card__hint i {
-  font-size: 1rem;
-  color: #d49829;
+  color: #d49829 !important;
+  font-size: 1rem !important;
 }
-
 @media (hover: hover) and (pointer: fine) {
   .flip-card:hover .flip-card__hint {
     opacity: 0;
   }
 }
-
 .flip-card.is-flipped .flip-card__hint {
   opacity: 0;
 }
 
-/* ---- Back ---- */
+/* ===== BACK FACE ===== */
 .flip-card__back {
-  background: linear-gradient(145deg, #0c355a 0%, #092944 100%);
-  transform: rotateY(180deg);
-  color: white;
+  background: linear-gradient(150deg, #0c355a 0%, #071e35 100%);
+  color: white !important;
   display: flex;
   align-items: stretch;
+  /* Back starts rotated away from us */
+  transform: rotateY(180deg);
 }
 
 .flip-card__back-inner {
-  padding: 2.8rem 2.5rem;
+  padding: 2.8rem 2.6rem;
   display: flex;
   flex-direction: column;
   width: 100%;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: rgba(212, 152, 41, 0.4) transparent;
+  scrollbar-color: rgba(212, 152, 41, 0.45) transparent;
 }
-
 .flip-card__back-inner::-webkit-scrollbar {
   width: 4px;
 }
-
 .flip-card__back-inner::-webkit-scrollbar-thumb {
-  background: rgba(212, 152, 41, 0.4);
+  background: rgba(212, 152, 41, 0.45);
   border-radius: 2px;
 }
 
 .flip-card__back-badge {
   display: inline-block;
-  background: rgba(212, 152, 41, 0.2);
-  border: 1px solid rgba(212, 152, 41, 0.5);
-  color: #d49829;
-  font-size: 1rem;
+  align-self: flex-start;
+  background: rgba(212, 152, 41, 0.18);
+  border: 1px solid rgba(212, 152, 41, 0.55);
+  color: #d49829 !important;
+  font-size: 1rem !important;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 0.35rem 1rem;
   border-radius: 3px;
   margin-bottom: 1rem;
-  align-self: flex-start;
 }
 
 .flip-card__back-name {
-  font-size: clamp(1.8rem, 2.2vw, 2.4rem);
-  color: white;
-  margin-bottom: 0.3rem;
-  line-height: 1.1;
+  font-size: clamp(1.8rem, 2.2vw, 2.4rem) !important;
+  color: white !important;
+  margin: 0 0 0.3rem;
+  line-height: 1.15;
 }
 
 .flip-card__back-role {
-  font-size: 1.3rem;
-  color: #d49829;
+  font-size: 1.3rem !important;
+  color: #d49829 !important;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -360,15 +343,15 @@
   width: 3.5rem;
   height: 2px;
   background: rgba(212, 152, 41, 0.5);
-  margin: 1.4rem 0;
+  margin: 1.5rem 0;
   flex-shrink: 0;
 }
 
 .flip-card__back-bio {
-  font-size: 1.35rem;
-  color: rgba(255, 255, 255, 0.82);
-  line-height: 1.7;
-  margin-bottom: 1.6rem;
+  font-size: 1.35rem !important;
+  color: rgba(255, 255, 255, 0.83) !important;
+  line-height: 1.72;
+  margin-bottom: 1.8rem;
   flex: 1;
 }
 
@@ -381,30 +364,27 @@
 
 .flip-cred-tag {
   display: inline-block;
-  font-size: 1.05rem;
+  font-size: 1.05rem !important;
   font-weight: 600;
-  letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 0.85);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 0.4rem 1rem;
+  color: rgba(255, 255, 255, 0.88) !important;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 0.4rem 1.1rem;
   border-radius: 50px;
 }
 
 .flip-card__cta {
   align-self: flex-start;
+  flex-shrink: 0;
   font-size: 1.3rem !important;
   padding: 1.2rem 2.4rem !important;
-  flex-shrink: 0;
 }
 
-/* ---- Values Strip ---- */
+/* ===== VALUES STRIP ===== */
 .team-values {
   padding: 7rem 2rem;
   background: linear-gradient(135deg, #0c355a 0%, #0a2a47 100%);
-  color: white;
 }
-
 .team-values-container {
   max-width: 1100px;
   margin: 0 auto;
@@ -413,63 +393,55 @@
   gap: 3rem;
   text-align: center;
 }
-
 .value-item {
   padding: 2rem 1rem;
-  /* ALWAYS VISIBLE */
-  opacity: 1;
-  visibility: visible;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
-
 .value-icon {
-  font-size: 3.2rem;
-  color: #d49829;
+  font-size: 3.2rem !important;
+  color: #d49829 !important;
   margin-bottom: 1.5rem;
   display: block;
 }
-
 .value-item h3 {
-  font-size: 2rem;
-  color: white;
+  font-size: 2rem !important;
+  color: white !important;
   margin-bottom: 1rem;
   letter-spacing: 0.05em;
 }
-
 .value-item p {
-  font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.5rem !important;
+  color: rgba(255, 255, 255, 0.72) !important;
   line-height: 1.6;
 }
 
-/* ---- CTA Section ---- */
+/* ===== CTA SECTION ===== */
 .cta-section {
   padding: 8rem 2rem;
   text-align: center;
   background:
-    linear-gradient(rgba(12, 53, 90, 0.9), rgba(12, 53, 90, 0.9)),
-    url("../assets/imgs/backgrounds/div3.webp") center/cover;
+    linear-gradient(rgba(12, 53, 90, 0.92), rgba(12, 53, 90, 0.92)),
+    url("../assets/imgs/backgrounds/div3.webp") center / cover;
   color: white;
 }
-
 .cta-container {
   max-width: 800px;
   margin: 0 auto;
 }
-
 .cta-section h2 {
-  font-size: clamp(2.8rem, 4vw, 3.8rem);
+  font-size: clamp(2.8rem, 4vw, 3.8rem) !important;
   margin-bottom: 3rem;
-  color: white;
+  color: white !important;
 }
-
 .cta-note {
-  font-size: 1.4rem;
-  color: rgba(255, 255, 255, 0.65);
+  font-size: 1.4rem !important;
+  color: rgba(255, 255, 255, 0.65) !important;
   font-style: italic;
   margin-top: 1.5rem;
 }
 
-/* ---- Animations ---- */
+/* ===== KEYFRAMES ===== */
 @keyframes heroFadeIn {
   from {
     opacity: 0;
@@ -480,26 +452,23 @@
     transform: translateY(0);
   }
 }
-
 @keyframes scrollPulse {
   0%,
   100% {
     opacity: 0.4;
-    transform: scaleY(1);
   }
   50% {
     opacity: 1;
-    transform: scaleY(1.15);
   }
 }
 
-/* ---- Responsive ---- */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
   .flip-grid {
     gap: 2rem;
   }
   .flip-card {
-    height: 480px;
+    height: 490px;
   }
 }
 
@@ -510,7 +479,7 @@
   }
   .flip-card:first-child {
     grid-column: 1 / -1;
-    max-width: 480px;
+    max-width: 440px;
     margin: 0 auto;
     width: 100%;
   }
@@ -537,22 +506,18 @@
     gap: 1.5rem;
   }
   .flip-card {
-    height: 420px;
+    height: 400px;
   }
   .flip-card:first-child {
     grid-column: 1 / -1;
-    max-width: 420px;
-    height: 440px;
-  }
-  .flip-card__hint {
-    opacity: 1;
-    font-size: 1.2rem;
+    max-width: 400px;
+    height: 420px;
   }
 }
 
 @media (max-width: 480px) {
   .team-hero-title {
-    font-size: 3.4rem;
+    font-size: 3.2rem !important;
   }
   .flip-grid {
     grid-template-columns: 1fr;
@@ -562,10 +527,7 @@
   .flip-card:first-child {
     grid-column: auto;
     max-width: 100%;
-    height: 460px;
-  }
-  .flip-card__back-bio {
-    font-size: 1.3rem;
+    height: 450px;
   }
   .team-values {
     padding: 5rem 1.5rem;
@@ -575,7 +537,7 @@
     gap: 1.5rem;
   }
   .value-item h3 {
-    font-size: 1.7rem;
+    font-size: 1.7rem !important;
   }
   .cta-section {
     padding: 6rem 1.5rem;
