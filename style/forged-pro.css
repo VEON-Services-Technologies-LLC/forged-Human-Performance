@@ -5,7 +5,8 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(rgba(12, 53, 90, 0.7), rgba(12, 53, 90, 0.7)),
+  background:
+    linear-gradient(rgba(12, 53, 90, 0.7), rgba(12, 53, 90, 0.7)),
     url("../assets/imgs/backgrounds/div3.webp") center/cover;
   color: white;
 }
@@ -563,7 +564,9 @@
   padding: 0 3rem;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
+  transition:
+    max-height 0.3s ease,
+    padding 0.3s ease;
   background: white;
 }
 
@@ -571,7 +574,10 @@
   max-height: 500px; /* Increased from 300px to accommodate longer answers */
   padding: 0 3rem 2rem 3rem;
   opacity: 1;
-  transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.3s ease 0.2s;
+  transition:
+    max-height 0.5s ease,
+    padding 0.5s ease,
+    opacity 0.3s ease 0.2s;
   display: block !important;
 }
 
@@ -579,7 +585,10 @@
   max-height: 0;
   padding: 0 3rem;
   opacity: 0;
-  transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.1s ease;
+  transition:
+    max-height 0.3s ease,
+    padding 0.3s ease,
+    opacity 0.1s ease;
 }
 
 .faq-item.active .faq-icon {
@@ -603,7 +612,8 @@
 .cta-section {
   padding: 8rem 2rem;
   text-align: center;
-  background: linear-gradient(rgba(12, 53, 90, 0.9), rgba(12, 53, 90, 0.9)),
+  background:
+    linear-gradient(rgba(12, 53, 90, 0.9), rgba(12, 53, 90, 0.9)),
     url("../assets/imgs/backgrounds/div3.webp") center/cover;
   color: white;
 }
@@ -624,6 +634,11 @@
   color: rgba(255, 255, 255, 0.7);
   font-style: italic;
   margin-top: 1.5rem;
+}
+
+.red-highlight-font {
+  color: #ad2b2b;
+  font-weight: 700;
 }
 
 /* Responsive Adjustments */
